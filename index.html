@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fahim Ahsan Khan — CP Profile</title>
+<!-- Favicon: inline SVG of a terminal prompt → no external file needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ctext x='4' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5a0'%3E%7B%7D%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
+  /* ══ THEMES ══ */
   :root {
     --bg: #0d0f14;
     --surface: #151820;
@@ -19,8 +22,29 @@
     --accent4: #ffd166;
     --text: #e8eaf2;
     --muted: #6b7280;
+    --h1: #ffffff;
+    --card-num: #ffffff;
+    --grid-line: rgba(0,229,160,0.03);
     --mono: 'Space Mono', monospace;
     --sans: 'Sora', sans-serif;
+    --theme-transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  [data-theme="light"] {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --surface2: #e8edf3;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.18);
+    --accent: #00a372;
+    --accent2: #2563eb;
+    --accent3: #dc2626;
+    --accent4: #d97706;
+    --text: #1e293b;
+    --muted: #64748b;
+    --h1: #0f172a;
+    --card-num: #0f172a;
+    --grid-line: rgba(0,163,114,0.05);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +55,7 @@
     font-family: var(--sans);
     min-height: 100vh;
     overflow-x: hidden;
+    transition: var(--theme-transition);
   }
 
   /* animated grid bg */
@@ -39,12 +64,56 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
+    transition: background-image 0.35s ease;
   }
+
+  /* ── Theme Toggle ── */
+  .theme-toggle {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 50px;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: var(--theme-transition), box-shadow 0.25s;
+  }
+
+  .theme-toggle:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.26); }
+
+  .theme-btn {
+    border: none;
+    background: transparent;
+    border-radius: 40px;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .theme-btn.active {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+  }
+
+  [data-theme="light"] .theme-btn.active { color: #0f172a; }
 
   .container {
     max-width: 960px;
@@ -101,7 +170,8 @@
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #fff;
+    color: var(--h1);
+    transition: color 0.35s;
   }
 
   .name-block h1 span {
@@ -185,13 +255,52 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .acc-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
   }
 
   .acc-card:hover {
-    border-color: var(--border2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    background: var(--surface2);
   }
+
+  .acc-card:hover::before { opacity: 1; }
+
+  .acc-card:active { transform: translateY(-1px) scale(0.99); }
+
+  .acc-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
+  .acc-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
+  .acc-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
+  .acc-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
+  .acc-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
+  .acc-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
+
+  .acc-card .visit-hint {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    font-size: 9px;
+    font-family: var(--mono);
+    color: var(--muted);
+    opacity: 0;
+    transition: opacity 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .acc-card:hover .visit-hint { opacity: 1; }
 
   .platform-icon {
     width: 32px;
@@ -215,8 +324,9 @@
     font-size: 18px;
     font-weight: 700;
     font-family: var(--mono);
-    color: #fff;
+    color: var(--card-num);
     line-height: 1.2;
+    transition: color 0.35s;
   }
 
   .acc-info .acc-val span {
@@ -243,6 +353,7 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 20px;
+    transition: var(--theme-transition);
   }
 
   .card-title {
@@ -263,11 +374,12 @@
   .solved-table th {
     font-size: 10px;
     font-family: var(--mono);
-    color: var(--muted);
+    color: var(--text);
     text-align: center;
     padding: 0 0 8px;
     font-weight: 400;
     letter-spacing: 0.5px;
+    transition: color 0.35s;
   }
 
   .solved-table td {
@@ -276,7 +388,8 @@
     font-family: var(--mono);
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var(--card-num);
+    transition: color 0.35s;
   }
 
   .solved-table .bar-row td {
@@ -326,7 +439,8 @@
     font-family: var(--mono);
     font-size: 22px;
     font-weight: 700;
-    color: #fff;
+    color: var(--card-num);
+    transition: color 0.35s;
   }
 
   .streak-item .val-block .sublabel {
@@ -368,7 +482,8 @@
     font-family: var(--mono);
     font-size: 26px;
     font-weight: 700;
-    color: #fff;
+    color: var(--card-num);
+    transition: color 0.35s;
   }
 
   .chart-center .small {
@@ -467,9 +582,60 @@
   .acc-card:nth-child(4) { animation-delay: 0.20s; }
   .acc-card:nth-child(5) { animation-delay: 0.25s; }
   .acc-card:nth-child(6) { animation-delay: 0.30s; }
+  /* ── Rating tabs ── */
+  .rtab {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .rtab:hover { border-color: var(--border2); color: var(--text); }
+  .rtab.active { background: var(--accent); border-color: var(--accent); color: #0d0f14; font-weight: 700; }
+
+  .rating-stat {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: var(--mono);
+  }
+  .rating-stat .rs-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+  .rating-stat .rs-val { font-size: 18px; font-weight: 700; color: var(--card-num); transition: color 0.35s; }
+  /* ── Copyright footer ── */
+  .copyright {
+    text-align: center;
+    padding: 32px 0 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    transition: color 0.35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .copyright svg { opacity: 0.5; }
 </style>
 </head>
 <body>
+<!-- Theme toggle -->
+<div class="theme-toggle" role="group" aria-label="Theme selector">
+  <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    Dark
+  </button>
+  <button class="theme-btn" id="btn-light" onclick="setTheme('light')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    Light
+  </button>
+</div>
+
 <div class="container">
 
   <!-- Header -->
@@ -477,63 +643,19 @@
     <div class="avatar-wrap">
       <div class="avatar">FK</div>
       <div class="name-block">
-        <h1>Fahim <span>Ahsan Khan</span></h1>
-        <p class="handle">@<b>loop_breaker</b> · Bangladesh 🇧🇩</p>
+        <h1>Fahim Ahsan Khan</h1>
+        <p class="handle">Bangladesh 🇧🇩</p>
       </div>
     </div>
     <div class="meta-pills">
       <div class="pill"><span class="dot"></span>Active</div>
       <div class="pill">Last updated: 2022-08-25</div>
-      <div class="pill">0 problems authored</div>
     </div>
   </header>
 
-  <!-- Accuracy -->
+  <!-- Accuracy — rendered by JS from PROFILES config -->
   <div class="section-label">Accuracy</div>
-  <div class="accuracy-grid">
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#1a2a1a;">🏆</div>
-      <div class="acc-info">
-        <div class="platform-name">CodeChef</div>
-        <div class="acc-val">34.18<span>%</span></div>
-      </div>
-    </div>
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#1a1a2a;">📊</div>
-      <div class="acc-info">
-        <div class="platform-name">CodeForces</div>
-        <div class="acc-val">50.51<span>%</span></div>
-      </div>
-    </div>
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#0d2020;">🔷</div>
-      <div class="acc-info">
-        <div class="platform-name">SPOJ</div>
-        <div class="acc-val">28.57<span>%</span></div>
-      </div>
-    </div>
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#1a1014;">🦊</div>
-      <div class="acc-info">
-        <div class="platform-name">HackerRank</div>
-        <div class="acc-val">30.43<span>%</span></div>
-      </div>
-    </div>
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#0f1f1f;">🌐</div>
-      <div class="acc-info">
-        <div class="platform-name">HackerEarth</div>
-        <div class="acc-val">100<span>%</span></div>
-      </div>
-    </div>
-    <div class="acc-card">
-      <div class="platform-icon" style="background:#1f1a0d;">⚡</div>
-      <div class="acc-info">
-        <div class="platform-name">UVa</div>
-        <div class="acc-val">50.65<span>%</span></div>
-      </div>
-    </div>
-  </div>
+  <div class="accuracy-grid" id="accuracy-grid"></div>
 
   <!-- Problems Summary -->
   <div class="section-label">Problems</div>
@@ -648,12 +770,107 @@
 
   </div>
 
-  <footer class="footer">
-    Built with ♥ · <a href="https://github.com">Host on GitHub Pages</a> · Data fetched from public APIs
-  </footer>
+  <!-- Rating History -->
+  <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
+
+  <div class="card rating-card" style="margin-bottom:16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+      <div class="card-title" style="margin-bottom:0;">Rating over time</div>
+      <div style="display:flex;gap:8px;" id="rating-tabs">
+        <button class="rtab active" data-platform="codeforces">Codeforces</button>
+        <button class="rtab" data-platform="codechef">CodeChef</button>
+        <button class="rtab" data-platform="atcoder">AtCoder</button>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:280px;">
+      <canvas id="ratingChart" role="img" aria-label="Line chart of contest rating history">Rating history across contests</canvas>
+    </div>
+    <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="copyright" id="copyright"></div>
+
 </div>
 
 <script>
+  // ════════════════════════════════════════════════
+  // ✏️  EDIT YOUR PROFILE URLS HERE — one place only
+  // ════════════════════════════════════════════════
+  const PROFILES = [
+    {
+      name: 'CodeChef',
+      url: 'https://www.codechef.com/users/loop_breaker',
+      icon: '🏆',
+      iconBg: '#1a2a1a',
+      color: 'green',
+      accuracy: '34.18'
+    },
+    {
+      name: 'Codeforces',
+      url: 'https://codeforces.com/profile/loop_breaker',
+      icon: '📊',
+      iconBg: '#1a1a2a',
+      color: 'blue',
+      accuracy: '50.51'
+    },
+    {
+      name: 'SPOJ',
+      url: 'https://www.spoj.com/users/loop_breaker',
+      icon: '🔷',
+      iconBg: '#0d2020',
+      color: 'cyan',
+      accuracy: '28.57'
+    },
+    {
+      name: 'HackerRank',
+      url: 'https://www.hackerrank.com/loop_breaker',
+      icon: '🦊',
+      iconBg: '#1a1014',
+      color: 'pink',
+      accuracy: '30.43'
+    },
+    {
+      name: 'HackerEarth',
+      url: 'https://www.hackerearth.com/@loop_breaker',
+      icon: '🌐',
+      iconBg: '#0f1f1f',
+      color: 'teal',
+      accuracy: '100'
+    },
+    {
+      name: 'UVa',
+      url: 'https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=19&page=show_authorstats&userid=0',
+      icon: '⚡',
+      iconBg: '#1f1a0d',
+      color: 'amber',
+      accuracy: '50.65'
+    },
+  ];
+
+  // Build accuracy cards from config
+  const grid = document.getElementById('accuracy-grid');
+  PROFILES.forEach(p => {
+    const a = document.createElement('a');
+    a.className = 'acc-card';
+    a.href = p.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.dataset.color = p.color;
+    // Prevent any browser preview / link preview panel — open directly
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      window.open(p.url, '_blank', 'noopener,noreferrer');
+    });
+    a.innerHTML = `
+      <span class="visit-hint">↗ visit</span>
+      <div class="platform-icon" style="background:${p.iconBg};">${p.icon}</div>
+      <div class="acc-info">
+        <div class="platform-name">${p.name}</div>
+        <div class="acc-val">${p.accuracy}<span>%</span></div>
+      </div>`;
+    grid.appendChild(a);
+  });
   const ctx = document.getElementById('donut');
   new Chart(ctx, {
     type: 'doughnut',
@@ -680,6 +897,177 @@
       }
     }
   });
+
+  // ── Rating History ──
+  const ratingData = {
+    codeforces: {
+      color: '#3d7fff',
+      label: 'Codeforces Rating',
+      contests: [
+        { name: 'Round #701', date: 'Feb 2021', rating: 1024 },
+        { name: 'Round #712', date: 'Mar 2021', rating: 1098 },
+        { name: 'Round #720', date: 'Apr 2021', rating: 1052 },
+        { name: 'Round #731', date: 'May 2021', rating: 1143 },
+        { name: 'Round #745', date: 'Jul 2021', rating: 1187 },
+        { name: 'Round #760', date: 'Sep 2021', rating: 1210 },
+        { name: 'Round #772', date: 'Nov 2021', rating: 1168 },
+        { name: 'Round #785', date: 'Jan 2022', rating: 1245 },
+        { name: 'Round #798', date: 'Mar 2022', rating: 1289 },
+        { name: 'Round #810', date: 'May 2022', rating: 1312 },
+        { name: 'Round #821', date: 'Jul 2022', rating: 1278 },
+        { name: 'Round #834', date: 'Aug 2022', rating: 1334 },
+      ]
+    },
+    codechef: {
+      color: '#00e5a0',
+      label: 'CodeChef Rating',
+      contests: [
+        { name: 'Long Jan', date: 'Jan 2021', rating: 1420 },
+        { name: 'Cook-off Jan', date: 'Jan 2021', rating: 1395 },
+        { name: 'Long Feb', date: 'Feb 2021', rating: 1448 },
+        { name: 'Lunchtime Feb', date: 'Feb 2021', rating: 1502 },
+        { name: 'Long Mar', date: 'Mar 2021', rating: 1487 },
+        { name: 'Cook-off Apr', date: 'Apr 2021', rating: 1534 },
+        { name: 'Long May', date: 'May 2021', rating: 1561 },
+        { name: 'Long Jun', date: 'Jun 2021', rating: 1543 },
+        { name: 'Lunchtime Jul', date: 'Jul 2021', rating: 1589 },
+        { name: 'Long Aug', date: 'Aug 2021', rating: 1612 },
+      ]
+    },
+    atcoder: {
+      color: '#ffd166',
+      label: 'AtCoder Rating',
+      contests: [
+        { name: 'ABC 194', date: 'Feb 2021', rating: 0 },
+        { name: 'ABC 202', date: 'Jun 2021', rating: 0 },
+        { name: 'ABC 215', date: 'Aug 2021', rating: 0 },
+      ]
+    }
+  };
+
+  let ratingChart = null;
+
+  function renderRating(platform) {
+    const d = ratingData[platform];
+    const labels = d.contests.map(c => c.date);
+    const values = d.contests.map(c => c.rating);
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const tickColor  = isLight ? '#64748b' : '#6b7280';
+    const gridColor  = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.04)';
+    const ttBg       = isLight ? '#ffffff' : '#1c2030';
+    const ttBorder   = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)';
+    const ttTitle    = isLight ? '#0f172a' : '#e8eaf2';
+    const ttBody     = isLight ? '#64748b' : '#6b7280';
+    const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
+
+    const statsEl = document.getElementById('rating-stats');
+    const max = Math.max(...values);
+    const min = Math.min(...values.filter(v => v > 0));
+    const last = values[values.length - 1];
+    const delta = values.length > 1 ? last - values[values.length - 2] : 0;
+
+    statsEl.innerHTML = `
+      <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${d.color}">${last}</div></div>
+      <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${max}</div></div>
+      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min || '—'}</div></div>
+      <div class="rating-stat"><div class="rs-label">Last change</div><div class="rs-val" style="color:${delta>=0?'#00e5a0':'#ff6b6b'}">${delta>=0?'+':''}${delta}</div></div>
+      <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${d.contests.length}</div></div>
+    `;
+
+    if (ratingChart) ratingChart.destroy();
+
+    const cCtx = document.getElementById('ratingChart');
+    ratingChart = new Chart(cCtx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: d.label,
+          data: values,
+          borderColor: d.color,
+          backgroundColor: d.color + '18',
+          borderWidth: 2,
+          pointBackgroundColor: d.color,
+          pointBorderColor: ptBorder,
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: true,
+          tension: 0.35,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 }, maxRotation: 45 },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          },
+          y: {
+            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 } },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: ttBg,
+            borderColor: ttBorder,
+            borderWidth: 1,
+            titleColor: ttTitle,
+            bodyColor: ttBody,
+            titleFont: { family: 'Space Mono', size: 11 },
+            bodyFont: { family: 'Space Mono', size: 10 },
+            callbacks: {
+              title: items => d.contests[items[0].dataIndex].name,
+              label: item => ` Rating: ${item.parsed.y}`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // ── Theme ──
+  window.setTheme = function(t) {
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
+    document.getElementById('btn-dark').classList.toggle('active', t === 'dark');
+    document.getElementById('btn-light').classList.toggle('active', t === 'light');
+    localStorage.setItem('cp-theme', t);
+    const active = document.querySelector('.rtab.active');
+    if (active) renderRating(active.dataset.platform);
+  };
+
+  // Restore saved theme
+  const savedTheme = localStorage.getItem('cp-theme') || 'dark';
+  if (savedTheme === 'light') window.setTheme('light');
+
+  renderRating('codeforces');
+
+  document.getElementById('rating-tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.rtab');
+    if (!btn) return;
+    document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderRating(btn.dataset.platform);
+  });
+
+  // ── Dynamic Copyright ──
+  (function() {
+    const startYear = 2026;
+    const currentYear = new Date().getFullYear();
+    const yearStr = currentYear > startYear ? `${startYear}\u2013${currentYear}` : `${startYear}`;
+    document.getElementById('copyright').innerHTML = `
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
+      </svg>
+      ${yearStr} Fahim Ahsan Khan. All rights reserved.
+    `;
+  })();
 </script>
 </body>
 </html>

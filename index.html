@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fahim Ahsan Khan — CP Profile</title>
+<!-- Favicon: inline SVG of a terminal prompt → no external file needed -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ctext x='4' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5a0'%3E%7B%7D%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -612,7 +613,6 @@
   .acc-card:nth-child(4) { animation-delay: 0.20s; }
   .acc-card:nth-child(5) { animation-delay: 0.25s; }
   .acc-card:nth-child(6) { animation-delay: 0.30s; }
-  
   /* ── Rating tabs ── */
   .rtab {
     background: var(--surface2);
@@ -636,7 +636,6 @@
   }
   .rating-stat .rs-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
   .rating-stat .rs-val { font-size: 18px; font-weight: 700; color: var(--card-num); transition: color 0.35s; }
-  
   /* ── Copyright footer ── */
   .copyright {
     text-align: center;
@@ -656,6 +655,7 @@
 </style>
 </head>
 <body>
+<!-- Theme toggle -->
 <div class="theme-toggle" role="group" aria-label="Theme selector">
   <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -669,6 +669,7 @@
 
 <div class="container">
 
+  <!-- Header -->
   <header class="header">
     <div class="avatar-wrap">
       <div class="avatar">FK</div>
@@ -679,14 +680,15 @@
     </div>
     <div class="meta-pills">
       <div class="pill"><span class="dot"></span>Active</div>
-      <div class="pill">Last updated: <span id="last-updated-date">2022-08-25</span></div>
+      <div class="pill">Last updated: 2022-08-25</div>
     </div>
   </header>
 
+  <!-- Problems Summary -->
   <div class="section-label">Problems Solved</div>
   <div class="problems-row">
     <div class="prob-card">
-      <span class="num" id="total-solved-display">797</span>
+      <span class="num">797</span>
       <div class="label">Solved</div>
     </div>
     <div class="prob-card total">
@@ -695,8 +697,10 @@
     </div>
   </div>
 
+  <!-- Solved Counts — acc-card style -->
   <div class="accuracy-grid" id="solved-grid"></div>
 
+  <!-- Rating History -->
   <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
 
   <div class="card rating-card" style="margin-bottom:16px;">
@@ -714,6 +718,7 @@
     <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
   </div>
 
+  <!-- Submission Breakdown -->
   <div class="section-label" style="margin-top:8px;">Submission Breakdown</div>
   <div class="card chart-card" style="margin-bottom:16px;">
     <div>
@@ -737,15 +742,19 @@
     </div>
   </div>
 
+  <!-- Copyright -->
   <div class="copyright" id="copyright"></div>
 
 </div>
 
 <script>
   // ════════════════════════════════════════════════
-  // ✏️ PROFILE DATA ARRAYS
+  // ✏️  EDIT YOUR PROFILE URLS HERE — one place only
   // ════════════════════════════════════════════════
 
+
+  // Build solved-count cards (acc-card style)
+  // favicon URLs — real site icons
   const SOLVED = [
     { name: 'Codeforces',  url: 'https://codeforces.com/profile/loop_breaker',           favicon: 'https://codeforces.com/favicon.ico',                          color: 'blue',  solved: 434 },
     { name: 'UVa',         url: 'https://onlinejudge.org/',                              favicon: 'https://onlinejudge.org/templates/hm_yaml_2_5/img/ojlogo2.svg.png', color: 'amber', solved: 193 },
@@ -759,9 +768,64 @@
     { name: 'AtCoder',     url: 'https://atcoder.jp/users/loop_breaker',                 favicon: 'https://atcoder.jp/favicon.ico',                              color: 'pink',  solved: 0   },
   ];
 
+  const solvedColors = { green:'#00e5a0', blue:'#3d7fff', cyan:'#22d3ee', pink:'#f472b6', teal:'#2dd4bf', amber:'#ffd166' };
+  const maxSolved = Math.max(...SOLVED.map(p => p.solved));
+
+  const grid = document.getElementById('solved-grid');
+  SOLVED.forEach(p => {
+    const pct = maxSolved > 0 ? Math.max(p.solved > 0 ? 2 : 0, Math.round((p.solved / maxSolved) * 100)) : 0;
+    const barColor = solvedColors[p.color] || '#00e5a0';
+    const a = document.createElement('a');
+    a.className = 'acc-card';
+    a.href = p.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.dataset.color = p.color;
+    a.addEventListener('click', e => { e.preventDefault(); window.open(p.url, '_blank', 'noopener,noreferrer'); });
+    a.innerHTML = `
+      <div class="platform-icon" style="background:var(--surface2);display:flex;align-items:center;justify-content:center;">
+        <img src="${p.favicon}" width="18" height="18" style="border-radius:3px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <span style="display:none;font-size:13px;">${p.name[0]}</span>
+      </div>
+      <div class="acc-info" style="flex:1;min-width:0;">
+        <div class="platform-name">${p.name}</div>
+        <div class="acc-val">${p.solved}<span> solved</span></div>
+      </div>`;
+    grid.appendChild(a);
+  });
+  const ctx = document.getElementById('donut');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Accepted','Partially Solved','Wrong Answer','TLE','Runtime Error','Compile Error','Others'],
+      datasets: [{
+        data: [51.7, 2.1, 36.2, 5.8, 2.4, 1.2, 0.6],
+        backgroundColor: ['#00e5a0','#ffd166','#ff6b6b','#60a5fa','#a78bfa','#f97316','#94a3b8'],
+        borderWidth: 0,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '72%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      }
+    }
+  });
+
+  // ── Rating History ──
   const ratingData = {
     codeforces: {
-      color: '#3d7fff', label: 'Codeforces Rating',
+      color: '#3d7fff',
+      label: 'Codeforces Rating',
       contests: [
         { name: 'Round #701', date: 'Feb 2021', rating: 1024 },
         { name: 'Round #712', date: 'Mar 2021', rating: 1098 },
@@ -778,7 +842,8 @@
       ]
     },
     codechef: {
-      color: '#00e5a0', label: 'CodeChef Rating',
+      color: '#00e5a0',
+      label: 'CodeChef Rating',
       contests: [
         { name: 'Long Jan', date: 'Jan 2021', rating: 1420 },
         { name: 'Cook-off Jan', date: 'Jan 2021', rating: 1395 },
@@ -793,7 +858,8 @@
       ]
     },
     atcoder: {
-      color: '#ffd166', label: 'AtCoder Rating',
+      color: '#ffd166',
+      label: 'AtCoder Rating',
       contests: [
         { name: 'ABC 194', date: 'Feb 2021', rating: 0 },
         { name: 'ABC 202', date: 'Jun 2021', rating: 0 },
@@ -802,121 +868,7 @@
     }
   };
 
-  const solvedColors = { green:'#00e5a0', blue:'#3d7fff', cyan:'#22d3ee', pink:'#f472b6', teal:'#2dd4bf', amber:'#ffd166' };
   let ratingChart = null;
-
-  // ════════════════════════════════════════════════
-  // 🚀 MAIN INIT LOGIC: FETCH DATA.JSON
-  // ════════════════════════════════════════════════
-  async function initProfile() {
-    try {
-      // Fetch the json file. Adding a small timestamp query prevents github pages from caching stale data.
-      const response = await fetch('data.json?t=' + new Date().getTime());
-      
-      if (response.ok) {
-        const liveData = await response.json();
-        
-        // --- OVERRIDE HARDCODED DATA WITH LIVE DATA ---
-        if (liveData.codeforces) {
-          
-          // 1. Update Solved Count in the SOLVED array
-          const cfCard = SOLVED.find(p => p.name === 'Codeforces');
-          if (cfCard && liveData.codeforces.solved !== undefined) {
-            cfCard.solved = liveData.codeforces.solved;
-          }
-
-          // 2. Update Rating Data in the ratingData object
-          const cfRatings = ratingData.codeforces;
-          if (cfRatings && liveData.codeforces.rating !== undefined) {
-             // Push a new "Live" point to the end of the historical chart
-             cfRatings.contests.push({
-               name: 'Current (Live)',
-               date: 'Now',
-               rating: liveData.codeforces.rating
-             });
-             // We save the max_rating from json so our peak calculation is accurate
-             cfRatings.apiPeak = liveData.codeforces.max_rating;
-          }
-          
-          // 3. Update the "Last Updated" text visually
-          document.getElementById('last-updated-date').innerText = new Date().toISOString().split('T')[0];
-        }
-      }
-    } catch (error) {
-      console.warn("Could not load data.json. Falling back to hardcoded data.", error);
-    }
-
-    // Now that our arrays are injected with live data, render the screen:
-    renderSolvedGrid();
-    renderDonutChart();
-    renderRating('codeforces');
-  }
-
-
-  // ════════════════════════════════════════════════
-  // 🎨 RENDERING FUNCTIONS
-  // ════════════════════════════════════════════════
-
-  function renderSolvedGrid() {
-    const grid = document.getElementById('solved-grid');
-    grid.innerHTML = ''; 
-    let totalSolvedCount = 0;
-
-    SOLVED.forEach(p => {
-      totalSolvedCount += p.solved;
-      const barColor = solvedColors[p.color] || '#00e5a0';
-      const a = document.createElement('a');
-      a.className = 'acc-card';
-      a.href = p.url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.dataset.color = p.color;
-      a.addEventListener('click', e => { e.preventDefault(); window.open(p.url, '_blank', 'noopener,noreferrer'); });
-      a.innerHTML = `
-        <div class="platform-icon" style="background:var(--surface2);display:flex;align-items:center;justify-content:center;">
-          <img src="${p.favicon}" width="18" height="18" style="border-radius:3px;object-fit:contain;"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <span style="display:none;font-size:13px;">${p.name[0]}</span>
-        </div>
-        <div class="acc-info" style="flex:1;min-width:0;">
-          <div class="platform-name">${p.name}</div>
-          <div class="acc-val">${p.solved}<span> solved</span></div>
-        </div>`;
-      grid.appendChild(a);
-    });
-    
-    // Dynamically update the big "Solved" number at the top
-    document.getElementById('total-solved-display').innerText = totalSolvedCount;
-  }
-
-  function renderDonutChart() {
-    const ctx = document.getElementById('donut');
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Accepted','Partially Solved','Wrong Answer','TLE','Runtime Error','Compile Error','Others'],
-        datasets: [{
-          data: [51.7, 2.1, 36.2, 5.8, 2.4, 1.2, 0.6],
-          backgroundColor: ['#00e5a0','#ffd166','#ff6b6b','#60a5fa','#a78bfa','#f97316','#94a3b8'],
-          borderWidth: 0,
-          hoverOffset: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '72%',
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
-            }
-          }
-        }
-      }
-    });
-  }
 
   function renderRating(platform) {
     const d = ratingData[platform];
@@ -932,9 +884,7 @@
     const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
 
     const statsEl = document.getElementById('rating-stats');
-    
-    // We check against d.apiPeak to ensure if the json max_rating is higher, we show it
-    const max = Math.max(...values, d.apiPeak || 0);
+    const max = Math.max(...values);
     const min = Math.min(...values.filter(v => v > 0));
     const last = values[values.length - 1];
     const delta = values.length > 1 ? last - values[values.length - 2] : 0;
@@ -1018,7 +968,8 @@
   const savedTheme = localStorage.getItem('cp-theme') || 'dark';
   if (savedTheme === 'light') window.setTheme('light');
 
-  // Event Listener for Rating Tabs
+  renderRating('codeforces');
+
   document.getElementById('rating-tabs').addEventListener('click', e => {
     const btn = e.target.closest('.rtab');
     if (!btn) return;
@@ -1040,10 +991,6 @@
       ${yearStr} Fahim Ahsan Khan. All rights reserved.
     `;
   })();
-
-  // 🚀 KICK OFF THE FETCH PROCESS 
-  initProfile();
-
 </script>
 </body>
 </html>

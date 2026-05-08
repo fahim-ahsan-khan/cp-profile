@@ -1,6 +1,9 @@
 {
   "codeforces": {
-    "solved": 0,
-    "rating": 0
+    "handle": "loop_breaker",
+    "rating": 1231,
+    "max_rating": 1377,
+    "rank": "pupil",
+    "solved": 433
   }
 }

@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 HANDLE = "loop_breaker"
 LEETCODE_USERNAME = "loop_breaker"
 BEECROWD_ID = "74808"
+UVA_USERNAME = "loop_breaker"
 
 # =========================
 # CODEFORCES USER INFO
@@ -145,6 +146,37 @@ try:
 except Exception as e:
     print(f"Beecrowd fetch failed (keeping previous value 0): {e}")
 
+
+# =========================
+# UVA (via uhunt public API)
+# =========================
+uva_solved = 0
+try:
+    uid_res = requests.get(
+        f"https://uhunt.onlinejudge.org/api/uname2uid/{UVA_USERNAME}",
+        timeout=10
+    )
+    uid = uid_res.json()
+    if uid and uid != 0:
+        subs_res = requests.get(
+            f"https://uhunt.onlinejudge.org/api/subs-user/{uid}",
+            timeout=30
+        )
+        subs_data = subs_res.json()
+        # Each submission: [sid, pid, verdict, runtime, time, rank, lang, uacc]
+        # verdict 90 = Accepted
+        uva_ac_problems = set()
+        for sub in subs_data:
+            if sub[2] == 90:
+                uva_ac_problems.add(sub[1])
+        uva_solved = len(uva_ac_problems)
+        print(f"UVa solved: {uva_solved}")
+    else:
+        print(f"UVa username '{UVA_USERNAME}' not found")
+except Exception as e:
+    print(f"UVa fetch failed: {e}")
+
+
 # =========================
 # FINAL JSON
 # =========================
@@ -169,6 +201,11 @@ data = {
     "beecrowd": {
         "id": BEECROWD_ID,
         "solved": beecrowd_solved
+    },
+
+    "uva": {
+        "username": UVA_USERNAME,
+        "solved": uva_solved
     }
 }
 

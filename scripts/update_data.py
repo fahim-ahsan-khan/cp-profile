@@ -1,7 +1,7 @@
 import json
 import re
+import requests
 from bs4 import BeautifulSoup
-from curl_cffi import requests
 
 HANDLE = "loop_breaker"
 LEETCODE_USERNAME = "loop_breaker"
@@ -107,13 +107,12 @@ beecrowd_profile_url = f"https://judge.beecrowd.com/en/profile/{BEECROWD_ID}"
 
 beecrowd_solved = 0
 
-# 1. Try the JSON API endpoint first (clean, no HTML parsing)
 try:
-    api_response = requests.get(
-        beecrowd_api_url,
-        impersonate="chrome120",
-        headers={"Accept": "application/json"}
-    )
+    import cloudscraper
+    scraper = cloudscraper.create_scraper()
+
+    # 1. Try the JSON API endpoint first (no HTML parsing needed)
+    api_response = scraper.get(beecrowd_api_url, headers={"Accept": "application/json"})
     if api_response.status_code == 200:
         api_data = api_response.json()
         print(f"Beecrowd API keys: {list(api_data.keys())}")
@@ -123,14 +122,11 @@ try:
                 print(f"Beecrowd solved (from API field '{field}'): {beecrowd_solved}")
                 break
     else:
-        print(f"Beecrowd API blocked! Status: {api_response.status_code}")
-except Exception as e:
-    print("Beecrowd API failed:", e)
+        print(f"Beecrowd API status: {api_response.status_code}")
 
-# 2. Fall back to HTML scraping if the API returned 0
-if beecrowd_solved == 0:
-    try:
-        response = requests.get(beecrowd_profile_url, impersonate="chrome120")
+    # 2. Fall back to HTML scraping if the API returned 0
+    if beecrowd_solved == 0:
+        response = scraper.get(beecrowd_profile_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
             solved_nodes = soup.find_all(string=re.compile("Solved", re.IGNORECASE))
@@ -144,9 +140,10 @@ if beecrowd_solved == 0:
                         print(f"Beecrowd solved (from HTML scrape): {beecrowd_solved}")
                         break
         else:
-            print(f"Beecrowd profile blocked! Status: {response.status_code}")
-    except Exception as e:
-        print("Beecrowd HTML scraping failed:", e)
+            print(f"Beecrowd profile status: {response.status_code}")
+
+except Exception as e:
+    print(f"Beecrowd fetch failed (keeping previous value 0): {e}")
 
 # =========================
 # FINAL JSON

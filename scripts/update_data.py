@@ -1,6 +1,7 @@
-import requests
 import json
+import re
 from bs4 import BeautifulSoup
+from curl_cffi import requests
 
 HANDLE = "loop_breaker"
 LEETCODE_USERNAME = "loop_breaker"
@@ -100,45 +101,52 @@ leetcode_ranking = matched_user["profile"]["ranking"]
 # =========================
 # BEECROWD
 # =========================
-import re  # We need regex for the smarter search 
 
-beecrowd_url = f"https://judge.beecrowd.com/en/profile/{BEECROWD_ID}"
-
-# 1. Disguise the request as a real browser (Fixes the 403 Cloudflare block)
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
-
-response = requests.get(beecrowd_url, headers=headers)
-soup = BeautifulSoup(response.text, "html.parser")
+beecrowd_api_url = f"https://judge.beecrowd.com/api/users/{BEECROWD_ID}"
+beecrowd_profile_url = f"https://judge.beecrowd.com/en/profile/{BEECROWD_ID}"
 
 beecrowd_solved = 0
 
+# 1. Try the JSON API endpoint first (clean, no HTML parsing)
 try:
-    if response.status_code == 200:
-        # 2. Robust Search: Look for the text "Solved" directly, ignoring HTML tags/classes
-        solved_nodes = soup.find_all(string=re.compile("Solved", re.IGNORECASE))
-        
-        for node in solved_nodes:
-            # Traverse slightly up the HTML tree to grab the text and the number next to it safely
-            container = node.parent
-            if container and container.parent:
-                text = container.parent.get_text(separator=" ", strip=True)
-                
-                # Use Regex to extract the first set of digits that come immediately after "Solved"
-                match = re.search(r'Solved.*?(\d+)', text, re.IGNORECASE)
-                if match:
-                    beecrowd_solved = int(match.group(1))
-                    break  # Stop looking once we find the valid number
+    api_response = requests.get(
+        beecrowd_api_url,
+        impersonate="chrome120",
+        headers={"Accept": "application/json"}
+    )
+    if api_response.status_code == 200:
+        api_data = api_response.json()
+        print(f"Beecrowd API keys: {list(api_data.keys())}")
+        for field in ["problems_solved", "solved_problems", "ac_count", "solved", "accepted"]:
+            if field in api_data and api_data[field]:
+                beecrowd_solved = int(api_data[field])
+                print(f"Beecrowd solved (from API field '{field}'): {beecrowd_solved}")
+                break
     else:
-        print(f"Beecrowd request blocked! Status Code: {response.status_code}")
-
+        print(f"Beecrowd API blocked! Status: {api_response.status_code}")
 except Exception as e:
-    print("Beecrowd parsing failed:", e)
+    print("Beecrowd API failed:", e)
 
-# =========================
-# FINAL JSON
-# =========================
+# 2. Fall back to HTML scraping if the API returned 0
+if beecrowd_solved == 0:
+    try:
+        response = requests.get(beecrowd_profile_url, impersonate="chrome120")
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, "html.parser")
+            solved_nodes = soup.find_all(string=re.compile("Solved", re.IGNORECASE))
+            for node in solved_nodes:
+                container = node.parent
+                if container and container.parent:
+                    text = container.parent.get_text(separator=" ", strip=True)
+                    match = re.search(r'Solved.*?(\d+)', text, re.IGNORECASE)
+                    if match:
+                        beecrowd_solved = int(match.group(1))
+                        print(f"Beecrowd solved (from HTML scrape): {beecrowd_solved}")
+                        break
+        else:
+            print(f"Beecrowd profile blocked! Status: {response.status_code}")
+    except Exception as e:
+        print("Beecrowd HTML scraping failed:", e)
 
 # =========================
 # FINAL JSON

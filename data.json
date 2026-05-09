@@ -5,5 +5,13 @@
     "max_rating": 1377,
     "rank": "pupil",
     "solved": 433
+  },
+  "leetcode": {
+    "handle": "loop_breaker",
+    "solved": 94,
+    "easy": 46,
+    "medium": 48,
+    "hard": 0,
+    "ranking": 1584062
   }
 }

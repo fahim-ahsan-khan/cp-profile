@@ -1,8 +1,10 @@
 import requests
 import json
+from bs4 import BeautifulSoup
 
 HANDLE = "loop_breaker"
 LEETCODE_USERNAME = "loop_breaker"
+BEECROWD_ID = "74808"
 
 # =========================
 # CODEFORCES USER INFO
@@ -96,6 +98,35 @@ for item in stats:
 leetcode_ranking = matched_user["profile"]["ranking"]
 
 # =========================
+# BEECROWD
+# =========================
+
+beecrowd_url = f"https://judge.beecrowd.com/en/profile/{BEECROWD_ID}"
+
+response = requests.get(beecrowd_url)
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+beecrowd_solved = 0
+
+try:
+    stats = soup.find_all("div", class_="pb-2")
+
+    for stat in stats:
+        text = stat.get_text(strip=True)
+
+        if "Solved" in text:
+            number = ''.join(filter(str.isdigit, text))
+
+            if number:
+                beecrowd_solved = int(number)
+
+            break
+
+except Exception as e:
+    print("Beecrowd parsing failed:", e)
+
+# =========================
 # FINAL JSON
 # =========================
 data = {
@@ -114,6 +145,11 @@ data = {
         "medium": leetcode_data["medium"],
         "hard": leetcode_data["hard"],
         "ranking": leetcode_ranking
+    },
+
+    "beecrowd": {
+        "id": BEECROWD_ID,
+        "solved": beecrowd_solved
     }
 }
 

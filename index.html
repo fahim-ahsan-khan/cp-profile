@@ -960,6 +960,13 @@
       const updatedPill = document.getElementById('last-updated');
       if (updatedPill && cf.last_updated) updatedPill.textContent = `Last updated: ${cf.last_updated}`;
 
+      // 4. Patch the LeetCode solved card
+      const lc = data.leetcode;
+      if (lc) {
+        const lcEl = document.getElementById('val-leetcode');
+        if (lcEl) lcEl.innerHTML = `${lc.solved}<span> solved</span>`;
+      }
+
     } catch (e) {
       console.warn('data.json load failed, using static fallback:', e.message);
     }

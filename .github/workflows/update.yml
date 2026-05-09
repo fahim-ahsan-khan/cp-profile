@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 cloudscraper
+        run: pip install requests beautifulsoup4
 
       - name: Run updater
         run: python update_data.py

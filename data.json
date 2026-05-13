@@ -1,10 +1,14 @@
 {
+  "meta": {
+    "lastUpdated": "2026-05-13T00:00:00Z"
+  },
   "codeforces": {
     "handle": "loop_breaker",
     "rating": 1231,
     "max_rating": 1377,
     "rank": "pupil",
-    "solved": 433
+    "solved": 433,
+    "contests": []
   },
   "leetcode": {
     "handle": "loop_breaker",

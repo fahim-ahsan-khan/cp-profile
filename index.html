@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahim Ahsan Khan ? CP Profile</title>
-<!-- Favicon: inline SVG of a terminal prompt ?ｿｽ?ｿｽ no external file needed -->
+<title>Fahim Ahsan Khan — CP Profile</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ctext x='4' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5a0'%3E%7B%7D%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
-  /* ?? THEMES ?? */
   :root {
     --bg: #0d0f14;
     --surface: #151820;
@@ -58,7 +56,6 @@
     transition: var(--theme-transition);
   }
 
-  /* animated grid bg */
   body::before {
     content: '';
     position: fixed;
@@ -72,7 +69,6 @@
     transition: background-image 0.35s ease;
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Theme Toggle ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .theme-toggle {
     position: fixed;
     bottom: 28px;
@@ -123,7 +119,6 @@
     z-index: 1;
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Header ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .header {
     display: flex;
     align-items: flex-start;
@@ -174,10 +169,6 @@
     transition: color 0.35s;
   }
 
-  .name-block h1 span {
-    color: var(--accent);
-  }
-
   .handle {
     font-family: var(--mono);
     font-size: 12px;
@@ -219,7 +210,6 @@
     50% { opacity: 0.3; }
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Section label ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .section-label {
     font-family: var(--mono);
     font-size: 10px;
@@ -239,7 +229,6 @@
     background: var(--border);
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Accuracy row ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .accuracy-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -297,41 +286,18 @@
   .acc-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
 
   .acc-card .visit-hint {
-    display: none; /* removed */
-  }
-
-  /* bottom reveal strip ? slides up on hover */
-  .acc-card::after {
-    content: 'VIEW PROFILE';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 7px 0;
-    font-family: var(--mono);
+    top: 7px;
+    right: 10px;
     font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 0 12px 12px;
-    transform: translateY(100%);
-    transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.2s;
+    font-family: var(--mono);
+    color: var(--muted);
     opacity: 0;
-    pointer-events: none;
+    transition: opacity 0.2s;
+    letter-spacing: 0.5px;
   }
 
-  .acc-card:hover::after {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .acc-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
-  .acc-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
-  .acc-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
-  .acc-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85);color: #fff; }
-  .acc-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
-  .acc-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85);color: #1a1200; }
+  .acc-card:hover .visit-hint { opacity: 1; }
 
   .platform-icon {
     width: 32px;
@@ -366,16 +332,7 @@
     font-weight: 400;
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Main grid ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
   @media (max-width: 600px) {
-    .main-grid { grid-template-columns: 1fr; }
     .header { flex-direction: column; }
   }
 
@@ -396,37 +353,6 @@
     margin-bottom: 20px;
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Solved counts ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
-  .solved-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .solved-table th {
-    font-size: 10px;
-    font-family: var(--mono);
-    color: var(--text);
-    text-align: center;
-    padding: 0 0 8px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    transition: color 0.35s;
-  }
-
-  .solved-table td {
-    text-align: center;
-    padding: 10px 4px 4px;
-    font-family: var(--mono);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--card-num);
-    transition: color 0.35s;
-  }
-
-  .solved-table .bar-row td {
-    padding: 4px;
-  }
-
   .bar-wrap {
     height: 4px;
     background: var(--surface2);
@@ -440,49 +366,7 @@
     transition: width 1s ease;
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Streaks ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
-  .streak-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .streak-item {
-    background: var(--surface2);
-    border-radius: 10px;
-    padding: 12px 16px;
-  }
-
-  .streak-item .label {
-    font-size: 10px;
-    font-family: var(--mono);
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-
-  .streak-item .vals {
-    display: flex;
-    gap: 16px;
-  }
-
-  .streak-item .val-block .num {
-    font-family: var(--mono);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--card-num);
-    transition: color 0.35s;
-  }
-
-  .streak-item .val-block .sublabel {
-    font-size: 9px;
-    color: var(--muted);
-    font-family: var(--mono);
-  }
-
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Chart ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .chart-card {
-    grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
@@ -552,7 +436,6 @@
     color: var(--muted);
   }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Problems summary ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .problems-row {
     display: flex;
     gap: 12px;
@@ -585,19 +468,6 @@
 
   .prob-card.total .num { color: var(--accent2); }
 
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Footer ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
-  .footer {
-    margin-top: 48px;
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .footer a { color: var(--accent); text-decoration: none; }
-  .footer a:hover { text-decoration: underline; }
-
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Fade in animation ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -613,7 +483,6 @@
   .acc-card:nth-child(4) { animation-delay: 0.20s; }
   .acc-card:nth-child(5) { animation-delay: 0.25s; }
   .acc-card:nth-child(6) { animation-delay: 0.30s; }
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Rating tabs ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .rtab {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -636,7 +505,6 @@
   }
   .rating-stat .rs-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
   .rating-stat .rs-val { font-size: 18px; font-weight: 700; color: var(--card-num); transition: color 0.35s; }
-  /* ?ｿｽ?ｿｽ?ｿｽ?ｿｽ Copyright footer ?ｿｽ?ｿｽ?ｿｽ?ｿｽ */
   .copyright {
     text-align: center;
     padding: 32px 0 20px;
@@ -655,7 +523,6 @@
 </style>
 </head>
 <body>
-<!-- Theme toggle -->
 <div class="theme-toggle" role="group" aria-label="Theme selector">
   <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -669,38 +536,34 @@
 
 <div class="container">
 
-  <!-- Header -->
   <header class="header">
     <div class="avatar-wrap">
       <div class="avatar">FK</div>
       <div class="name-block">
         <h1>Fahim Ahsan Khan</h1>
-        <p class="handle">Bangladesh ????</p>
+        <p class="handle">Bangladesh 🇧🇩</p>
       </div>
     </div>
     <div class="meta-pills">
       <div class="pill"><span class="dot"></span>Active</div>
-      <div class="pill">Last updated: 2022-08-25</div>
+      <div class="pill" id="pill-last-updated">Last updated: …</div>
     </div>
   </header>
 
-  <!-- Problems Summary -->
   <div class="section-label">Problems Solved</div>
   <div class="problems-row">
     <div class="prob-card">
-      <span class="num">797</span>
+      <span class="num" id="summary-solved">—</span>
       <div class="label">Solved</div>
     </div>
     <div class="prob-card total">
-      <span class="num">883</span>
+      <span class="num" id="summary-attempted">—</span>
       <div class="label">Total Attempted</div>
     </div>
   </div>
 
-  <!-- Solved Counts ? acc-card style -->
   <div class="accuracy-grid" id="solved-grid"></div>
 
-  <!-- Rating History -->
   <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
 
   <div class="card rating-card" style="margin-bottom:16px;">
@@ -718,66 +581,100 @@
     <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
   </div>
 
-  <!-- Submission Breakdown -->
   <div class="section-label" style="margin-top:8px;">Submission Breakdown</div>
   <div class="card chart-card" style="margin-bottom:16px;">
     <div>
       <div class="card-title">Total Submissions</div>
-      <ul class="legend-list">
-        <li><span class="dot-sq" style="background:#00e5a0;"></span> Accepted <span class="pct">51.7%</span></li>
-        <li><span class="dot-sq" style="background:#ffd166;"></span> Partially Solved <span class="pct">2.1%</span></li>
-        <li><span class="dot-sq" style="background:#ff6b6b;"></span> Wrong Answer <span class="pct">36.2%</span></li>
-        <li><span class="dot-sq" style="background:#60a5fa;"></span> Time Limit Exceeded <span class="pct">5.8%</span></li>
-        <li><span class="dot-sq" style="background:#a78bfa;"></span> Runtime Error <span class="pct">2.4%</span></li>
-        <li><span class="dot-sq" style="background:#f97316;"></span> Compile Error <span class="pct">1.2%</span></li>
-        <li><span class="dot-sq" style="background:#94a3b8;"></span> Others <span class="pct">0.6%</span></li>
-      </ul>
+      <p id="chart-card-subtitle" style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4;">Loading…</p>
+      <ul class="legend-list" id="legend-list"></ul>
     </div>
     <div class="chart-wrap">
-      <canvas id="donut" role="img" aria-label="Donut chart showing submission results: 51.7% accepted, 36.2% wrong answer, and others">Accepted: 51.7%, Wrong Answer: 36.2%, TLE: 5.8%, Partially Solved: 2.1%, Runtime Error: 2.4%, Compile Error: 1.2%, Others: 0.6%</canvas>
+      <canvas id="donut" role="img" aria-label="Submission verdict breakdown"></canvas>
       <div class="chart-center">
-        <span class="big">883</span>
+        <span class="big" id="donut-total">—</span>
         <span class="small">total</span>
       </div>
     </div>
   </div>
 
-  <!-- Copyright -->
   <div class="copyright" id="copyright"></div>
 
 </div>
 
 <script>
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  PLATFORM CONFIG  (static fallbacks 窶? edit here)
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  const SOLVED = [
-    { key: 'codeforces', name: 'Codeforces', url: 'https://codeforces.com/profile/loop_breaker', favicon: 'https://codeforces.com/favicon.ico',                               color: 'blue',  solved: 434 },
-    { key: 'uva',        name: 'UVa',        url: 'https://onlinejudge.org/',                    favicon: 'https://onlinejudge.org/templates/hm_yaml_2_5/img/ojlogo2.svg.png', color: 'amber', solved: 193 },
-    { key: 'codechef',   name: 'CodeChef',   url: 'https://www.codechef.com/users/loop_breaker', favicon: 'https://www.codechef.com/favicon.ico',                               color: 'green', solved: 53  },
-    { key: 'leetcode',   name: 'LeetCode',   url: 'https://leetcode.com/u/loop_breaker/',        favicon: 'https://leetcode.com/favicon.ico',                                   color: 'amber', solved: 0   },
-    { key: 'hackerrank', name: 'HackerRank', url: 'https://www.hackerrank.com/loop_breaker',     favicon: 'https://www.hackerrank.com/favicon.ico',                             color: 'green', solved: 6   },
-    { key: 'spoj',       name: 'SPOJ',       url: 'https://www.spoj.com/users/loop_breaker',     favicon: 'https://www.spoj.com/favicon.ico',                                   color: 'cyan',  solved: 4   },
-    { key: 'beecrowd',   name: 'Beecrowd',   url: 'https://judge.beecrowd.com/en/profile/74808', favicon: 'https://judge.beecrowd.com/favicon.ico',                            color: 'blue',  solved: 0   },
-    { key: 'lightoj',    name: 'Light OJ',   url: 'https://lightoj.com/user/loop_breaker',       favicon: 'https://lightoj.com/favicon.ico',                                    color: 'cyan',  solved: 0   },
-    { key: 'timus',      name: 'Timus',      url: 'https://acm.timus.ru/',                       favicon: 'https://acm.timus.ru/favicon.ico',                                   color: 'pink',  solved: 3   },
-    { key: 'atcoder',    name: 'AtCoder',    url: 'https://atcoder.jp/users/loop_breaker',       favicon: 'https://atcoder.jp/favicon.ico',                                     color: 'pink',  solved: 0   },
-  ];
+  const solvedColors = { green:'#00e5a0', blue:'#3d7fff', cyan:'#22d3ee', pink:'#f472b6', teal:'#2dd4bf', amber:'#ffd166' };
+  const donutColors = ['#00e5a0','#ffd166','#ff6b6b','#60a5fa','#a78bfa','#f97316','#94a3b8'];
+  const donutLabels = ['Accepted','Partially Solved','Wrong Answer','TLE','Runtime Error','Compile Error','Others'];
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  BUILD CARDS
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  const grid = document.getElementById('solved-grid');
-  SOLVED.forEach(p => {
-    const a = document.createElement('a');
-    a.className = 'acc-card';
-    a.id = `card-${p.key}`;
-    a.href = p.url;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.dataset.color = p.color;
-    a.addEventListener('click', e => { e.preventDefault(); window.open(p.url, '_blank', 'noopener,noreferrer'); });
-    a.innerHTML = `
+  let ratingData = {};
+  let ratingChart = null;
+  let donutChart = null;
+
+  function normalizeProfileData(raw) {
+    if (!raw || typeof raw !== 'object') return {};
+    if (Array.isArray(raw.platforms)) return raw;
+    if (raw.codeforces != null && raw.leetcode != null && raw.uva != null) {
+      const cf = raw.codeforces;
+      const lc = raw.leetcode;
+      const uva = raw.uva;
+      const solvedSum = (cf.solved || 0) + (lc.solved || 0) + (uva.solved || 0);
+      return {
+        meta: raw.meta || {},
+        summary: {
+          solved: raw.summary && raw.summary.solved != null ? raw.summary.solved : solvedSum,
+          attempted: raw.summary && raw.summary.attempted != null ? raw.summary.attempted : null
+        },
+        platforms: [
+          {
+            name: 'Codeforces',
+            solved: cf.solved,
+            url: `https://codeforces.com/profile/${encodeURIComponent(cf.handle || '')}`,
+            favicon: 'https://codeforces.com/favicon.ico',
+            color: 'green'
+          },
+          {
+            name: 'LeetCode',
+            solved: lc.solved,
+            url: `https://leetcode.com/${encodeURIComponent(lc.handle || '')}/`,
+            favicon: 'https://leetcode.com/favicon.ico',
+            color: 'blue'
+          },
+          {
+            name: 'UVa',
+            solved: uva.solved,
+            url: 'https://uhunt.onlinejudge.org/',
+            favicon: 'https://onlinejudge.org/favicon.ico',
+            color: 'teal'
+          }
+        ],
+        submissions: raw.submissions || { total: 0, percentages: [0, 0, 0, 0, 0, 0, 0], source: '' },
+        rating: raw.rating || {
+          codeforces: { label: 'Codeforces', color: '#3080cf', contests: [] },
+          codechef: { label: 'CodeChef', color: '#6b5b2f', contests: [] },
+          atcoder: { label: 'AtCoder', color: '#262322', contests: [] }
+        }
+      };
+    }
+    return raw;
+  }
+
+  function buildSolvedGrid(platforms) {
+    const grid = document.getElementById('solved-grid');
+    grid.innerHTML = '';
+    const maxSolved = Math.max(1, ...platforms.map(p => p.solved || 0));
+    platforms.forEach(p => {
+      const solved = p.solved ?? 0;
+      const pct = maxSolved > 0 ? Math.max(solved > 0 ? 2 : 0, Math.round((solved / maxSolved) * 100)) : 0;
+      const barColor = solvedColors[p.color] || '#00e5a0';
+      const a = document.createElement('a');
+      a.className = 'acc-card';
+      a.href = p.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.dataset.color = p.color;
+      const errHint = p.error ? ` title="Last sync failed; showing cached value"` : '';
+      a.innerHTML = `
+      <span class="visit-hint">↗ visit</span>
       <div class="platform-icon" style="background:var(--surface2);display:flex;align-items:center;justify-content:center;">
         <img src="${p.favicon}" width="18" height="18" style="border-radius:3px;object-fit:contain;"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
@@ -785,147 +682,57 @@
       </div>
       <div class="acc-info" style="flex:1;min-width:0;">
         <div class="platform-name">${p.name}</div>
-        <div class="acc-val" id="val-${p.key}">${p.solved}<span> solved</span></div>
+        <div class="acc-val"${errHint}>${solved}<span> solved</span></div>
+        <div class="bar-wrap" style="margin-top:6px;"><div class="bar-fill" style="width:${pct}%;background:${barColor};"></div></div>
       </div>`;
-    grid.appendChild(a);
-  });
+      grid.appendChild(a);
+    });
+  }
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  DONUT CHART (static)
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  new Chart(document.getElementById('donut'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Accepted','Partially Solved','Wrong Answer','TLE','Runtime Error','Compile Error','Others'],
-      datasets: [{
-        data: [51.7, 2.1, 36.2, 5.8, 2.4, 1.2, 0.6],
-        backgroundColor: ['#00e5a0','#ffd166','#ff6b6b','#60a5fa','#a78bfa','#f97316','#94a3b8'],
-        borderWidth: 0,
-        hoverOffset: 8
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      cutout: '72%',
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.label}: ${c.parsed}%` } }
-      }
-    }
-  });
+  function renderDonut(submissions) {
+    const sub = submissions || { total: 0, percentages: [0,0,0,0,0,0,0], source: '' };
+    const pctArr = sub.percentages || [];
+    document.getElementById('donut-total').textContent = sub.total != null ? sub.total : '—';
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  RATING CHART
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  const staticRatingData = {
-    codechef: {
-      color: '#00e5a0', label: 'CodeChef Rating',
-      contests: [
-        { name: 'Long Jan',      date: 'Jan 2021', rating: 1420 },
-        { name: 'Cook-off Jan',  date: 'Jan 2021', rating: 1395 },
-        { name: 'Long Feb',      date: 'Feb 2021', rating: 1448 },
-        { name: 'Lunchtime Feb', date: 'Feb 2021', rating: 1502 },
-        { name: 'Long Mar',      date: 'Mar 2021', rating: 1487 },
-        { name: 'Cook-off Apr',  date: 'Apr 2021', rating: 1534 },
-        { name: 'Long May',      date: 'May 2021', rating: 1561 },
-        { name: 'Long Jun',      date: 'Jun 2021', rating: 1543 },
-        { name: 'Lunchtime Jul', date: 'Jul 2021', rating: 1589 },
-        { name: 'Long Aug',      date: 'Aug 2021', rating: 1612 },
-      ]
-    },
-    atcoder: {
-      color: '#ffd166', label: 'AtCoder Rating',
-      contests: [
-        { name: 'ABC 194', date: 'Feb 2021', rating: 0 },
-        { name: 'ABC 202', date: 'Jun 2021', rating: 0 },
-        { name: 'ABC 215', date: 'Aug 2021', rating: 0 },
-      ]
-    }
-  };
-
-  // Populated from CF API after data.json loads
-  let cfRatingContests = [];
-  let cfMeta = { rating: 1231, max_rating: 1377, rank: 'pupil' }; // fallback from data.json
-
-  let ratingChart = null;
-
-  function renderRating(platform) {
-    let color, label, contests;
-    if (platform === 'codeforces') {
-      color = '#3d7fff'; label = 'Codeforces Rating'; contests = cfRatingContests;
-    } else {
-      const d = staticRatingData[platform];
-      color = d.color; label = d.label; contests = d.contests;
+    const subEl = document.getElementById('chart-card-subtitle');
+    if (subEl) {
+      subEl.textContent = sub.source === 'codeforces'
+        ? 'Verdict breakdown from your Codeforces submissions (same totals as Codeforces API).'
+        : 'Submission breakdown from synced data.';
     }
 
-    const isLight  = document.documentElement.getAttribute('data-theme') === 'light';
-    const tickColor = isLight ? '#64748b' : '#6b7280';
-    const gridColor = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.04)';
-    const ttBg      = isLight ? '#ffffff' : '#1c2030';
-    const ttBorder  = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)';
-    const ttTitle   = isLight ? '#0f172a' : '#e8eaf2';
-    const ttBody    = isLight ? '#64748b' : '#6b7280';
-    const ptBorder  = isLight ? '#f0f4f8' : '#0d0f14';
+    const legend = document.getElementById('legend-list');
+    legend.innerHTML = donutLabels.map((lab, i) => {
+      const p = pctArr[i] != null ? pctArr[i] : 0;
+      const col = donutColors[i];
+      return `<li><span class="dot-sq" style="background:${col};"></span> ${lab} <span class="pct">${p}%</span></li>`;
+    }).join('');
 
-    const statsEl = document.getElementById('rating-stats');
-
-    if (contests.length === 0) {
-      statsEl.innerHTML = `<div class="rating-stat"><div class="rs-label">Loading窶ｦ</div><div class="rs-val" style="color:${color}">窶?</div></div>`;
-      if (ratingChart) { ratingChart.destroy(); ratingChart = null; }
-      return;
-    }
-
-    const values = contests.map(c => c.rating);
-    const max    = Math.max(...values);
-    const min    = Math.min(...values.filter(v => v > 0));
-    const last   = values[values.length - 1];
-    const delta  = values.length > 1 ? last - values[values.length - 2] : 0;
-
-    // For CF, show rank from data.json alongside the rating
-    const currentDisplay = platform === 'codeforces'
-      ? `${cfMeta.rating} <span style="font-size:12px;color:var(--muted);font-weight:400;">${cfMeta.rank}</span>`
-      : last;
-
-    statsEl.innerHTML = `
-      <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${color}">${currentDisplay}</div></div>
-      <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${platform === 'codeforces' ? cfMeta.max_rating : max}</div></div>
-      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min || '窶?'}</div></div>
-      <div class="rating-stat"><div class="rs-label">Last &Delta;</div><div class="rs-val" style="color:${delta >= 0 ? '#00e5a0' : '#ff6b6b'}">${delta >= 0 ? '+' : ''}${delta}</div></div>
-      <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${contests.length}</div></div>
-    `;
-
-    if (ratingChart) ratingChart.destroy();
-    ratingChart = new Chart(document.getElementById('ratingChart'), {
-      type: 'line',
+    const ctx = document.getElementById('donut');
+    if (donutChart) donutChart.destroy();
+    donutChart = new Chart(ctx, {
+      type: 'doughnut',
       data: {
-        labels: contests.map(c => c.date),
+        labels: donutLabels,
         datasets: [{
-          label, data: values,
-          borderColor: color, backgroundColor: color + '18',
-          borderWidth: 2,
-          pointBackgroundColor: color, pointBorderColor: ptBorder,
-          pointBorderWidth: 2,
-          pointRadius: contests.length > 40 ? 3 : 5,
-          pointHoverRadius: 7,
-          fill: true, tension: 0.35,
+          data: pctArr.length ? pctArr : donutLabels.map(() => 0),
+          backgroundColor: donutColors,
+          borderWidth: 0,
+          hoverOffset: 8
         }]
       },
       options: {
-        responsive: true, maintainAspectRatio: false,
-        scales: {
-          x: { ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 }, maxRotation: 45, maxTicksLimit: 12 }, grid: { color: gridColor }, border: { color: gridColor } },
-          y: { ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 } }, grid: { color: gridColor }, border: { color: gridColor } }
-        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '72%',
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: ttBg, borderColor: ttBorder, borderWidth: 1,
-            titleColor: ttTitle, bodyColor: ttBody,
-            titleFont: { family: 'Space Mono', size: 11 }, bodyFont: { family: 'Space Mono', size: 10 },
             callbacks: {
-              title: items => contests[items[0].dataIndex].name,
-              label: item  => ` Rating: ${item.parsed.y}`
+              label: c => {
+                const v = typeof c.parsed === 'number' ? c.parsed : (c.raw ?? '');
+                return ` ${c.label}: ${v}%`;
+              }
             }
           }
         }
@@ -933,88 +740,127 @@
     });
   }
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  LOAD data.json 竊? patch CF solved count + fetch CF rating
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  async function loadDataJson() {
-    try {
-      const res  = await fetch(`data.json?t=${Date.now()}`); // cache-bust for GitHub Pages
-      if (!res.ok) throw new Error('data.json not found');
-      const data = await res.json();
+  function renderRating(platform) {
+    const d = ratingData[platform];
+    const statsEl = document.getElementById('rating-stats');
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const tickColor  = isLight ? '#64748b' : '#6b7280';
+    const gridColor  = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.04)';
+    const ttBg       = isLight ? '#ffffff' : '#1c2030';
+    const ttBorder   = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)';
+    const ttTitle    = isLight ? '#0f172a' : '#e8eaf2';
+    const ttBody     = isLight ? '#64748b' : '#6b7280';
+    const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
 
-      const cf = data.codeforces;
-      if (!cf) throw new Error('No codeforces key in data.json');
-
-      // 1. Update CF meta (for rating stats panel)
-      cfMeta = {
-        rating:     cf.rating     ?? cfMeta.rating,
-        max_rating: cf.max_rating ?? cfMeta.max_rating,
-        rank:       cf.rank       ?? cfMeta.rank,
-      };
-
-      // 2. Patch the Codeforces solved card
-      const valEl = document.getElementById('val-codeforces');
-      if (valEl) valEl.innerHTML = `${cf.solved}<span> solved</span>`;
-
-      // 3. Update "Last updated" pill if id exists
-      const updatedPill = document.getElementById('last-updated');
-      if (updatedPill && cf.last_updated) updatedPill.textContent = `Last updated: ${cf.last_updated}`;
-
-      // 4. Patch the LeetCode solved card
-      const lc = data.leetcode;
-      if (lc) {
-        const lcEl = document.getElementById('val-leetcode');
-        if (lcEl) lcEl.innerHTML = `${lc.solved}<span> solved</span>`;
-      }
-
-      // 5. Patch the Beecrowd solved card
-      const bc = data.beecrowd;
-      if (bc) {
-        const bcEl = document.getElementById('val-beecrowd');
-        if (bcEl) bcEl.innerHTML = `${bc.solved}<span> solved</span>`;
-      }
-
-    } catch (e) {
-      console.warn('data.json load failed, using static fallback:', e.message);
+    if (!d || !d.contests || !d.contests.length) {
+      statsEl.innerHTML = '<div class="rating-stat"><div class="rs-label">No contest data</div><div class="rs-val">—</div></div>';
+      if (ratingChart) { ratingChart.destroy(); ratingChart = null; }
+      return;
     }
 
-    // Always fetch CF rating history from the API regardless
-    await loadCFRatingHistory();
-  }
+    const labels = d.contests.map(c => c.date);
+    const values = d.contests.map(c => c.rating);
+    const positive = values.filter(v => v > 0);
+    const max = values.length ? Math.max(...values) : 0;
+    const min = positive.length ? Math.min(...positive) : null;
+    const last = values[values.length - 1];
+    const delta = values.length > 1 ? last - values[values.length - 2] : 0;
 
-  async function loadCFRatingHistory() {
-    try {
-      const res = await fetch('https://codeforces.com/api/user.rating?handle=loop_breaker');
-      const d   = await res.json();
-      if (d.status !== 'OK') throw new Error('CF API error');
+    statsEl.innerHTML = `
+      <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${d.color}">${last}</div></div>
+      <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${max}</div></div>
+      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min != null ? min : '—'}</div></div>
+      <div class="rating-stat"><div class="rs-label">Last change</div><div class="rs-val" style="color:${delta>=0?'#00e5a0':'#ff6b6b'}">${delta>=0?'+':''}${delta}</div></div>
+      <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${d.contests.length}</div></div>
+    `;
 
-      cfRatingContests = d.result.map(c => ({
-        name:   c.contestName,
-        date:   new Date(c.ratingUpdateTimeSeconds * 1000)
-                  .toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
-        rating: c.newRating,
-      }));
+    if (ratingChart) ratingChart.destroy();
 
-      // Re-render chart only if CF tab is currently active
-      const activeTab = document.querySelector('.rtab.active');
-      if (!activeTab || activeTab.dataset.platform === 'codeforces') {
-        renderRating('codeforces');
+    const cCtx = document.getElementById('ratingChart');
+    ratingChart = new Chart(cCtx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: d.label,
+          data: values,
+          borderColor: d.color,
+          backgroundColor: d.color + '18',
+          borderWidth: 2,
+          pointBackgroundColor: d.color,
+          pointBorderColor: ptBorder,
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: true,
+          tension: 0.35,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 }, maxRotation: 45 },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          },
+          y: {
+            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 } },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: ttBg,
+            borderColor: ttBorder,
+            borderWidth: 1,
+            titleColor: ttTitle,
+            bodyColor: ttBody,
+            titleFont: { family: 'Space Mono', size: 11 },
+            bodyFont: { family: 'Space Mono', size: 10 },
+            callbacks: {
+              title: items => d.contests[items[0].dataIndex].name,
+              label: item => ` Rating: ${item.parsed.y}`
+            }
+          }
+        }
       }
-    } catch (e) {
-      console.warn('CF rating API failed:', e.message);
-    }
+    });
   }
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  THEME
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
+  function applyProfile(data) {
+    ratingData = data.rating || {};
+    const lu = data.meta && data.meta.lastUpdated;
+    const pill = document.getElementById('pill-last-updated');
+    if (pill) {
+      if (lu) {
+        const dt = new Date(lu);
+        const ds = isNaN(dt.getTime()) ? lu : dt.toISOString().slice(0, 10);
+        pill.textContent = `Last updated: ${ds}`;
+      } else {
+        pill.textContent = 'Last updated: —';
+      }
+    }
+
+    const sum = data.summary || {};
+    document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '—';
+    document.getElementById('summary-attempted').textContent = sum.attempted != null ? sum.attempted : '—';
+
+    buildSolvedGrid(data.platforms || []);
+    renderDonut(data.submissions);
+    renderRating(document.querySelector('.rtab.active')?.dataset.platform || 'codeforces');
+  }
+
   window.setTheme = function(t) {
     document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
-    document.getElementById('btn-dark').classList.toggle('active',  t === 'dark');
+    document.getElementById('btn-dark').classList.toggle('active', t === 'dark');
     document.getElementById('btn-light').classList.toggle('active', t === 'light');
     localStorage.setItem('cp-theme', t);
     const active = document.querySelector('.rtab.active');
-    if (active) renderRating(active.dataset.platform);
+    if (active && ratingData && Object.keys(ratingData).length) renderRating(active.dataset.platform);
   };
 
   const savedTheme = localStorage.getItem('cp-theme') || 'dark';
@@ -1028,17 +874,21 @@
     renderRating(btn.dataset.platform);
   });
 
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  //  BOOT 窶? render static shell first, then patch with live data
-  // 笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊絶武笊?
-  renderRating('codeforces'); // shows "Loading窶ｦ" until API responds
-  loadDataJson();             // fetches data.json 竊? patches CF card 竊? fetches CF rating API 竊? re-renders chart
+  (async function loadProfile() {
+    try {
+      const res = await fetch('data.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(String(res.status));
+      applyProfile(normalizeProfileData(await res.json()));
+    } catch (e) {
+      document.getElementById('pill-last-updated').textContent = 'Could not load data.json';
+      document.getElementById('chart-card-subtitle').textContent = 'Ensure data.json is present (see scripts/update_data.py and the GitHub workflow).';
+    }
+  })();
 
-  // Dynamic copyright
   (function() {
-    const startYear   = 2026;
+    const startYear = 2026;
     const currentYear = new Date().getFullYear();
-    const yearStr     = currentYear > startYear ? `${startYear}\u2013${currentYear}` : `${startYear}`;
+    const yearStr = currentYear > startYear ? `${startYear}\u2013${currentYear}` : `${startYear}`;
     document.getElementById('copyright').innerHTML = `
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"/>

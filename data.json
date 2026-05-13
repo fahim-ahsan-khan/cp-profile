@@ -1,14 +1,10 @@
 {
-  "meta": {
-    "lastUpdated": "2026-05-13T00:00:00Z"
-  },
   "codeforces": {
     "handle": "loop_breaker",
     "rating": 1231,
     "max_rating": 1377,
     "rank": "pupil",
-    "solved": 433,
-    "contests": []
+    "solved": 433
   },
   "leetcode": {
     "handle": "loop_breaker",
@@ -16,7 +12,7 @@
     "easy": 46,
     "medium": 48,
     "hard": 0,
-    "ranking": 1587152
+    "ranking": 1587981
   },
   "uva": {
     "username": "loop_breaker",

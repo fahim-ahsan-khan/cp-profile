@@ -662,7 +662,9 @@
           {
             name: 'UVa',
             solved: uva.solved,
-            url: 'https://uhunt.onlinejudge.org/',
+            url: uva.user_id != null && uva.user_id !== ''
+              ? `https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_authorprofile&userid=${encodeURIComponent(String(uva.user_id))}`
+              : 'https://uhunt.onlinejudge.org/',
             favicon: 'https://onlinejudge.org/favicon.ico',
             color: 'teal'
           }

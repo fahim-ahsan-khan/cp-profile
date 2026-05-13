@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-13T17:55:51Z"
+    "lastUpdated": "2026-05-13T18:19:03Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -541,6 +541,8 @@
   },
   "uva": {
     "username": "loop_breaker",
-    "solved": 0
+    "solved": 193,
+    "user_id": 833661,
+    "display_name": "Fahim Ahsan Khan"
   }
 }

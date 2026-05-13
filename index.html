@@ -790,6 +790,11 @@
 
     const labels = d.contests.map(c => c.date);
     const values = d.contests.map(c => c.rating);
+    const displayLabels = labels.map(s => {
+      if (!s || typeof s !== 'string') return s;
+      const p = s.split('-');
+      return p.length >= 2 ? `${p[0]}-${p[1]}` : s;
+    });
     const positive = values.filter(v => v > 0);
     const max = values.length ? Math.max(...values) : 0;
     const min = positive.length ? Math.min(...positive) : null;
@@ -810,7 +815,7 @@
     ratingChart = new Chart(cCtx, {
       type: 'line',
       data: {
-        labels,
+        labels: displayLabels,
         datasets: [{
           label: d.label,
           data: values,
@@ -829,14 +834,31 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+          padding: { left: 52, right: 16, top: 10, bottom: 8 }
+        },
         scales: {
           x: {
-            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 }, maxRotation: 45 },
+            ticks: {
+              color: tickColor,
+              font: { family: 'Space Mono', size: 10 },
+              maxRotation: 40,
+              minRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 12,
+              autoSkipPadding: 28
+            },
             grid: { color: gridColor },
             border: { color: gridColor }
           },
           y: {
-            ticks: { color: tickColor, font: { family: 'Space Mono', size: 10 } },
+            grace: '6%',
+            ticks: {
+              color: tickColor,
+              font: { family: 'Space Mono', size: 10 },
+              padding: 10,
+              callback: v => (typeof v === 'number' && Number.isFinite(v) ? Math.round(v) : v)
+            },
             grid: { color: gridColor },
             border: { color: gridColor }
           }
@@ -852,7 +874,11 @@
             titleFont: { family: 'Space Mono', size: 11 },
             bodyFont: { family: 'Space Mono', size: 10 },
             callbacks: {
-              title: items => d.contests[items[0].dataIndex].name,
+              title: items => {
+                const c = d.contests[items[0].dataIndex];
+                const name = c.name || 'Contest';
+                return c.date ? `${name} (${c.date})` : name;
+              },
               label: item => ` Rating: ${item.parsed.y}`
             }
           }

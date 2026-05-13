@@ -1,4 +1,6 @@
 import json
+from datetime import datetime, timezone
+
 import requests
 
 HANDLE = "loop_breaker"
@@ -33,6 +35,37 @@ for sub in subs["result"]:
         index = problem.get("index", "")
 
         solved.add(f"{contest_id}-{index}")
+
+
+# =========================
+# CODEFORCES RATING / CONTESTS (for profile chart)
+# =========================
+cf_contests = []
+rating_url = f"https://codeforces.com/api/user.rating?handle={HANDLE}"
+try:
+    rating_res = requests.get(rating_url, timeout=30).json()
+    if rating_res.get("status") == "OK":
+        for row in rating_res.get("result", []):
+            ts = row.get("ratingUpdateTimeSeconds")
+            try:
+                day = (
+                    datetime.fromtimestamp(int(ts), tz=timezone.utc).strftime("%Y-%m-%d")
+                    if ts is not None
+                    else ""
+                )
+            except (OSError, ValueError, TypeError):
+                day = ""
+            cf_contests.append(
+                {
+                    "date": day,
+                    "rating": row.get("newRating", 0),
+                    "name": row.get("contestName", ""),
+                }
+            )
+    else:
+        print(f"Codeforces user.rating: {rating_res.get('comment', rating_res)}")
+except Exception as e:
+    print(f"Codeforces rating fetch failed: {e}")
 
 
 # =========================
@@ -135,12 +168,16 @@ except Exception as e:
 # FINAL JSON
 # =========================
 data = {
+    "meta": {
+        "lastUpdated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    },
     "codeforces": {
         "handle": HANDLE,
         "rating": rating,
         "max_rating": max_rating,
         "rank": rank,
-        "solved": len(solved)
+        "solved": len(solved),
+        "contests": cf_contests,
     },
 
     "leetcode": {

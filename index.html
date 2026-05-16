@@ -630,15 +630,23 @@
     if (raw.codeforces != null && raw.leetcode != null && raw.uva != null) {
       const cf = raw.codeforces;
       const lc = raw.leetcode;
+      const cc = raw.codechef || {};
       const uva = raw.uva;
-      const solvedSum = (cf.solved || 0) + (lc.solved || 0) + (uva.solved || 0);
+      const solvedSum =
+        (cf.solved || 0) + (lc.solved || 0) + (cc.solved || 0) + (uva.solved || 0);
       const existingRating = raw.rating || {};
       const existingCf = existingRating.codeforces || {};
+      const existingCc = existingRating.codechef || {};
       const fromFlatContests = Array.isArray(cf.contests) ? cf.contests : [];
+      const fromFlatCcContests = Array.isArray(cc.contests) ? cc.contests : [];
       const contestsCf =
         Array.isArray(existingCf.contests) && existingCf.contests.length > 0
           ? existingCf.contests
           : fromFlatContests;
+      const contestsCc =
+        Array.isArray(existingCc.contests) && existingCc.contests.length > 0
+          ? existingCc.contests
+          : fromFlatCcContests;
       return {
         meta: raw.meta || {},
         summary: {
@@ -661,6 +669,13 @@
             color: 'blue'
           },
           {
+            name: 'CodeChef',
+            solved: cc.solved,
+            url: `https://www.codechef.com/users/${encodeURIComponent(cc.handle || 'loop_breaker')}`,
+            favicon: 'https://www.codechef.com/favicon.ico',
+            color: 'amber'
+          },
+          {
             name: 'UVa',
             solved: uva.solved,
             url: uva.user_id != null && uva.user_id !== ''
@@ -679,7 +694,13 @@
             ...existingCf,
             contests: contestsCf
           },
-          codechef: { label: 'CodeChef', color: '#6b5b2f', contests: [], ...existingRating.codechef },
+          codechef: {
+            label: 'CodeChef',
+            color: '#6b5b2f',
+            contests: [],
+            ...existingCc,
+            contests: contestsCc
+          },
           atcoder: { label: 'AtCoder', color: '#262322', contests: [], ...existingRating.atcoder }
         }
       };

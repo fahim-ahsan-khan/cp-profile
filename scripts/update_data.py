@@ -7,7 +7,8 @@ _scripts_dir = Path(__file__).resolve().parent
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
-from config import CF_HANDLE, LEETCODE_USERNAME, UVA_USERNAME
+from config import CF_HANDLE, CODECHEF_USERNAME, LEETCODE_USERNAME, UVA_USERNAME
+from platforms.codechef import fetch_codechef
 from platforms.codeforces import fetch_codeforces
 from platforms.leetcode import fetch_leetcode
 from platforms.uva import fetch_uva
@@ -20,6 +21,7 @@ def main() -> None:
         },
         "codeforces": fetch_codeforces(CF_HANDLE),
         "leetcode": fetch_leetcode(LEETCODE_USERNAME),
+        "codechef": fetch_codechef(CODECHEF_USERNAME),
         "uva": fetch_uva(UVA_USERNAME),
     }
 

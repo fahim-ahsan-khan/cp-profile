@@ -14,5 +14,6 @@ def _uva_user_id() -> int | None:
 
 CF_HANDLE = os.environ.get("CF_HANDLE", "loop_breaker")
 LEETCODE_USERNAME = os.environ.get("LEETCODE_USERNAME", "loop_breaker")
+CODECHEF_USERNAME = os.environ.get("CODECHEF_USERNAME", "loop_breaker")
 UVA_USERNAME = os.environ.get("UVA_USERNAME", "loop_breaker")
 UVA_USER_ID = _uva_user_id()

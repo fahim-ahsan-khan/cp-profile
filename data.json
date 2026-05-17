@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-17T12:53:33Z"
+    "lastUpdated": "2026-05-17T13:15:50Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -662,5 +662,10 @@
     "solved": 193,
     "user_id": 833661,
     "display_name": "Fahim Ahsan Khan"
+  },
+  "beecrowd": {
+    "profile_id": 74808,
+    "url": "https://judge.beecrowd.com/en/profile/74808",
+    "solved": 0
   }
 }

@@ -17,3 +17,15 @@ LEETCODE_USERNAME = os.environ.get("LEETCODE_USERNAME", "loop_breaker")
 CODECHEF_USERNAME = os.environ.get("CODECHEF_USERNAME", "loop_breaker")
 UVA_USERNAME = os.environ.get("UVA_USERNAME", "loop_breaker")
 UVA_USER_ID = _uva_user_id()
+
+
+def _beecrowd_profile_id() -> int:
+    raw = os.environ.get("BEECROWD_PROFILE_ID", "74808").strip()
+    try:
+        n = int(raw)
+        return n if n > 0 else 74808
+    except ValueError:
+        return 74808
+
+
+BEECROWD_PROFILE_ID = _beecrowd_profile_id()

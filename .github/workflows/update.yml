@@ -26,6 +26,9 @@ jobs:
         run: pip install requests cloudscraper curl_cffi
 
       - name: Run updater
+        env:
+          BEECROWD_SOLVED: ${{ vars.BEECROWD_SOLVED }}
+          BEECROWD_API_TOKEN: ${{ secrets.BEECROWD_API_TOKEN }}
         run: python scripts/update_data.py
 
       - name: Git config

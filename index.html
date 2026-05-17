@@ -632,8 +632,16 @@
       const lc = raw.leetcode;
       const cc = raw.codechef || {};
       const uva = raw.uva;
+      const bc = raw.beecrowd || {};
+      const bcProfileId = bc.profile_id != null ? bc.profile_id : 74808;
+      const bcUrl =
+        bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcProfileId))}`;
       const solvedSum =
-        (cf.solved || 0) + (lc.solved || 0) + (cc.solved || 0) + (uva.solved || 0);
+        (cf.solved || 0) +
+        (lc.solved || 0) +
+        (cc.solved || 0) +
+        (uva.solved || 0) +
+        (bc.solved || 0);
       const existingRating = raw.rating || {};
       const existingCf = existingRating.codeforces || {};
       const existingCc = existingRating.codechef || {};
@@ -683,6 +691,13 @@
               : 'https://uhunt.onlinejudge.org/',
             favicon: 'https://uhunt.onlinejudge.org/images/uva.png',
             color: 'teal'
+          },
+          {
+            name: 'Beecrowd',
+            solved: bc.solved,
+            url: bcUrl,
+            favicon: 'https://judge.beecrowd.com/favicon.ico',
+            color: 'cyan'
           }
         ],
         submissions: raw.submissions || { total: 0, percentages: [0, 0, 0, 0, 0, 0, 0], source: '' },

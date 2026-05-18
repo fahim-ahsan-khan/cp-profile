@@ -148,6 +148,26 @@
     color: #0d0f14;
     flex-shrink: 0;
     position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
   }
 
   .avatar::after {
@@ -231,12 +251,15 @@
 
   .accuracy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: 1fr;
     gap: 12px;
     margin-bottom: 40px;
   }
 
+  @media (max-width: 700px) {
+    .accuracy-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   @media (max-width: 420px) {
     .accuracy-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -481,6 +504,8 @@
     margin-top: 4px;
   }
 
+  .prob-card.total .num { color: var(--accent2); }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -496,19 +521,80 @@
   .acc-card:nth-child(4) { animation-delay: 0.20s; }
   .acc-card:nth-child(5) { animation-delay: 0.25s; }
   .acc-card:nth-child(6) { animation-delay: 0.30s; }
+  .rating-card {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .rating-card-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rating-card-head .card-title {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .rating-tabs-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rating-chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(200px, 42vw, 280px);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rating-chart-wrap canvas {
+    display: block;
+    max-width: 100% !important;
+  }
+
   .rtab {
     background: var(--surface2);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 6px 14px;
-    font-size: 11px;
+    padding: 6px 10px;
+    font-size: clamp(9px, 2.6vw, 11px);
     font-family: var(--mono);
     color: var(--muted);
     cursor: pointer;
     transition: all 0.2s;
+    flex: 1 1 calc(33.333% - 6px);
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
   }
+
   .rtab:hover { border-color: var(--border2); color: var(--text); }
   .rtab.active { background: var(--accent); border-color: var(--accent); color: #0d0f14; font-weight: 700; }
+
+  @media (max-width: 420px) {
+    .rtab {
+      flex: 1 1 calc(50% - 4px);
+      padding: 5px 6px;
+    }
+    .rtab[data-platform="hackerrank"] {
+      flex: 1 1 100%;
+    }
+  }
 
   .rating-stat {
     background: var(--surface2);
@@ -520,19 +606,38 @@
   .rating-stat .rs-val { font-size: 18px; font-weight: 700; color: var(--card-num); transition: color 0.35s; }
   .copyright {
     text-align: center;
-    padding: 32px 0 20px;
+    padding: 28px max(12px, env(safe-area-inset-right)) 24px max(12px, env(safe-area-inset-left));
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: clamp(9px, 2.8vw, 11px);
     color: var(--muted);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     transition: color 0.35s;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    max-width: 100%;
+    line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
-  .copyright svg { opacity: 0.5; }
+  .copyright svg {
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .copyright-text {
+    display: inline;
+    max-width: 100%;
+    hyphens: auto;
+  }
+
+  @media (max-width: 380px) {
+    .container { padding-left: 16px; padding-right: 16px; }
+    .copyright { letter-spacing: 0; }
+  }
 </style>
 </head>
 <body>
@@ -551,10 +656,14 @@
 
   <header class="header">
     <div class="avatar-wrap">
-      <div class="avatar">FK</div>
+      <div class="avatar">
+        <img class="avatar-img" src="assets/avatar.jpg" alt="Fahim Ahsan Khan" width="72" height="72"
+             onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='assets/avatar.svg';}else{this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex';}">
+        <span class="avatar-fallback" aria-hidden="true">FK</span>
+      </div>
       <div class="name-block">
         <h1>Fahim Ahsan Khan</h1>
-        <p class="handle">Bangladesh <svg viewBox="0 0 20 12" width="18" height="11" style="vertical-align:-1px;border-radius:2px;" aria-label="Bangladesh flag" role="img"><rect width="20" height="12" fill="#006a4e"/><circle cx="9" cy="6" r="3.6" fill="#f42a41"/></svg></p>
+        <p class="handle">Bangladesh 🇧🇩</p>
       </div>
     </div>
     <div class="meta-pills">
@@ -569,6 +678,10 @@
       <span class="num" id="summary-solved">—</span>
       <div class="label">Solved</div>
     </div>
+    <div class="prob-card total">
+      <span class="num" id="summary-attempted">—</span>
+      <div class="label">Total Attempted</div>
+    </div>
   </div>
 
   <div class="accuracy-grid" id="solved-grid"></div>
@@ -576,15 +689,15 @@
   <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
 
   <div class="card rating-card" style="margin-bottom:16px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
-      <div class="card-title" style="margin-bottom:0;">Rating over time</div>
-      <div style="display:flex;gap:8px;" id="rating-tabs">
-        <button class="rtab active" data-platform="codeforces">Codeforces</button>
-        <button class="rtab" data-platform="codechef">CodeChef</button>
-        <button class="rtab" data-platform="hackerrank">HackerRank</button>
+    <div class="rating-card-head">
+      <div class="card-title">Rating over time</div>
+      <div class="rating-tabs-wrap" id="rating-tabs">
+        <button type="button" class="rtab active" data-platform="codeforces">Codeforces</button>
+        <button type="button" class="rtab" data-platform="codechef">CodeChef</button>
+        <button type="button" class="rtab" data-platform="hackerrank" title="HackerRank">HackerRank</button>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:280px;">
+    <div class="rating-chart-wrap">
       <canvas id="ratingChart" role="img" aria-label="Line chart of contest rating history">Rating history across contests</canvas>
     </div>
     <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
@@ -895,7 +1008,7 @@
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { left: 38, right: 16, top: 10, bottom: 8 }
+          padding: { left: 4, right: 8, top: 8, bottom: 4 }
         },
         scales: {
           x: {
@@ -952,7 +1065,7 @@
     const dt = new Date(isoOrDate);
     if (isNaN(dt.getTime())) return String(isoOrDate);
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
+    return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]}, ${dt.getUTCFullYear()}`;
   }
 
   function applyProfile(data) {
@@ -971,6 +1084,7 @@
 
     const sum = data.summary || {};
     document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '—';
+    document.getElementById('summary-attempted').textContent = sum.attempted != null ? sum.attempted : '—';
 
     buildSolvedGrid(data.platforms || []);
     renderDonut(data.submissions);
@@ -1017,7 +1131,7 @@
         <circle cx="12" cy="12" r="10"/>
         <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
       </svg>
-      ${yearStr} Fahim Ahsan Khan. All rights reserved.
+      <span class="copyright-text">${yearStr} Fahim Ahsan Khan. All rights reserved.</span>
     `;
   })();
 </script>

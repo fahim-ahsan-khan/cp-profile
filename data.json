@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-18T09:37:41Z"
+    "lastUpdated": "2026-05-18T13:09:59Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -537,7 +537,7 @@
     "easy": 46,
     "medium": 48,
     "hard": 0,
-    "ranking": 1591279
+    "ranking": 1592093
   },
   "codechef": {
     "handle": "loop_breaker",
@@ -667,5 +667,15 @@
     "profile_id": 74808,
     "url": "https://judge.beecrowd.com/en/profile/74808",
     "solved": 243
+  },
+  "hackerrank": {
+    "handle": "loop_breaker",
+    "solved": 105,
+    "problem_solving": 36,
+    "badge_solved_sum": 69,
+    "submissions": 184,
+    "stars": 10,
+    "badges": 3,
+    "algorithms_rating": 1469
   }
 }

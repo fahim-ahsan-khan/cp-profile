@@ -484,8 +484,6 @@
     margin-top: 4px;
   }
 
-  .prob-card.total .num { color: var(--accent2); }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -559,7 +557,7 @@
       <div class="avatar">FK</div>
       <div class="name-block">
         <h1>Fahim Ahsan Khan</h1>
-        <p class="handle">Bangladesh 🇧🇩</p>
+        <p class="handle">Bangladesh <svg viewBox="0 0 20 12" width="18" height="11" style="vertical-align:-1px;border-radius:2px;" aria-label="Bangladesh flag" role="img"><rect width="20" height="12" fill="#006a4e"/><circle cx="9" cy="6" r="3.6" fill="#f42a41"/></svg></p>
       </div>
     </div>
     <div class="meta-pills">
@@ -573,10 +571,6 @@
     <div class="prob-card">
       <span class="num" id="summary-solved">—</span>
       <div class="label">Solved</div>
-    </div>
-    <div class="prob-card total">
-      <span class="num" id="summary-attempted">—</span>
-      <div class="label">Total Attempted</div>
     </div>
   </div>
 
@@ -961,7 +955,7 @@
     const dt = new Date(isoOrDate);
     if (isNaN(dt.getTime())) return String(isoOrDate);
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]}, ${dt.getUTCFullYear()}`;
+    return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
   }
 
   function applyProfile(data) {
@@ -980,7 +974,6 @@
 
     const sum = data.summary || {};
     document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '—';
-    document.getElementById('summary-attempted').textContent = sum.attempted != null ? sum.attempted : '—';
 
     buildSolvedGrid(data.platforms || []);
     renderDonut(data.submissions);

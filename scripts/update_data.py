@@ -12,6 +12,7 @@ from config import (
     CODECHEF_USERNAME,
     HACKERRANK_USERNAME,
     LEETCODE_USERNAME,
+    LIGHTOJ_USERNAME,
     UVA_USERNAME,
 )
 from platforms.beecrowd import fetch_beecrowd
@@ -19,6 +20,7 @@ from platforms.codechef import fetch_codechef
 from platforms.codeforces import fetch_codeforces
 from platforms.hackerrank import fetch_hackerrank
 from platforms.leetcode import fetch_leetcode
+from platforms.lightoj import fetch_lightoj
 from platforms.uva import fetch_uva
 
 
@@ -33,6 +35,7 @@ def main() -> None:
         "uva": fetch_uva(UVA_USERNAME),
         "beecrowd": fetch_beecrowd(),
         "hackerrank": fetch_hackerrank(HACKERRANK_USERNAME),
+        "lightoj": fetch_lightoj(LIGHTOJ_USERNAME),
     }
 
     with open("data.json", "w") as f:

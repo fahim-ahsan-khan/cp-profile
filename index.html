@@ -633,15 +633,18 @@
       const cc = raw.codechef || {};
       const uva = raw.uva;
       const bc = raw.beecrowd || {};
+      const hr = raw.hackerrank || {};
       const bcProfileId = bc.profile_id != null ? bc.profile_id : 74808;
       const bcUrl =
         bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcProfileId))}`;
+      const hrUrl = `https://www.hackerrank.com/profile/${encodeURIComponent(hr.handle || 'loop_breaker')}`;
       const solvedSum =
         (cf.solved || 0) +
         (lc.solved || 0) +
         (cc.solved || 0) +
         (uva.solved || 0) +
-        (bc.solved || 0);
+        (bc.solved || 0) +
+        (hr.solved || 0);
       const existingRating = raw.rating || {};
       const existingCf = existingRating.codeforces || {};
       const existingCc = existingRating.codechef || {};
@@ -698,6 +701,13 @@
             url: bcUrl,
             favicon: 'https://judge.beecrowd.com/favicon.ico',
             color: 'cyan'
+          },
+          {
+            name: 'HackerRank',
+            solved: hr.solved,
+            url: hrUrl,
+            favicon: 'https://www.hackerrank.com/favicon.ico',
+            color: 'pink'
           }
         ],
         submissions: raw.submissions || { total: 0, percentages: [0, 0, 0, 0, 0, 0, 0], source: '' },

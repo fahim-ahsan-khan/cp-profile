@@ -284,6 +284,7 @@
   .acc-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
   .acc-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
   .acc-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
+  .acc-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
 
   .acc-card .visit-hint {
     display: none;
@@ -321,6 +322,7 @@
   .acc-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85); color: #fff; }
   .acc-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
   .acc-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
+  .acc-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
 
   @media (prefers-reduced-motion: reduce) {
     .acc-card::after {
@@ -634,17 +636,20 @@
       const uva = raw.uva;
       const bc = raw.beecrowd || {};
       const hr = raw.hackerrank || {};
+      const loj = raw.lightoj || {};
       const bcProfileId = bc.profile_id != null ? bc.profile_id : 74808;
       const bcUrl =
         bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcProfileId))}`;
       const hrUrl = `https://www.hackerrank.com/profile/${encodeURIComponent(hr.handle || 'loop_breaker')}`;
+      const lojUrl = `https://lightoj.com/user/${encodeURIComponent(loj.handle || 'loop_breaker')}`;
       const solvedSum =
         (cf.solved || 0) +
         (lc.solved || 0) +
         (cc.solved || 0) +
         (uva.solved || 0) +
         (bc.solved || 0) +
-        (hr.solved || 0);
+        (hr.solved || 0) +
+        (loj.solved || 0);
       const existingRating = raw.rating || {};
       const existingCf = existingRating.codeforces || {};
       const existingCc = existingRating.codechef || {};
@@ -708,6 +713,13 @@
             url: hrUrl,
             favicon: 'https://www.hackerrank.com/favicon.ico',
             color: 'pink'
+          },
+          {
+            name: 'LightOJ',
+            solved: loj.solved,
+            url: lojUrl,
+            favicon: 'https://lightoj.com/loj-favicon.png',
+            color: 'purple'
           }
         ],
         submissions: raw.submissions || { total: 0, percentages: [0, 0, 0, 0, 0, 0, 0], source: '' },

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-18T13:37:47Z"
+    "lastUpdated": "2026-05-18T13:58:28Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -676,7 +676,64 @@
     "submissions": 184,
     "stars": 10,
     "badges": 3,
-    "algorithms_rating": 1469
+    "algorithms_rating": 1469,
+    "contests": [
+      {
+        "date": "2016-08-23",
+        "rating": 1161,
+        "name": "101 Hack 40"
+      },
+      {
+        "date": "2016-11-17",
+        "rating": 1448,
+        "name": "101 Hack 43"
+      },
+      {
+        "date": "2016-12-13",
+        "rating": 1604,
+        "name": "101 Hack 44"
+      },
+      {
+        "date": "2017-01-17",
+        "rating": 1536,
+        "name": "101 Hack 45"
+      },
+      {
+        "date": "2017-03-02",
+        "rating": 1547,
+        "name": "HourRank 18"
+      },
+      {
+        "date": "2017-03-21",
+        "rating": 1620,
+        "name": "101 Hack 47"
+      },
+      {
+        "date": "2017-06-20",
+        "rating": 1660,
+        "name": "101 Hack 50"
+      },
+      {
+        "date": "2018-04-02",
+        "rating": 1658,
+        "name": "HourRank 27"
+      },
+      {
+        "date": "2018-05-02",
+        "rating": 1627,
+        "name": "101 Hack 54"
+      },
+      {
+        "date": "2018-08-02",
+        "rating": 1642,
+        "name": "HourRank 29"
+      },
+      {
+        "date": "2018-12-02",
+        "rating": 1469,
+        "name": "HourRank 31"
+      }
+    ]
   },
   "lightoj": {
     "handle": "loop_breaker",

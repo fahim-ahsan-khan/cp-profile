@@ -36,6 +36,42 @@ def _submission_histories(username: str) -> dict:
     return body if isinstance(body, dict) else {}
 
 
+def _rating_history(username: str) -> list[dict]:
+    res = requests.get(
+        f"{_BASE}/{username}/rating_histories_elo",
+        headers=_HEADERS,
+        timeout=30,
+    )
+    res.raise_for_status()
+    body = res.json()
+    if not isinstance(body, dict):
+        return []
+    models = body.get("models") or []
+    contests: list[dict] = []
+    for track in models:
+        if not isinstance(track, dict):
+            continue
+        if track.get("category") != "Algorithms":
+            continue
+        for ev in track.get("events") or []:
+            if not isinstance(ev, dict):
+                continue
+            date_raw = ev.get("date") or ""
+            day = date_raw[:10] if isinstance(date_raw, str) else ""
+            try:
+                rating = int(round(float(ev.get("rating", 0) or 0)))
+            except (TypeError, ValueError):
+                rating = 0
+            contests.append(
+                {
+                    "date": day,
+                    "rating": rating,
+                    "name": ev.get("contest_name", "") or "",
+                }
+            )
+    return contests
+
+
 def _total_accepted_submissions(history: dict) -> int:
     total = 0
     for v in history.values():
@@ -82,6 +118,7 @@ def fetch_hackerrank(username: str) -> dict:
     earned_badges = 0
     algorithms_rating = 0
     accepted_submissions = 0
+    contests: list[dict] = []
 
     try:
         badges = _badges(username)
@@ -104,13 +141,22 @@ def fetch_hackerrank(username: str) -> dict:
     except Exception as e:
         print(f"HackerRank submission history fetch failed: {e}")
 
+    try:
+        contests = _rating_history(username)
+    except Exception as e:
+        print(f"HackerRank rating history fetch failed: {e}")
+
+    if contests and not algorithms_rating:
+        algorithms_rating = contests[-1]["rating"]
+
     solved = problem_solving + badge_solved_sum
 
     print(
         f"HackerRank solved: {solved} "
         f"(problem-solving: {problem_solving} + badge sum: {badge_solved_sum}), "
         f"submissions: {accepted_submissions}, stars: {stars}, "
-        f"badges: {earned_badges}, algorithms rating: {algorithms_rating}"
+        f"badges: {earned_badges}, algorithms rating: {algorithms_rating}, "
+        f"contests: {len(contests)}"
     )
 
     return {
@@ -122,4 +168,5 @@ def fetch_hackerrank(username: str) -> dict:
         "stars": stars,
         "badges": earned_badges,
         "algorithms_rating": algorithms_rating,
+        "contests": contests,
     }

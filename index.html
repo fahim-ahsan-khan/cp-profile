@@ -27,7 +27,7 @@
     --sans: 'Sora', sans-serif;
     --theme-transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
-
+ 
   [data-theme="light"] {
     --bg: #f0f4f8;
     --surface: #ffffff;
@@ -44,9 +44,9 @@
     --card-num: #0f172a;
     --grid-line: rgba(0,163,114,0.05);
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -55,7 +55,7 @@
     overflow-x: hidden;
     transition: var(--theme-transition);
   }
-
+ 
   body::before {
     content: '';
     position: fixed;
@@ -68,7 +68,7 @@
     z-index: 0;
     transition: background-image 0.35s ease;
   }
-
+ 
   .theme-toggle {
     position: fixed;
     bottom: 28px;
@@ -84,9 +84,9 @@
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     transition: var(--theme-transition), box-shadow 0.25s;
   }
-
+ 
   .theme-toggle:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.26); }
-
+ 
   .theme-btn {
     border: none;
     background: transparent;
@@ -102,15 +102,15 @@
     transition: background 0.2s, color 0.2s;
     white-space: nowrap;
   }
-
+ 
   .theme-btn.active {
     background: var(--accent);
     color: #fff;
     font-weight: 700;
   }
-
+ 
   [data-theme="light"] .theme-btn.active { color: #0f172a; }
-
+ 
   .container {
     max-width: 960px;
     margin: 0 auto;
@@ -118,7 +118,7 @@
     position: relative;
     z-index: 1;
   }
-
+ 
   .header {
     display: flex;
     align-items: flex-start;
@@ -127,13 +127,13 @@
     margin-bottom: 48px;
     flex-wrap: wrap;
   }
-
+ 
   .avatar-wrap {
     display: flex;
     align-items: center;
     gap: 20px;
   }
-
+ 
   .avatar {
     width: 72px;
     height: 72px;
@@ -150,7 +150,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .avatar-img {
     width: 100%;
     height: 100%;
@@ -160,7 +160,7 @@
     position: relative;
     z-index: 1;
   }
-
+ 
   .avatar-fallback {
     position: absolute;
     inset: 0;
@@ -169,7 +169,7 @@
     justify-content: center;
     z-index: 0;
   }
-
+ 
   .avatar::after {
     content: '';
     position: absolute;
@@ -180,7 +180,7 @@
     opacity: 0.3;
     filter: blur(6px);
   }
-
+ 
   .name-block h1 {
     font-size: 28px;
     font-weight: 700;
@@ -188,23 +188,23 @@
     color: var(--h1);
     transition: color 0.35s;
   }
-
+ 
   .handle {
     font-family: var(--mono);
     font-size: 12px;
     color: var(--muted);
     margin-top: 4px;
   }
-
+ 
   .handle b { color: var(--accent); }
-
+ 
   .meta-pills {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
     align-items: center;
   }
-
+ 
   .pill {
     background: var(--surface2);
     border: 1px solid var(--border2);
@@ -217,19 +217,19 @@
     align-items: center;
     gap: 6px;
   }
-
+ 
   .pill .dot {
     width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--accent);
     animation: pulse 2s infinite;
   }
-
+ 
   @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
   }
-
+ 
   .section-label {
     font-family: var(--mono);
     font-size: 10px;
@@ -241,14 +241,14 @@
     align-items: center;
     gap: 10px;
   }
-
+ 
   .section-label::after {
     content: '';
     flex: 1;
     height: 1px;
     background: var(--border);
   }
-
+ 
   .accuracy-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -256,14 +256,14 @@
     gap: 12px;
     margin-bottom: 40px;
   }
-
+ 
   @media (max-width: 700px) {
     .accuracy-grid { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 420px) {
     .accuracy-grid { grid-template-columns: repeat(2, 1fr); }
   }
-
+ 
   .acc-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -279,7 +279,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .acc-card::before {
     content: '';
     position: absolute;
@@ -288,16 +288,16 @@
     transition: opacity 0.25s;
     pointer-events: none;
   }
-
+ 
   .acc-card:hover {
     transform: translateY(-3px);
     background: var(--surface2);
   }
-
+ 
   .acc-card:hover::before { opacity: 1; }
-
+ 
   .acc-card:active { transform: translateY(-1px) scale(0.99); }
-
+ 
   .acc-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
   .acc-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
   .acc-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
@@ -305,11 +305,11 @@
   .acc-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
   .acc-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
   .acc-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
-
+ 
   .acc-card .visit-hint {
     display: none;
   }
-
+ 
   .acc-card::after {
     content: 'VIEW PROFILE';
     position: absolute;
@@ -330,12 +330,12 @@
     pointer-events: none;
     z-index: 2;
   }
-
+ 
   .acc-card:hover::after {
     transform: translateY(0);
     opacity: 1;
   }
-
+ 
   .acc-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
   .acc-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
   .acc-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
@@ -343,13 +343,13 @@
   .acc-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
   .acc-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
   .acc-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
-
+ 
   @media (prefers-reduced-motion: reduce) {
     .acc-card::after {
       transition: transform 0.12s ease, opacity 0.12s ease;
     }
   }
-
+ 
   .platform-icon {
     width: 32px;
     height: 32px;
@@ -360,14 +360,14 @@
     font-size: 16px;
     flex-shrink: 0;
   }
-
+ 
   .acc-info .platform-name {
     font-size: 10px;
     color: var(--muted);
     font-family: var(--mono);
     letter-spacing: 0.5px;
   }
-
+ 
   .acc-info .acc-val {
     font-size: 18px;
     font-weight: 700;
@@ -376,17 +376,17 @@
     line-height: 1.2;
     transition: color 0.35s;
   }
-
+ 
   .acc-info .acc-val span {
     font-size: 11px;
     color: var(--muted);
     font-weight: 400;
   }
-
+ 
   @media (max-width: 600px) {
     .header { flex-direction: column; }
   }
-
+ 
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -394,7 +394,7 @@
     padding: 20px;
     transition: var(--theme-transition);
   }
-
+ 
   .card-title {
     font-size: 11px;
     font-family: var(--mono);
@@ -403,25 +403,25 @@
     color: var(--muted);
     margin-bottom: 20px;
   }
-
+ 
   .chart-card {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
     align-items: center;
   }
-
+ 
   @media (max-width: 600px) {
     .chart-card { grid-template-columns: 1fr; }
   }
-
+ 
   .chart-wrap {
     position: relative;
     width: 200px;
     height: 200px;
     flex-shrink: 0;
   }
-
+ 
   .chart-center {
     position: absolute;
     inset: 0;
@@ -430,7 +430,7 @@
     align-items: center;
     justify-content: center;
   }
-
+ 
   .chart-center .big {
     font-family: var(--mono);
     font-size: 26px;
@@ -438,20 +438,20 @@
     color: var(--card-num);
     transition: color 0.35s;
   }
-
+ 
   .chart-center .small {
     font-size: 10px;
     color: var(--muted);
     font-family: var(--mono);
   }
-
+ 
   .legend-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
-
+ 
   .legend-list li {
     display: flex;
     align-items: center;
@@ -459,27 +459,27 @@
     font-size: 12px;
     color: var(--text);
   }
-
+ 
   .legend-list .dot-sq {
     width: 10px;
     height: 10px;
     border-radius: 2px;
     flex-shrink: 0;
   }
-
+ 
   .legend-list .pct {
     margin-left: auto;
     font-family: var(--mono);
     font-size: 11px;
     color: var(--muted);
   }
-
+ 
   .problems-row {
     display: flex;
     gap: 12px;
     margin-bottom: 16px;
   }
-
+ 
   .prob-card {
     flex: 1;
     background: var(--surface);
@@ -488,7 +488,7 @@
     padding: 20px;
     text-align: center;
   }
-
+ 
   .prob-card .num {
     font-family: var(--mono);
     font-size: 36px;
@@ -496,25 +496,25 @@
     color: var(--accent);
     display: block;
   }
-
+ 
   .prob-card .label {
     font-size: 11px;
     color: var(--muted);
     font-family: var(--mono);
     margin-top: 4px;
   }
-
+ 
   .prob-card.total .num { color: var(--accent2); }
-
+ 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
+ 
   .card, .acc-card, .prob-card {
     animation: fadeUp 0.5s ease both;
   }
-
+ 
   .acc-card:nth-child(1) { animation-delay: 0.05s; }
   .acc-card:nth-child(2) { animation-delay: 0.10s; }
   .acc-card:nth-child(3) { animation-delay: 0.15s; }
@@ -525,7 +525,7 @@
     overflow: hidden;
     max-width: 100%;
   }
-
+ 
   .rating-card-head {
     display: flex;
     flex-direction: column;
@@ -535,12 +535,12 @@
     width: 100%;
     max-width: 100%;
   }
-
+ 
   .rating-card-head .card-title {
     margin-bottom: 0;
     width: 100%;
   }
-
+ 
   .rating-tabs-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -548,7 +548,7 @@
     width: 100%;
     max-width: 100%;
   }
-
+ 
   .rating-chart-wrap {
     position: relative;
     width: 100%;
@@ -558,12 +558,12 @@
     margin: 0;
     padding: 0;
   }
-
+ 
   .rating-chart-wrap canvas {
     display: block;
     max-width: 100% !important;
   }
-
+ 
   .rtab {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -582,10 +582,10 @@
     text-overflow: ellipsis;
     text-align: center;
   }
-
+ 
   .rtab:hover { border-color: var(--border2); color: var(--text); }
   .rtab.active { background: var(--accent); border-color: var(--accent); color: #0d0f14; font-weight: 700; }
-
+ 
   @media (max-width: 420px) {
     .rtab {
       flex: 1 1 calc(50% - 4px);
@@ -595,7 +595,7 @@
       flex: 1 1 100%;
     }
   }
-
+ 
   .rating-stat {
     background: var(--surface2);
     border-radius: 10px;
@@ -622,18 +622,18 @@
     word-break: break-word;
     overflow-wrap: anywhere;
   }
-
+ 
   .copyright svg {
     opacity: 0.5;
     flex-shrink: 0;
   }
-
+ 
   .copyright-text {
     display: inline;
     max-width: 100%;
     hyphens: auto;
   }
-
+ 
   @media (max-width: 380px) {
     .container { padding-left: 16px; padding-right: 16px; }
     .copyright { letter-spacing: 0; }
@@ -651,9 +651,9 @@
     Light
   </button>
 </div>
-
+ 
 <div class="container">
-
+ 
   <header class="header">
     <div class="avatar-wrap">
       <div class="avatar">
@@ -671,7 +671,7 @@
       <div class="pill" id="pill-last-updated">Last updated: …</div>
     </div>
   </header>
-
+ 
   <div class="section-label">Problems Solved</div>
   <div class="problems-row">
     <div class="prob-card">
@@ -679,11 +679,11 @@
       <div class="label">Solved</div>
     </div>
   </div>
-
+ 
   <div class="accuracy-grid" id="solved-grid"></div>
-
+ 
   <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
-
+ 
   <div class="card rating-card" style="margin-bottom:16px;">
     <div class="rating-card-head">
       <div class="card-title">Rating over time</div>
@@ -698,35 +698,15 @@
     </div>
     <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
   </div>
-
-  <div class="section-label" style="margin-top:40px;">Submission Breakdown</div>
-  <div class="card chart-card" style="margin-bottom:16px;">
-    <div>
-      <div class="card-title">Total Submissions</div>
-      <p id="chart-card-subtitle" style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4;">Loading…</p>
-      <ul class="legend-list" id="legend-list"></ul>
-    </div>
-    <div class="chart-wrap">
-      <canvas id="donut" role="img" aria-label="Submission verdict breakdown"></canvas>
-      <div class="chart-center">
-        <span class="big" id="donut-total">—</span>
-        <span class="small">total</span>
-      </div>
-    </div>
-  </div>
-
+ 
   <div class="copyright" id="copyright"></div>
-
+ 
 </div>
-
+ 
 <script>
-  const donutColors = ['#00e5a0','#ffd166','#ff6b6b','#60a5fa','#a78bfa','#f97316','#94a3b8'];
-  const donutLabels = ['Accepted','Partially Solved','Wrong Answer','TLE','Runtime Error','Compile Error','Others'];
-
   let ratingData = {};
   let ratingChart = null;
-  let donutChart = null;
-
+ 
   function normalizeProfileData(raw) {
     if (!raw || typeof raw !== 'object') return {};
     if (Array.isArray(raw.platforms)) return raw;
@@ -857,7 +837,7 @@
     }
     return raw;
   }
-
+ 
   function buildSolvedGrid(platforms) {
     const grid = document.getElementById('solved-grid');
     grid.innerHTML = '';
@@ -887,58 +867,7 @@
       grid.appendChild(a);
     });
   }
-
-  function renderDonut(submissions) {
-    const sub = submissions || { total: 0, percentages: [0,0,0,0,0,0,0], source: '' };
-    const pctArr = sub.percentages || [];
-    document.getElementById('donut-total').textContent = sub.total != null ? sub.total : '—';
-
-    const subEl = document.getElementById('chart-card-subtitle');
-    if (subEl) {
-      subEl.textContent = sub.source === 'codeforces'
-        ? 'Verdict breakdown from your Codeforces submissions (same totals as Codeforces API).'
-        : 'Submission breakdown from synced data.';
-    }
-
-    const legend = document.getElementById('legend-list');
-    legend.innerHTML = donutLabels.map((lab, i) => {
-      const p = pctArr[i] != null ? pctArr[i] : 0;
-      const col = donutColors[i];
-      return `<li><span class="dot-sq" style="background:${col};"></span> ${lab} <span class="pct">${p}%</span></li>`;
-    }).join('');
-
-    const ctx = document.getElementById('donut');
-    if (donutChart) donutChart.destroy();
-    donutChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: donutLabels,
-        datasets: [{
-          data: pctArr.length ? pctArr : donutLabels.map(() => 0),
-          backgroundColor: donutColors,
-          borderWidth: 0,
-          hoverOffset: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '72%',
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: c => {
-                const v = typeof c.parsed === 'number' ? c.parsed : (c.raw ?? '');
-                return ` ${c.label}: ${v}%`;
-              }
-            }
-          }
-        }
-      }
-    });
-  }
-
+ 
   function renderRating(platform) {
     const d = ratingData[platform];
     const statsEl = document.getElementById('rating-stats');
@@ -950,13 +879,13 @@
     const ttTitle    = isLight ? '#0f172a' : '#e8eaf2';
     const ttBody     = isLight ? '#64748b' : '#6b7280';
     const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
-
+ 
     if (!d || !d.contests || !d.contests.length) {
       statsEl.innerHTML = '<div class="rating-stat"><div class="rs-label">No contest data</div><div class="rs-val">—</div></div>';
       if (ratingChart) { ratingChart.destroy(); ratingChart = null; }
       return;
     }
-
+ 
     const labels = d.contests.map(c => c.date);
     const values = d.contests.map(c => c.rating);
     const displayLabels = labels.map(s => {
@@ -969,7 +898,7 @@
     const min = positive.length ? Math.min(...positive) : null;
     const last = values[values.length - 1];
     const delta = values.length > 1 ? last - values[values.length - 2] : 0;
-
+ 
     statsEl.innerHTML = `
       <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${d.color}">${last}</div></div>
       <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${max}</div></div>
@@ -977,9 +906,9 @@
       <div class="rating-stat"><div class="rs-label">Last change</div><div class="rs-val" style="color:${delta>=0?'#00e5a0':'#ff6b6b'}">${delta>=0?'+':''}${delta}</div></div>
       <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${d.contests.length}</div></div>
     `;
-
+ 
     if (ratingChart) ratingChart.destroy();
-
+ 
     const cCtx = document.getElementById('ratingChart');
     ratingChart = new Chart(cCtx, {
       type: 'line',
@@ -1055,7 +984,7 @@
       }
     });
   }
-
+ 
   function formatLastUpdatedLabel(isoOrDate) {
     if (!isoOrDate) return '';
     const dt = new Date(isoOrDate);
@@ -1063,7 +992,7 @@
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
   }
-
+ 
   function applyProfile(data) {
     ratingData = data.rating || {};
     const lu = data.meta && data.meta.lastUpdated;
@@ -1077,15 +1006,14 @@
         pill.textContent = 'Last updated: —';
       }
     }
-
+ 
     const sum = data.summary || {};
     document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '—';
-
+ 
     buildSolvedGrid(data.platforms || []);
-    renderDonut(data.submissions);
     renderRating(document.querySelector('.rtab.active')?.dataset.platform || 'codeforces');
   }
-
+ 
   window.setTheme = function(t) {
     document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
     document.getElementById('btn-dark').classList.toggle('active', t === 'dark');
@@ -1094,10 +1022,10 @@
     const active = document.querySelector('.rtab.active');
     if (active && ratingData && Object.keys(ratingData).length) renderRating(active.dataset.platform);
   };
-
+ 
   const savedTheme = localStorage.getItem('cp-theme') || 'dark';
   if (savedTheme === 'light') window.setTheme('light');
-
+ 
   document.getElementById('rating-tabs').addEventListener('click', e => {
     const btn = e.target.closest('.rtab');
     if (!btn) return;
@@ -1105,7 +1033,7 @@
     btn.classList.add('active');
     renderRating(btn.dataset.platform);
   });
-
+ 
   (async function loadProfile() {
     try {
       const res = await fetch('data.json', { cache: 'no-store' });
@@ -1113,10 +1041,9 @@
       applyProfile(normalizeProfileData(await res.json()));
     } catch (e) {
       document.getElementById('pill-last-updated').textContent = 'Could not load data.json';
-      document.getElementById('chart-card-subtitle').textContent = 'Ensure data.json is present (see scripts/update_data.py and the GitHub workflow).';
     }
   })();
-
+ 
   (function() {
     const startYear = 2026;
     const currentYear = new Date().getFullYear();
@@ -1132,3 +1059,4 @@
 </script>
 </body>
 </html>
+ 

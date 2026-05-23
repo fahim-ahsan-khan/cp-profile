@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahim Ahsan Khan — CP Profile</title>
+<title>Fahim Ahsan Khan ?ｿｽ? CP Profile</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ctext x='4' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5a0'%3E%7B%7D%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -249,140 +249,6 @@
     background: var(--border);
   }
  
-  .accuracy-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 12px;
-    margin-bottom: 40px;
-  }
- 
-  @media (max-width: 700px) {
-    .accuracy-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 420px) {
-    .accuracy-grid { grid-template-columns: repeat(2, 1fr); }
-  }
- 
-  .acc-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    overflow: hidden;
-  }
- 
-  .acc-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.25s;
-    pointer-events: none;
-  }
- 
-  .acc-card:hover {
-    transform: translateY(-3px);
-    background: var(--surface2);
-  }
- 
-  .acc-card:hover::before { opacity: 1; }
- 
-  .acc-card:active { transform: translateY(-1px) scale(0.99); }
- 
-  .acc-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
-  .acc-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
-  .acc-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
-  .acc-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
-  .acc-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
-  .acc-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
-  .acc-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
- 
-  .acc-card .visit-hint {
-    display: none;
-  }
- 
-  .acc-card::after {
-    content: 'VIEW PROFILE';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 7px 0;
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 0 12px 12px;
-    transform: translateY(100%);
-    transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.2s;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2;
-  }
- 
-  .acc-card:hover::after {
-    transform: translateY(0);
-    opacity: 1;
-  }
- 
-  .acc-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
-  .acc-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
-  .acc-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
-  .acc-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85); color: #fff; }
-  .acc-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
-  .acc-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
-  .acc-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
- 
-  @media (prefers-reduced-motion: reduce) {
-    .acc-card::after {
-      transition: transform 0.12s ease, opacity 0.12s ease;
-    }
-  }
- 
-  .platform-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
- 
-  .acc-info .platform-name {
-    font-size: 10px;
-    color: var(--muted);
-    font-family: var(--mono);
-    letter-spacing: 0.5px;
-  }
- 
-  .acc-info .acc-val {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: var(--mono);
-    color: var(--card-num);
-    line-height: 1.2;
-    transition: color 0.35s;
-  }
- 
-  .acc-info .acc-val span {
-    font-size: 11px;
-    color: var(--muted);
-    font-weight: 400;
-  }
- 
   @media (max-width: 600px) {
     .header { flex-direction: column; }
   }
@@ -511,16 +377,9 @@
     to { opacity: 1; transform: translateY(0); }
   }
  
-  .card, .acc-card, .prob-card {
+  .card, .prob-card {
     animation: fadeUp 0.5s ease both;
   }
- 
-  .acc-card:nth-child(1) { animation-delay: 0.05s; }
-  .acc-card:nth-child(2) { animation-delay: 0.10s; }
-  .acc-card:nth-child(3) { animation-delay: 0.15s; }
-  .acc-card:nth-child(4) { animation-delay: 0.20s; }
-  .acc-card:nth-child(5) { animation-delay: 0.25s; }
-  .acc-card:nth-child(6) { animation-delay: 0.30s; }
   .rating-card {
     overflow: hidden;
     max-width: 100%;
@@ -634,19 +493,253 @@
     hyphens: auto;
   }
  
-  @media (max-width: 380px) {
-    .container { padding-left: 16px; padding-right: 16px; }
-    .copyright { letter-spacing: 0; }
+  /* 笏笏 Profile Cards Grid 笏笏 */
+  .profile-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
   }
+
+  @media (max-width: 720px) {
+    .profile-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .profile-cards-grid { grid-template-columns: 1fr; }
+  }
+
+  .pf-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s, background 0.25s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .pf-card:nth-child(1) { animation-delay: 0.05s; }
+  .pf-card:nth-child(2) { animation-delay: 0.10s; }
+  .pf-card:nth-child(3) { animation-delay: 0.15s; }
+  .pf-card:nth-child(4) { animation-delay: 0.20s; }
+  .pf-card:nth-child(5) { animation-delay: 0.25s; }
+  .pf-card:nth-child(6) { animation-delay: 0.30s; }
+  .pf-card:nth-child(7) { animation-delay: 0.35s; }
+
+  .pf-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    border-color: var(--border2);
+    background: var(--surface2);
+  }
+
+  .pf-card:active { transform: translateY(-1px) scale(0.99); }
+
+  .pf-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
+  .pf-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
+  .pf-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
+  .pf-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
+  .pf-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
+  .pf-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
+  .pf-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
+
+  .pf-card::after {
+    content: 'VIEW PROFILE';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 7px 0;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 16px 16px;
+    transform: translateY(100%);
+    transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .pf-card:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .pf-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
+  .pf-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
+  .pf-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
+  .pf-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85); color: #fff; }
+  .pf-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
+  .pf-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
+  .pf-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pf-card::after {
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+  }
+
+  .pf-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .pf-platform-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pf-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: contain;
+    background: var(--surface2);
+    padding: 2px;
+    flex-shrink: 0;
+  }
+
+  .pf-platform-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--h1);
+    letter-spacing: -0.2px;
+    font-family: var(--sans);
+    transition: color 0.35s;
+  }
+
+  .pf-ext-icon {
+    color: var(--muted);
+    opacity: 0.55;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .pf-card:hover .pf-ext-icon { opacity: 1; }
+
+  .pf-handle {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .pf-handle b {
+    color: var(--accent2);
+  }
+
+  .pf-rating-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .pf-rating-num {
+    font-family: var(--mono);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+
+  .pf-rating-rank {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+
+  .pf-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  .pf-star {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .pf-badge-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--sans);
+  }
+
+  .pf-subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
+
+  .pf-footer-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pf-footer-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
+
+  .pf-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 12px 0;
+  }
+
+  .pf-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pf-stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .pf-stat-val {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--mono);
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+
 </style>
 </head>
 <body>
 <div class="theme-toggle" role="group" aria-label="Theme selector">
-  <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')">
+  <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     Dark
   </button>
-  <button class="theme-btn" id="btn-light" onclick="setTheme('light')">
+  <button class="theme-btn active" id="btn-light" onclick="setTheme('light')">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     Light
   </button>
@@ -668,20 +761,21 @@
     </div>
     <div class="meta-pills">
       <div class="pill"><span class="dot"></span>Active</div>
-      <div class="pill" id="pill-last-updated">Last updated: …</div>
+      <div class="pill" id="pill-last-updated">Last updated: 窶ｦ</div>
     </div>
   </header>
  
   <div class="section-label">Problems Solved</div>
   <div class="problems-row">
     <div class="prob-card">
-      <span class="num" id="summary-solved">—</span>
+      <span class="num" id="summary-solved">?ｿｽ?</span>
       <div class="label">Solved</div>
     </div>
   </div>
- 
-  <div class="accuracy-grid" id="solved-grid"></div>
- 
+
+  <div class="section-label" style="margin-top:32px;">Platform Profiles</div>
+  <div class="profile-cards-grid" id="profile-cards-grid"></div>
+
   <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
  
   <div class="card rating-card" style="margin-bottom:16px;">
@@ -751,6 +845,7 @@
           ? existingHr.contests
           : fromFlatHrContests;
       return {
+        _raw: raw,
         meta: raw.meta || {},
         summary: {
           solved: raw.summary && raw.summary.solved != null ? raw.summary.solved : solvedSum,
@@ -838,36 +933,242 @@
     return raw;
   }
  
-  function buildSolvedGrid(platforms) {
-    const grid = document.getElementById('solved-grid');
+  function buildProfileCards(raw) {
+    const grid = document.getElementById('profile-cards-grid');
+    if (!grid) return;
     grid.innerHTML = '';
-    platforms.forEach(p => {
-      const solved = p.solved ?? 0;
-      const a = document.createElement('a');
-      a.className = 'acc-card';
-      a.href = p.url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.dataset.color = p.color;
-      const errHint = p.error ? ` title="Last sync failed; showing cached value"` : '';
-      a.innerHTML = `
-      <div class="platform-icon" style="background:var(--surface2);display:flex;align-items:center;justify-content:center;">
-        <img src="${p.favicon}" width="18" height="18" style="border-radius:3px;object-fit:contain;"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <span style="display:none;font-size:13px;">${p.name[0]}</span>
-      </div>
-      <div class="acc-info" style="flex:1;min-width:0;">
-        <div class="platform-name">${p.name}</div>
-        <div class="acc-val"${errHint}>${solved}<span> solved</span></div>
-      </div>`;
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.open(p.url, '_blank', 'noopener,noreferrer');
-      });
-      grid.appendChild(a);
+
+    const cf = raw.codeforces || {};
+    const lc = raw.leetcode || {};
+    const cc = raw.codechef || {};
+    const uva = raw.uva || {};
+    const bc = raw.beecrowd || {};
+    const hr = raw.hackerrank || {};
+    const loj = raw.lightoj || {};
+
+    const pfExtIcon = '<svg class="pf-ext-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+    const dash = v => (v != null && v !== '' ? v : '\u2014');
+
+    function titleCaseRank(rank) {
+      return String(rank || 'Unrated')
+        .split(/\s+/)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ');
+    }
+
+    function hrTier(rating) {
+      const r = Number(rating) || 0;
+      if (r >= 1400) return 'Gold';
+      if (r >= 1200) return 'Silver';
+      return 'Bronze';
+    }
+
+    function ccStarCount(rating) {
+      if (rating == null) return 0;
+      if (rating >= 2500) return 7;
+      if (rating >= 2200) return 6;
+      if (rating >= 2000) return 5;
+      if (rating >= 1800) return 4;
+      if (rating >= 1600) return 3;
+      if (rating >= 1400) return 2;
+      return 1;
+    }
+
+    function starsHtml(count, color, maxVisible) {
+      const n = Math.min(Math.max(count || 0, 0), maxVisible || count || 0);
+      const cap = maxVisible || n;
+      return Array.from({ length: n }, () =>
+        `<span class="pf-star" style="color:${color}">\u2605</span>`).join('') +
+        Array.from({ length: Math.max(0, cap - n) }, () =>
+        `<span class="pf-star" style="color:var(--border2)">\u2605</span>`).join('');
+    }
+
+    function appendPfCard({ href, logo, name, handleLabel, handle, bodyHtml, footerRows, footerNote, color }) {
+      const card = document.createElement('a');
+      card.className = 'pf-card';
+      card.href = href;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.dataset.color = color || 'green';
+      const rows = footerRows || [];
+      const footer = rows.map(row => `
+        <div class="pf-stat-row">
+          <span class="pf-stat-label">${row.label}</span>
+          <span class="pf-stat-val">${row.value}</span>
+        </div>`).join('');
+      const hasFooter = rows.length || footerNote;
+      const footerBlock = hasFooter ? `
+        <div class="pf-divider"></div>
+        <div class="pf-footer-stats">${footer}</div>
+        ${footerNote ? `<div class="pf-footer-note">${footerNote}</div>` : ''}` : '';
+      card.innerHTML = `
+        <div class="pf-card-header">
+          <div class="pf-platform-name-wrap">
+            <img class="pf-logo" src="${logo}" alt="${name}" onerror="this.style.display='none'">
+            <span class="pf-platform-name">${name}</span>
+          </div>
+          ${pfExtIcon}
+        </div>
+        <div class="pf-handle">${handleLabel}: <b>${handle}</b></div>
+        ${bodyHtml}${footerBlock}`;
+      grid.appendChild(card);
+    }
+
+    const cfRankColors = {
+      newbie: '#808080', pupil: '#008000', specialist: '#03a89e',
+      expert: '#0000ff', 'candidate master': '#aa00aa', master: '#ff8c00',
+      'international master': '#ff8c00', grandmaster: '#ff0000',
+      'international grandmaster': '#ff0000', 'legendary grandmaster': '#ff0000'
+    };
+    const cfHandle = cf.handle || '\u2014';
+    const cfRank = (cf.rank || 'pupil').toLowerCase();
+    const cfRankColor = cfRankColors[cfRank] || '#008000';
+
+    appendPfCard({
+      href: `https://codeforces.com/profile/${encodeURIComponent(cfHandle)}`,
+      logo: 'https://codeforces.com/favicon.ico',
+      name: 'Codeforces',
+      handleLabel: 'Handle',
+      handle: cfHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(cf.rating)}</span>
+          <span class="pf-rating-rank" style="color:${cfRankColor}">(${titleCaseRank(cf.rank || 'pupil')})</span>
+        </div>`,
+      footerRows: [
+        { label: 'Max Rating', value: dash(cf.max_rating) },
+        { label: 'Problems Solved', value: dash(cf.solved) }
+      ],
+      color: 'green'
+    });
+
+    const ccHandle = cc.handle || '\u2014';
+    const ccRating = cc.rating != null ? cc.rating : null;
+    const ccStars = ccStarCount(ccRating);
+    const ccStarColors = ['#808080', '#666600', '#408000', '#36a0dc', '#a333c8', '#ff7f00', '#ff0000'];
+    const ccStarColor = ccStarColors[Math.min(Math.max(ccStars, 1), 7) - 1] || '#ffd700';
+
+    appendPfCard({
+      href: `https://www.codechef.com/users/${encodeURIComponent(ccHandle)}`,
+      logo: 'https://www.codechef.com/favicon.ico',
+      name: 'CodeChef',
+      handleLabel: 'Handle',
+      handle: ccHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(ccRating)}</span>
+          <span class="pf-stars">${starsHtml(ccStars, ccStarColor, 3)}</span>
+        </div>`,
+      footerRows: [
+        { label: 'Max Rating', value: dash(cc.max_rating) },
+        { label: 'Problems Solved', value: dash(cc.solved) }
+      ],
+      color: 'amber'
+    });
+
+    const hrHandle = hr.handle || '\u2014';
+    const hrStarCount = Math.min(Math.max(hr.stars || 0, 0), 5);
+    const hrLevel = hrTier(hr.algorithms_rating);
+
+    appendPfCard({
+      href: `https://www.hackerrank.com/profile/${encodeURIComponent(hrHandle)}`,
+      logo: 'https://www.hackerrank.com/favicon.ico',
+      name: 'HackerRank',
+      handleLabel: 'Handle',
+      handle: hrHandle,
+      bodyHtml: `
+        <div class="pf-stars" style="margin-bottom:4px;">${starsHtml(hrStarCount, '#00b14f', 5)}</div>
+        <div class="pf-badge-label">Problem Solving (${hrLevel})</div>`,
+      footerRows: [
+        { label: 'Badges', value: dash(hr.badges) },
+        { label: 'Problems Solved', value: dash(hr.solved) }
+      ],
+      color: 'pink'
+    });
+
+    const lcHandle = lc.handle || '\u2014';
+
+    appendPfCard({
+      href: `https://leetcode.com/${encodeURIComponent(lcHandle)}/`,
+      logo: 'https://leetcode.com/favicon.ico',
+      name: 'LeetCode',
+      handleLabel: 'Handle',
+      handle: lcHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(lc.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerNote: `${dash(lc.easy)} Easy \u00b7 ${dash(lc.medium)} Med \u00b7 ${dash(lc.hard)} Hard`,
+      color: 'blue'
+    });
+
+    const uvaHandle = uva.username || '\u2014';
+    const uvaUrl = uva.user_id != null && uva.user_id !== ''
+      ? `https://uhunt.onlinejudge.org/id/${encodeURIComponent(String(uva.user_id))}`
+      : 'https://uhunt.onlinejudge.org/';
+
+    appendPfCard({
+      href: uvaUrl,
+      logo: 'https://uhunt.onlinejudge.org/images/uva.png',
+      name: 'UVa Online Judge',
+      handleLabel: 'Username',
+      handle: uvaHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(uva.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerRows: [
+        { label: 'User ID', value: dash(uva.user_id) }
+      ],
+      color: 'teal'
+    });
+
+    const bcId = bc.profile_id != null ? bc.profile_id : 74808;
+    const bcUrl = bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcId))}`;
+
+    appendPfCard({
+      href: bcUrl,
+      logo: 'https://judge.beecrowd.com/favicon.ico',
+      name: 'Beecrowd',
+      handleLabel: 'Profile',
+      handle: String(bcId),
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(bc.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerRows: [
+        { label: 'Submissions number', value: dash(bc.submissions) }
+      ],
+      color: 'cyan'
+    });
+
+    const lojHandle = loj.handle || '\u2014';
+    const lojAc = loj.ac != null ? loj.ac : null;
+    const lojSubs = loj.submissions != null ? loj.submissions : null;
+    const lojAcLabel = lojAc != null && lojSubs != null ? `${lojAc} / ${lojSubs}` : dash(lojAc);
+
+    appendPfCard({
+      href: `https://lightoj.com/user/${encodeURIComponent(lojHandle)}`,
+      logo: 'https://lightoj.com/loj-favicon.png',
+      name: 'LightOJ',
+      handleLabel: 'Handle',
+      handle: lojHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(loj.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>
+        <div class="pf-subtitle">${dash(loj.tried)} tried \u00b7 ${dash(loj.submissions)} submissions</div>`,
+      footerRows: [
+        { label: 'AC Submissions', value: lojAcLabel }
+      ],
+      color: 'purple'
     });
   }
- 
+
   function renderRating(platform) {
     const d = ratingData[platform];
     const statsEl = document.getElementById('rating-stats');
@@ -881,7 +1182,7 @@
     const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
  
     if (!d || !d.contests || !d.contests.length) {
-      statsEl.innerHTML = '<div class="rating-stat"><div class="rs-label">No contest data</div><div class="rs-val">—</div></div>';
+      statsEl.innerHTML = '<div class="rating-stat"><div class="rs-label">No contest data</div><div class="rs-val">?ｿｽ?</div></div>';
       if (ratingChart) { ratingChart.destroy(); ratingChart = null; }
       return;
     }
@@ -902,7 +1203,7 @@
     statsEl.innerHTML = `
       <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${d.color}">${last}</div></div>
       <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${max}</div></div>
-      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min != null ? min : '—'}</div></div>
+      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min != null ? min : '?ｿｽ?'}</div></div>
       <div class="rating-stat"><div class="rs-label">Last change</div><div class="rs-val" style="color:${delta>=0?'#00e5a0':'#ff6b6b'}">${delta>=0?'+':''}${delta}</div></div>
       <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${d.contests.length}</div></div>
     `;
@@ -1003,14 +1304,14 @@
         const ds = isNaN(dt.getTime()) ? lu : formatLastUpdatedLabel(lu);
         pill.textContent = `Last updated: ${ds}`;
       } else {
-        pill.textContent = 'Last updated: —';
+        pill.textContent = 'Last updated: ?ｿｽ?';
       }
     }
  
     const sum = data.summary || {};
-    document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '—';
+    document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '?ｿｽ?';
  
-    buildSolvedGrid(data.platforms || []);
+    buildProfileCards(data._raw || {});
     renderRating(document.querySelector('.rtab.active')?.dataset.platform || 'codeforces');
   }
  
@@ -1023,8 +1324,8 @@
     if (active && ratingData && Object.keys(ratingData).length) renderRating(active.dataset.platform);
   };
  
-  const savedTheme = localStorage.getItem('cp-theme') || 'dark';
-  if (savedTheme === 'light') window.setTheme('light');
+  const savedTheme = localStorage.getItem('cp-theme') || 'light';
+  window.setTheme(savedTheme);
  
   document.getElementById('rating-tabs').addEventListener('click', e => {
     const btn = e.target.closest('.rtab');

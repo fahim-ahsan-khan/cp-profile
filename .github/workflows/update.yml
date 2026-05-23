@@ -28,6 +28,7 @@ jobs:
       - name: Run updater
         env:
           BEECROWD_SOLVED: ${{ vars.BEECROWD_SOLVED }}
+          BEECROWD_SUBMISSIONS: ${{ vars.BEECROWD_SUBMISSIONS || '452' }}
           BEECROWD_API_TOKEN: ${{ secrets.BEECROWD_API_TOKEN }}
         run: python scripts/update_data.py
 

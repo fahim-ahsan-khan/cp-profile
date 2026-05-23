@@ -1,751 +1,1363 @@
-{
-  "meta": {
-    "lastUpdated": "2026-05-23T08:04:36Z"
-  },
-  "codeforces": {
-    "handle": "loop_breaker",
-    "rating": 1231,
-    "max_rating": 1377,
-    "rank": "pupil",
-    "solved": 433,
-    "contests": [
-      {
-        "date": "2016-03-03",
-        "rating": 1377,
-        "name": "Codeforces Round 344 (Div. 2)"
-      },
-      {
-        "date": "2016-03-07",
-        "rating": 1266,
-        "name": "Codeforces Round 345 (Div. 2)"
-      },
-      {
-        "date": "2016-03-19",
-        "rating": 1204,
-        "name": "IndiaHacks 2016 - Online Edition (Div. 1 + Div. 2)"
-      },
-      {
-        "date": "2016-03-30",
-        "rating": 1185,
-        "name": "Codeforces Round 346 (Div. 2)"
-      },
-      {
-        "date": "2016-05-05",
-        "rating": 1150,
-        "name": "Codeforces Round 350 (Div. 2)"
-      },
-      {
-        "date": "2016-05-07",
-        "rating": 1141,
-        "name": "Codeforces Round 351 (VK Cup 2016 Round 3, Div. 2 Edition)"
-      },
-      {
-        "date": "2016-05-11",
-        "rating": 1038,
-        "name": "Codeforces Round 352 (Div. 2)"
-      },
-      {
-        "date": "2016-05-16",
-        "rating": 950,
-        "name": "Codeforces Round 353 (Div. 2)"
-      },
-      {
-        "date": "2016-06-01",
-        "rating": 941,
-        "name": "Codeforces Round 355 (Div. 2)"
-      },
-      {
-        "date": "2016-06-29",
-        "rating": 901,
-        "name": "Codeforces Round 360 (Div. 2)"
-      },
-      {
-        "date": "2016-07-14",
-        "rating": 817,
-        "name": "Codeforces Round 362 (Div. 2)"
-      },
-      {
-        "date": "2016-07-22",
-        "rating": 728,
-        "name": "Codeforces Round 364 (Div. 2)"
-      },
-      {
-        "date": "2016-08-11",
-        "rating": 836,
-        "name": "Codeforces Round 367 (Div. 2)"
-      },
-      {
-        "date": "2016-08-20",
-        "rating": 944,
-        "name": "Codeforces Round 368 (Div. 2)"
-      },
-      {
-        "date": "2016-08-24",
-        "rating": 981,
-        "name": "AIM Tech Round 3 (Div. 2)"
-      },
-      {
-        "date": "2016-09-13",
-        "rating": 1047,
-        "name": "Codeforces Round 371 (Div. 2)"
-      },
-      {
-        "date": "2016-09-17",
-        "rating": 1050,
-        "name": "Codeforces Round 372 (Div. 2)"
-      },
-      {
-        "date": "2016-09-23",
-        "rating": 1132,
-        "name": "Codeforces Round 373 (Div. 2)"
-      },
-      {
-        "date": "2016-09-30",
-        "rating": 1176,
-        "name": "Codeforces Round 374 (Div. 2)"
-      },
-      {
-        "date": "2016-10-03",
-        "rating": 1177,
-        "name": "Codeforces Round 375 (Div. 2)"
-      },
-      {
-        "date": "2016-10-17",
-        "rating": 1116,
-        "name": "Codeforces Round 377 (Div. 2)"
-      },
-      {
-        "date": "2016-10-22",
-        "rating": 1107,
-        "name": "Canada Cup 2016"
-      },
-      {
-        "date": "2016-10-31",
-        "rating": 1101,
-        "name": "Codeforces Round 378 (Div. 2)"
-      },
-      {
-        "date": "2016-11-15",
-        "rating": 1159,
-        "name": "Codeforces Round 379 (Div. 2)"
-      },
-      {
-        "date": "2016-11-23",
-        "rating": 1067,
-        "name": "Codeforces Round 381 (Div. 2)"
-      },
-      {
-        "date": "2016-12-14",
-        "rating": 1082,
-        "name": "Codeforces Round 384 (Div. 2)"
-      },
-      {
-        "date": "2016-12-17",
-        "rating": 1107,
-        "name": "Codeforces Round 385 (Div. 2)"
-      },
-      {
-        "date": "2016-12-19",
-        "rating": 1043,
-        "name": "Codeforces Round 387 (Div. 2)"
-      },
-      {
-        "date": "2016-12-19",
-        "rating": 1017,
-        "name": "Codeforces Round 388 (Div. 2)"
-      },
-      {
-        "date": "2016-12-25",
-        "rating": 1066,
-        "name": "Codeforces Round 389 (Div. 2, Rated, Based on Technocup 2017 - Elimination Round 3)"
-      },
-      {
-        "date": "2016-12-30",
-        "rating": 1089,
-        "name": "Good Bye 2016"
-      },
-      {
-        "date": "2017-01-06",
-        "rating": 1001,
-        "name": "Codeforces Round 390 (Div. 2)"
-      },
-      {
-        "date": "2017-01-12",
-        "rating": 1102,
-        "name": "Codecraft-17 and Codeforces Round 391 (Div. 1 + Div. 2, combined)"
-      },
-      {
-        "date": "2017-01-19",
-        "rating": 1079,
-        "name": "Codeforces Round 392 (Div. 2)"
-      },
-      {
-        "date": "2017-01-22",
-        "rating": 1096,
-        "name": "Codeforces Round 393 (Div. 2) (8VC Venture Cup 2017 - Final Round Div. 2 Edition)"
-      },
-      {
-        "date": "2017-02-02",
-        "rating": 1163,
-        "name": "Codeforces Round 395 (Div. 2)"
-      },
-      {
-        "date": "2017-02-18",
-        "rating": 1223,
-        "name": "Codeforces Round 398 (Div. 2)"
-      },
-      {
-        "date": "2017-02-20",
-        "rating": 1262,
-        "name": "Divide by Zero 2017 and Codeforces Round 399 (Div. 1 + Div. 2, combined)"
-      },
-      {
-        "date": "2017-02-23",
-        "rating": 1335,
-        "name": "ICM Technex 2017 and Codeforces Round 400 (Div. 1 + Div. 2, combined)"
-      },
-      {
-        "date": "2017-02-26",
-        "rating": 1274,
-        "name": "Codeforces Round 402 (Div. 2)"
-      },
-      {
-        "date": "2017-03-05",
-        "rating": 1281,
-        "name": "Codeforces Round 403 (Div. 2, based on Technocup 2017 Finals)"
-      },
-      {
-        "date": "2017-03-18",
-        "rating": 1245,
-        "name": "Codeforces Round 405 (rated, Div. 2, based on VK Cup 2017 Round 1)"
-      },
-      {
-        "date": "2017-03-29",
-        "rating": 1146,
-        "name": "Codeforces Round 407 (Div. 2)"
-      },
-      {
-        "date": "2017-04-10",
-        "rating": 1157,
-        "name": "Codeforces Round 408 (Div. 2)"
-      },
-      {
-        "date": "2017-04-16",
-        "rating": 1055,
-        "name": "Codeforces Round 409 (rated, Div. 2, based on VK Cup 2017 Round 2)"
-      },
-      {
-        "date": "2017-04-21",
-        "rating": 1064,
-        "name": "Codeforces Round 410 (Div. 2)"
-      },
-      {
-        "date": "2017-06-17",
-        "rating": 974,
-        "name": "Codeforces Round 419 (Div. 2)"
-      },
-      {
-        "date": "2017-07-24",
-        "rating": 1068,
-        "name": "Codeforces Round 425 (Div. 2)"
-      },
-      {
-        "date": "2017-07-31",
-        "rating": 1032,
-        "name": "Codeforces Round 427 (Div. 2)"
-      },
-      {
-        "date": "2017-08-12",
-        "rating": 938,
-        "name": "Codeforces Round 428 (Div. 2)"
-      },
-      {
-        "date": "2017-08-29",
-        "rating": 850,
-        "name": "Codeforces Round 430 (Div. 2)"
-      },
-      {
-        "date": "2017-10-23",
-        "rating": 995,
-        "name": "Codeforces Round 442 (Div. 2)"
-      },
-      {
-        "date": "2017-11-17",
-        "rating": 1049,
-        "name": "Codeforces Round 446 (Div. 2)"
-      },
-      {
-        "date": "2017-12-02",
-        "rating": 1064,
-        "name": "Codeforces Round 449 (Div. 2)"
-      },
-      {
-        "date": "2017-12-11",
-        "rating": 1096,
-        "name": "Codeforces Round 450 (Div. 2)"
-      },
-      {
-        "date": "2017-12-16",
-        "rating": 1094,
-        "name": "Codeforces Round 451 (Div. 2)"
-      },
-      {
-        "date": "2017-12-23",
-        "rating": 1011,
-        "name": "Codeforces Round 454 (Div. 2, based on Technocup 2018 Elimination Round 4)"
-      },
-      {
-        "date": "2018-01-13",
-        "rating": 993,
-        "name": "Educational Codeforces Round 36 (Rated for Div. 2)"
-      },
-      {
-        "date": "2018-01-29",
-        "rating": 1017,
-        "name": "Codeforces Round 459 (Div. 2)"
-      },
-      {
-        "date": "2018-01-31",
-        "rating": 920,
-        "name": "Codeforces Round 460 (Div. 2)"
-      },
-      {
-        "date": "2018-02-07",
-        "rating": 849,
-        "name": "Codeforces Round 461 (Div. 2)"
-      },
-      {
-        "date": "2018-02-16",
-        "rating": 895,
-        "name": "Educational Codeforces Round 38 (Rated for Div. 2)"
-      },
-      {
-        "date": "2018-02-17",
-        "rating": 1085,
-        "name": "Codeforces Round 464 (Div. 2)"
-      },
-      {
-        "date": "2018-02-19",
-        "rating": 1064,
-        "name": "Codeforces Round 465 (Div. 2)"
-      },
-      {
-        "date": "2018-02-24",
-        "rating": 978,
-        "name": "Codeforces Round 466 (Div. 2)"
-      },
-      {
-        "date": "2018-02-25",
-        "rating": 1134,
-        "name": "Codeforces Round 467 (Div. 2)"
-      },
-      {
-        "date": "2018-04-04",
-        "rating": 1121,
-        "name": "Educational Codeforces Round 41 (Rated for Div. 2)"
-      },
-      {
-        "date": "2018-04-07",
-        "rating": 1152,
-        "name": "Divide by Zero 2018 and Codeforces Round 474 (Div. 1 + Div. 2, combined)"
-      },
-      {
-        "date": "2018-04-25",
-        "rating": 1260,
-        "name": "Codeforces Round 476 (Div. 2) [Thanks, Telegram!]"
-      },
-      {
-        "date": "2018-05-06",
-        "rating": 1205,
-        "name": "Codeforces Round 479 (Div. 3)"
-      },
-      {
-        "date": "2018-05-08",
-        "rating": 1138,
-        "name": "Codeforces Round 480 (Div. 2)"
-      },
-      {
-        "date": "2018-05-13",
-        "rating": 1147,
-        "name": "Codeforces Round 481 (Div. 3)"
-      },
-      {
-        "date": "2018-05-29",
-        "rating": 1111,
-        "name": "Codeforces Round 485 (Div. 2)"
-      },
-      {
-        "date": "2018-06-01",
-        "rating": 1101,
-        "name": "Codeforces Round 486 (Div. 3)"
-      },
-      {
-        "date": "2018-06-21",
-        "rating": 1163,
-        "name": "Codeforces Round 490 (Div. 3)"
-      },
-      {
-        "date": "2018-06-23",
-        "rating": 1193,
-        "name": "Codeforces Round 491 (Div. 2)"
-      },
-      {
-        "date": "2018-06-24",
-        "rating": 1213,
-        "name": "Codeforces Round 492 (Div. 2) [Thanks, uDebug!]"
-      },
-      {
-        "date": "2018-07-01",
-        "rating": 1188,
-        "name": "Codeforces Round 493 (Div. 2)"
-      },
-      {
-        "date": "2018-07-16",
-        "rating": 1146,
-        "name": "Codeforces Round 498 (Div. 3)"
-      },
-      {
-        "date": "2018-07-26",
-        "rating": 1174,
-        "name": "Codeforces Round 499 (Div. 2)"
-      },
-      {
-        "date": "2018-07-31",
-        "rating": 1219,
-        "name": "Codeforces Round 501 (Div. 3)"
-      },
-      {
-        "date": "2018-08-18",
-        "rating": 1205,
-        "name": "Educational Codeforces Round 49 (Rated for Div. 2)"
-      },
-      {
-        "date": "2018-08-19",
-        "rating": 1103,
-        "name": "Codeforces Round 505 (rated, Div. 1 + Div. 2, based on VK Cup 2018 Final)"
-      },
-      {
-        "date": "2018-08-24",
-        "rating": 1011,
-        "name": "Codeforces Round 506 (Div. 3)"
-      },
-      {
-        "date": "2018-12-04",
-        "rating": 1082,
-        "name": "Codeforces Round 525 (Div. 2)"
-      },
-      {
-        "date": "2018-12-15",
-        "rating": 1157,
-        "name": "Educational Codeforces Round 56 (Rated for Div. 2)"
-      },
-      {
-        "date": "2018-12-18",
-        "rating": 1172,
-        "name": "Codeforces Round 527 (Div. 3)"
-      },
-      {
-        "date": "2018-12-27",
-        "rating": 1099,
-        "name": "Codeforces Round 529 (Div. 3)"
-      },
-      {
-        "date": "2019-01-09",
-        "rating": 1132,
-        "name": "Codeforces Round 531 (Div. 3)"
-      },
-      {
-        "date": "2019-01-11",
-        "rating": 1161,
-        "name": "Educational Codeforces Round 58 (Rated for Div. 2)"
-      },
-      {
-        "date": "2019-01-23",
-        "rating": 1222,
-        "name": "Codeforces Round 535 (Div. 3)"
-      },
-      {
-        "date": "2019-02-03",
-        "rating": 1191,
-        "name": "CodeCraft-19 and Codeforces Round 537 (Div. 2)"
-      },
-      {
-        "date": "2019-02-18",
-        "rating": 1147,
-        "name": "Educational Codeforces Round 60 (Rated for Div. 2)"
-      },
-      {
-        "date": "2019-02-19",
-        "rating": 1202,
-        "name": "Codeforces Round 540 (Div. 3)"
-      },
-      {
-        "date": "2019-08-30",
-        "rating": 1206,
-        "name": "Codeforces Round 582 (Div. 3)"
-      },
-      {
-        "date": "2019-09-23",
-        "rating": 1276,
-        "name": "Codeforces Round 588 (Div. 2)"
-      },
-      {
-        "date": "2019-10-01",
-        "rating": 1295,
-        "name": "Codeforces Round 590 (Div. 3)"
-      },
-      {
-        "date": "2019-10-22",
-        "rating": 1262,
-        "name": "Codeforces Round 595 (Div. 3)"
-      },
-      {
-        "date": "2019-11-04",
-        "rating": 1262,
-        "name": "Codeforces Round 598 (Div. 3)"
-      },
-      {
-        "date": "2019-11-06",
-        "rating": 1246,
-        "name": "Codeforces Round 599 (Div. 2)"
-      },
-      {
-        "date": "2019-11-16",
-        "rating": 1296,
-        "name": "Codeforces Round 600 (Div. 2)"
-      },
-      {
-        "date": "2020-02-12",
-        "rating": 1256,
-        "name": "Educational Codeforces Round 82 (Rated for Div. 2)"
-      },
-      {
-        "date": "2020-02-13",
-        "rating": 1200,
-        "name": "Codeforces Round 619 (Div. 2)"
-      },
-      {
-        "date": "2020-02-24",
-        "rating": 1231,
-        "name": "Codeforces Round 624 (Div. 3)"
-      }
-    ]
-  },
-  "leetcode": {
-    "handle": "loop_breaker",
-    "solved": 94,
-    "easy": 46,
-    "medium": 48,
-    "hard": 0,
-    "ranking": 1595513
-  },
-  "codechef": {
-    "handle": "loop_breaker",
-    "rating": 1517,
-    "max_rating": 1563,
-    "solved": 53,
-    "contests": [
-      {
-        "date": "2018-07-23",
-        "rating": 1053,
-        "name": "July Cook-Off 2018 Division 2"
-      },
-      {
-        "date": "2018-08-20",
-        "rating": 1119,
-        "name": "August Cook-Off 2018 Division 2"
-      },
-      {
-        "date": "2018-11-12",
-        "rating": 1234,
-        "name": "November Challenge 2018 Division 2"
-      },
-      {
-        "date": "2018-11-19",
-        "rating": 1302,
-        "name": "November Cook-Off 2018 Division 2"
-      },
-      {
-        "date": "2018-12-18",
-        "rating": 1341,
-        "name": "December Challenge 2018 Division 2"
-      },
-      {
-        "date": "2019-01-14",
-        "rating": 1402,
-        "name": "January Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-02-13",
-        "rating": 1465,
-        "name": "February Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-02-23",
-        "rating": 1465,
-        "name": "February Lunchtime 2019 Division 2"
-      },
-      {
-        "date": "2019-03-13",
-        "rating": 1423,
-        "name": "March Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-04-15",
-        "rating": 1406,
-        "name": "April Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-06-17",
-        "rating": 1442,
-        "name": "June Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-07-15",
-        "rating": 1396,
-        "name": "July Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-08-12",
-        "rating": 1448,
-        "name": "August Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-09-16",
-        "rating": 1473,
-        "name": "September Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-09-28",
-        "rating": 1514,
-        "name": "September Lunchtime 2019 Division 2"
-      },
-      {
-        "date": "2019-10-14",
-        "rating": 1537,
-        "name": "October Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-11-11",
-        "rating": 1563,
-        "name": "November Challenge 2019 Division 2"
-      },
-      {
-        "date": "2019-12-16",
-        "rating": 1542,
-        "name": "December Challenge 2019 Division 2"
-      },
-      {
-        "date": "2020-01-13",
-        "rating": 1562,
-        "name": "January Challenge 2020 Division 2"
-      },
-      {
-        "date": "2020-07-13",
-        "rating": 1548,
-        "name": "July Challenge 2020 Division 2"
-      },
-      {
-        "date": "2021-04-12",
-        "rating": 1546,
-        "name": "April Challenge 2021 Division 3"
-      },
-      {
-        "date": "2021-05-17",
-        "rating": 1517,
-        "name": "May Challenge 2021 Division 3 (Rated)"
-      }
-    ]
-  },
-  "uva": {
-    "username": "loop_breaker",
-    "solved": 193,
-    "user_id": 833661,
-    "display_name": "Fahim Ahsan Khan"
-  },
-  "beecrowd": {
-    "profile_id": 74808,
-    "url": "https://judge.beecrowd.com/en/profile/74808",
-    "solved": 243,
-    "submissions": 452
-  },
-  "hackerrank": {
-    "handle": "loop_breaker",
-    "solved": 105,
-    "problem_solving": 36,
-    "badge_solved_sum": 69,
-    "submissions": 184,
-    "stars": 10,
-    "badges": 3,
-    "algorithms_rating": 1469,
-    "contests": [
-      {
-        "date": "2016-08-23",
-        "rating": 1161,
-        "name": "101 Hack 40"
-      },
-      {
-        "date": "2016-11-17",
-        "rating": 1448,
-        "name": "101 Hack 43"
-      },
-      {
-        "date": "2016-12-13",
-        "rating": 1604,
-        "name": "101 Hack 44"
-      },
-      {
-        "date": "2017-01-17",
-        "rating": 1536,
-        "name": "101 Hack 45"
-      },
-      {
-        "date": "2017-03-02",
-        "rating": 1547,
-        "name": "HourRank 18"
-      },
-      {
-        "date": "2017-03-21",
-        "rating": 1620,
-        "name": "101 Hack 47"
-      },
-      {
-        "date": "2017-06-20",
-        "rating": 1660,
-        "name": "101 Hack 50"
-      },
-      {
-        "date": "2018-04-02",
-        "rating": 1658,
-        "name": "HourRank 27"
-      },
-      {
-        "date": "2018-05-02",
-        "rating": 1627,
-        "name": "101 Hack 54"
-      },
-      {
-        "date": "2018-08-02",
-        "rating": 1642,
-        "name": "HourRank 29"
-      },
-      {
-        "date": "2018-12-02",
-        "rating": 1469,
-        "name": "HourRank 31"
-      }
-    ]
-  },
-  "lightoj": {
-    "handle": "loop_breaker",
-    "name": "Fahim Ahsan Khan",
-    "solved": 53,
-    "tried": 59,
-    "submissions": 154,
-    "ac": 67,
-    "wa": 57,
-    "tle": 11,
-    "rte": 4,
-    "ce": 5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahim Ahsan Khan ?ｿｽ? CP Profile</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f14'/%3E%3Ctext x='4' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%2300e5a0'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #151820;
+    --surface2: #1c2030;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.14);
+    --accent: #00e5a0;
+    --accent2: #3d7fff;
+    --accent3: #ff6b6b;
+    --accent4: #ffd166;
+    --text: #e8eaf2;
+    --muted: #6b7280;
+    --h1: #ffffff;
+    --card-num: #ffffff;
+    --grid-line: rgba(0,229,160,0.03);
+    --mono: 'Space Mono', monospace;
+    --sans: 'Sora', sans-serif;
+    --theme-transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
-}
+ 
+  [data-theme="light"] {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --surface2: #e8edf3;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.18);
+    --accent: #00a372;
+    --accent2: #2563eb;
+    --accent3: #dc2626;
+    --accent4: #d97706;
+    --text: #1e293b;
+    --muted: #64748b;
+    --h1: #0f172a;
+    --card-num: #0f172a;
+    --grid-line: rgba(0,163,114,0.05);
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: var(--theme-transition);
+  }
+ 
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    transition: background-image 0.35s ease;
+  }
+ 
+  .theme-toggle {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 50px;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: var(--theme-transition), box-shadow 0.25s;
+  }
+ 
+  .theme-toggle:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.26); }
+ 
+  .theme-btn {
+    border: none;
+    background: transparent;
+    border-radius: 40px;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+ 
+  .theme-btn.active {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+  }
+ 
+  [data-theme="light"] .theme-btn.active { color: #0f172a; }
+ 
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+ 
+  .avatar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+ 
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 22px;
+    color: #0d0f14;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .avatar-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+ 
+  .avatar::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(6px);
+  }
+ 
+  .name-block h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--h1);
+    transition: color 0.35s;
+  }
+ 
+  .handle {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+ 
+  .handle b { color: var(--accent); }
+ 
+  .meta-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+ 
+  .pill {
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-family: var(--mono);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+ 
+  .pill .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+ 
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+ 
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+ 
+  @media (max-width: 600px) {
+    .header { flex-direction: column; }
+  }
+ 
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: var(--theme-transition);
+  }
+ 
+  .card-title {
+    font-size: 11px;
+    font-family: var(--mono);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+ 
+  .chart-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+  }
+ 
+  @media (max-width: 600px) {
+    .chart-card { grid-template-columns: 1fr; }
+  }
+ 
+  .chart-wrap {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+ 
+  .chart-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .chart-center .big {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+ 
+  .chart-center .small {
+    font-size: 10px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+ 
+  .legend-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text);
+  }
+ 
+  .legend-list .dot-sq {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+ 
+  .legend-list .pct {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+ 
+  .problems-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+ 
+  .prob-card {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+ 
+  .prob-card .num {
+    font-family: var(--mono);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+ 
+  .prob-card .label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--mono);
+    margin-top: 4px;
+  }
+ 
+  .prob-card.total .num { color: var(--accent2); }
+ 
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .card, .prob-card {
+    animation: fadeUp 0.5s ease both;
+  }
+  .rating-card {
+    overflow: hidden;
+    max-width: 100%;
+  }
+ 
+  .rating-card-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+ 
+  .rating-card-head .card-title {
+    margin-bottom: 0;
+    width: 100%;
+  }
+ 
+  .rating-tabs-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+  }
+ 
+  .rating-chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(200px, 42vw, 280px);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  .rating-chart-wrap canvas {
+    display: block;
+    max-width: 100% !important;
+  }
+ 
+  .rtab {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: clamp(9px, 2.6vw, 11px);
+    font-family: var(--mono);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1 1 calc(33.333% - 6px);
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+ 
+  .rtab:hover { border-color: var(--border2); color: var(--text); }
+  .rtab.active { background: var(--accent); border-color: var(--accent); color: #0d0f14; font-weight: 700; }
+ 
+  @media (max-width: 420px) {
+    .rtab {
+      flex: 1 1 calc(50% - 4px);
+      padding: 5px 6px;
+    }
+    .rtab[data-platform="hackerrank"] {
+      flex: 1 1 100%;
+    }
+  }
+ 
+  .rating-stat {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: var(--mono);
+  }
+  .rating-stat .rs-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+  .rating-stat .rs-val { font-size: 18px; font-weight: 700; color: var(--card-num); transition: color 0.35s; }
+  .copyright {
+    text-align: center;
+    padding: 28px max(12px, env(safe-area-inset-right)) 24px max(12px, env(safe-area-inset-left));
+    font-family: var(--mono);
+    font-size: clamp(9px, 2.8vw, 11px);
+    color: var(--muted);
+    letter-spacing: 0.3px;
+    transition: color 0.35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    max-width: 100%;
+    line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+ 
+  .copyright svg {
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+ 
+  .copyright-text {
+    display: inline;
+    max-width: 100%;
+    hyphens: auto;
+  }
+ 
+  /* 笏笏 Profile Cards Grid 笏笏 */
+  .profile-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .profile-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .profile-cards-grid { grid-template-columns: 1fr; }
+  }
+
+  .pf-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s, background 0.25s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .pf-card:nth-child(1) { animation-delay: 0.05s; }
+  .pf-card:nth-child(2) { animation-delay: 0.10s; }
+  .pf-card:nth-child(3) { animation-delay: 0.15s; }
+  .pf-card:nth-child(4) { animation-delay: 0.20s; }
+  .pf-card:nth-child(5) { animation-delay: 0.25s; }
+  .pf-card:nth-child(6) { animation-delay: 0.30s; }
+  .pf-card:nth-child(7) { animation-delay: 0.35s; }
+
+  .pf-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    border-color: var(--border2);
+    background: var(--surface2);
+  }
+
+  .pf-card:active { transform: translateY(-1px) scale(0.99); }
+
+  .pf-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
+  .pf-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
+  .pf-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
+  .pf-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
+  .pf-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
+  .pf-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
+  .pf-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
+
+  .pf-card::after {
+    content: 'VIEW PROFILE';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 7px 0;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 16px 16px;
+    transform: translateY(100%);
+    transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .pf-card:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .pf-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
+  .pf-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
+  .pf-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
+  .pf-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85); color: #fff; }
+  .pf-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
+  .pf-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
+  .pf-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pf-card::after {
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+  }
+
+  .pf-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .pf-platform-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pf-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: contain;
+    background: var(--surface2);
+    padding: 2px;
+    flex-shrink: 0;
+  }
+
+  .pf-platform-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--h1);
+    letter-spacing: -0.2px;
+    font-family: var(--sans);
+    transition: color 0.35s;
+  }
+
+  .pf-ext-icon {
+    color: var(--muted);
+    opacity: 0.55;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .pf-card:hover .pf-ext-icon { opacity: 1; }
+
+  .pf-handle {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .pf-handle b {
+    color: var(--accent2);
+  }
+
+  .pf-rating-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .pf-rating-num {
+    font-family: var(--mono);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+
+  .pf-rating-rank {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+
+  .pf-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  .pf-star {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .pf-badge-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--sans);
+  }
+
+  .pf-subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
+
+  .pf-footer-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pf-footer-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
+
+  .pf-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 12px 0;
+  }
+
+  .pf-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pf-stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .pf-stat-val {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--mono);
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+
+</style>
+</head>
+<body>
+<div class="theme-toggle" role="group" aria-label="Theme selector">
+  <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    Dark
+  </button>
+  <button class="theme-btn active" id="btn-light" onclick="setTheme('light')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    Light
+  </button>
+</div>
+ 
+<div class="container">
+ 
+  <header class="header">
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <img class="avatar-img" src="assets/avatar.jpg" alt="Fahim Ahsan Khan" width="72" height="72"
+             onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='assets/avatar.svg';}else{this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex';}">
+        <span class="avatar-fallback" aria-hidden="true">FK</span>
+      </div>
+      <div class="name-block">
+        <h1>Fahim Ahsan Khan</h1>
+        <p class="handle">Bangladesh <svg viewBox="0 0 20 12" width="18" height="11" style="vertical-align:-1px;border-radius:2px;" aria-label="Bangladesh flag" role="img"><rect width="20" height="12" fill="#006a4e"/><circle cx="9" cy="6" r="3.6" fill="#f42a41"/></svg></p>
+      </div>
+    </div>
+    <div class="meta-pills">
+      <div class="pill"><span class="dot"></span>Active</div>
+      <div class="pill" id="pill-last-updated">Last updated: 窶ｦ</div>
+    </div>
+  </header>
+ 
+  <div class="section-label">Problems Solved</div>
+  <div class="problems-row">
+    <div class="prob-card">
+      <span class="num" id="summary-solved">?ｿｽ?</span>
+      <div class="label">Solved</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:32px;">Platform Profiles</div>
+  <div class="profile-cards-grid" id="profile-cards-grid"></div>
+
+  <div class="section-label" style="margin-top:40px;">Contest Rating History</div>
+ 
+  <div class="card rating-card" style="margin-bottom:16px;">
+    <div class="rating-card-head">
+      <div class="card-title">Rating over time</div>
+      <div class="rating-tabs-wrap" id="rating-tabs">
+        <button type="button" class="rtab active" data-platform="codeforces">Codeforces</button>
+        <button type="button" class="rtab" data-platform="codechef">CodeChef</button>
+        <button type="button" class="rtab" data-platform="hackerrank" title="HackerRank">HackerRank</button>
+      </div>
+    </div>
+    <div class="rating-chart-wrap">
+      <canvas id="ratingChart" role="img" aria-label="Line chart of contest rating history">Rating history across contests</canvas>
+    </div>
+    <div id="rating-stats" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;"></div>
+  </div>
+ 
+  <div class="copyright" id="copyright"></div>
+ 
+</div>
+ 
+<script>
+  let ratingData = {};
+  let ratingChart = null;
+ 
+  function normalizeProfileData(raw) {
+    if (!raw || typeof raw !== 'object') return {};
+    if (Array.isArray(raw.platforms)) return raw;
+    if (raw.codeforces != null && raw.leetcode != null && raw.uva != null) {
+      const cf = raw.codeforces;
+      const lc = raw.leetcode;
+      const cc = raw.codechef || {};
+      const uva = raw.uva;
+      const bc = raw.beecrowd || {};
+      const hr = raw.hackerrank || {};
+      const loj = raw.lightoj || {};
+      const bcProfileId = bc.profile_id != null ? bc.profile_id : 74808;
+      const bcUrl =
+        bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcProfileId))}`;
+      const hrUrl = `https://www.hackerrank.com/profile/${encodeURIComponent(hr.handle || 'loop_breaker')}`;
+      const lojUrl = `https://lightoj.com/user/${encodeURIComponent(loj.handle || 'loop_breaker')}`;
+      const solvedSum =
+        (cf.solved || 0) +
+        (lc.solved || 0) +
+        (cc.solved || 0) +
+        (uva.solved || 0) +
+        (bc.solved || 0) +
+        (hr.solved || 0) +
+        (loj.solved || 0);
+      const existingRating = raw.rating || {};
+      const existingCf = existingRating.codeforces || {};
+      const existingCc = existingRating.codechef || {};
+      const existingHr = existingRating.hackerrank || {};
+      const fromFlatContests = Array.isArray(cf.contests) ? cf.contests : [];
+      const fromFlatCcContests = Array.isArray(cc.contests) ? cc.contests : [];
+      const fromFlatHrContests = Array.isArray(hr.contests) ? hr.contests : [];
+      const contestsCf =
+        Array.isArray(existingCf.contests) && existingCf.contests.length > 0
+          ? existingCf.contests
+          : fromFlatContests;
+      const contestsCc =
+        Array.isArray(existingCc.contests) && existingCc.contests.length > 0
+          ? existingCc.contests
+          : fromFlatCcContests;
+      const contestsHr =
+        Array.isArray(existingHr.contests) && existingHr.contests.length > 0
+          ? existingHr.contests
+          : fromFlatHrContests;
+      return {
+        _raw: raw,
+        meta: raw.meta || {},
+        summary: {
+          solved: raw.summary && raw.summary.solved != null ? raw.summary.solved : solvedSum,
+          attempted: raw.summary && raw.summary.attempted != null ? raw.summary.attempted : null
+        },
+        platforms: [
+          {
+            name: 'Codeforces',
+            solved: cf.solved,
+            url: `https://codeforces.com/profile/${encodeURIComponent(cf.handle || '')}`,
+            favicon: 'https://codeforces.com/favicon.ico',
+            color: 'green'
+          },
+          {
+            name: 'LeetCode',
+            solved: lc.solved,
+            url: `https://leetcode.com/${encodeURIComponent(lc.handle || '')}/`,
+            favicon: 'https://leetcode.com/favicon.ico',
+            color: 'blue'
+          },
+          {
+            name: 'CodeChef',
+            solved: cc.solved,
+            url: `https://www.codechef.com/users/${encodeURIComponent(cc.handle || 'loop_breaker')}`,
+            favicon: 'https://www.codechef.com/favicon.ico',
+            color: 'amber'
+          },
+          {
+            name: 'UVa',
+            solved: uva.solved,
+            url: uva.user_id != null && uva.user_id !== ''
+              ? `https://uhunt.onlinejudge.org/id/${encodeURIComponent(String(uva.user_id))}`
+              : 'https://uhunt.onlinejudge.org/',
+            favicon: 'https://uhunt.onlinejudge.org/images/uva.png',
+            color: 'teal'
+          },
+          {
+            name: 'Beecrowd',
+            solved: bc.solved,
+            url: bcUrl,
+            favicon: 'https://judge.beecrowd.com/favicon.ico',
+            color: 'cyan'
+          },
+          {
+            name: 'HackerRank',
+            solved: hr.solved,
+            url: hrUrl,
+            favicon: 'https://www.hackerrank.com/favicon.ico',
+            color: 'pink'
+          },
+          {
+            name: 'LightOJ',
+            solved: loj.solved,
+            url: lojUrl,
+            favicon: 'https://lightoj.com/loj-favicon.png',
+            color: 'purple'
+          }
+        ],
+        submissions: raw.submissions || { total: 0, percentages: [0, 0, 0, 0, 0, 0, 0], source: '' },
+        rating: {
+          codeforces: {
+            label: 'Codeforces',
+            color: '#3080cf',
+            contests: [],
+            ...existingCf,
+            contests: contestsCf
+          },
+          codechef: {
+            label: 'CodeChef',
+            color: '#6b5b2f',
+            contests: [],
+            ...existingCc,
+            contests: contestsCc
+          },
+          hackerrank: {
+            label: 'HackerRank',
+            color: '#2ec866',
+            contests: [],
+            ...existingHr,
+            contests: contestsHr
+          }
+        }
+      };
+    }
+    return raw;
+  }
+ 
+  function buildProfileCards(raw) {
+    const grid = document.getElementById('profile-cards-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const cf = raw.codeforces || {};
+    const lc = raw.leetcode || {};
+    const cc = raw.codechef || {};
+    const uva = raw.uva || {};
+    const bc = raw.beecrowd || {};
+    const hr = raw.hackerrank || {};
+    const loj = raw.lightoj || {};
+
+    const pfExtIcon = '<svg class="pf-ext-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+    const dash = v => (v != null && v !== '' ? v : '\u2014');
+
+    function titleCaseRank(rank) {
+      return String(rank || 'Unrated')
+        .split(/\s+/)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ');
+    }
+
+    function hrTier(rating) {
+      const r = Number(rating) || 0;
+      if (r >= 1400) return 'Gold';
+      if (r >= 1200) return 'Silver';
+      return 'Bronze';
+    }
+
+    function ccStarCount(rating) {
+      if (rating == null) return 0;
+      if (rating >= 2500) return 7;
+      if (rating >= 2200) return 6;
+      if (rating >= 2000) return 5;
+      if (rating >= 1800) return 4;
+      if (rating >= 1600) return 3;
+      if (rating >= 1400) return 2;
+      return 1;
+    }
+
+    function starsHtml(count, color, maxVisible) {
+      const n = Math.min(Math.max(count || 0, 0), maxVisible || count || 0);
+      const cap = maxVisible || n;
+      return Array.from({ length: n }, () =>
+        `<span class="pf-star" style="color:${color}">\u2605</span>`).join('') +
+        Array.from({ length: Math.max(0, cap - n) }, () =>
+        `<span class="pf-star" style="color:var(--border2)">\u2605</span>`).join('');
+    }
+
+    function appendPfCard({ href, logo, name, handleLabel, handle, bodyHtml, footerRows, footerNote, color }) {
+      const card = document.createElement('a');
+      card.className = 'pf-card';
+      card.href = href;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.dataset.color = color || 'green';
+      const rows = footerRows || [];
+      const footer = rows.map(row => `
+        <div class="pf-stat-row">
+          <span class="pf-stat-label">${row.label}</span>
+          <span class="pf-stat-val">${row.value}</span>
+        </div>`).join('');
+      const hasFooter = rows.length || footerNote;
+      const footerBlock = hasFooter ? `
+        <div class="pf-divider"></div>
+        <div class="pf-footer-stats">${footer}</div>
+        ${footerNote ? `<div class="pf-footer-note">${footerNote}</div>` : ''}` : '';
+      card.innerHTML = `
+        <div class="pf-card-header">
+          <div class="pf-platform-name-wrap">
+            <img class="pf-logo" src="${logo}" alt="${name}" onerror="this.style.display='none'">
+            <span class="pf-platform-name">${name}</span>
+          </div>
+          ${pfExtIcon}
+        </div>
+        <div class="pf-handle">${handleLabel}: <b>${handle}</b></div>
+        ${bodyHtml}${footerBlock}`;
+      grid.appendChild(card);
+    }
+
+    const cfRankColors = {
+      newbie: '#808080', pupil: '#008000', specialist: '#03a89e',
+      expert: '#0000ff', 'candidate master': '#aa00aa', master: '#ff8c00',
+      'international master': '#ff8c00', grandmaster: '#ff0000',
+      'international grandmaster': '#ff0000', 'legendary grandmaster': '#ff0000'
+    };
+    const cfHandle = cf.handle || '\u2014';
+    const cfRank = (cf.rank || 'pupil').toLowerCase();
+    const cfRankColor = cfRankColors[cfRank] || '#008000';
+
+    appendPfCard({
+      href: `https://codeforces.com/profile/${encodeURIComponent(cfHandle)}`,
+      logo: 'https://codeforces.com/favicon.ico',
+      name: 'Codeforces',
+      handleLabel: 'Handle',
+      handle: cfHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(cf.rating)}</span>
+          <span class="pf-rating-rank" style="color:${cfRankColor}">(${titleCaseRank(cf.rank || 'pupil')})</span>
+        </div>`,
+      footerRows: [
+        { label: 'Max Rating', value: dash(cf.max_rating) },
+        { label: 'Problems Solved', value: dash(cf.solved) }
+      ],
+      color: 'green'
+    });
+
+    const ccHandle = cc.handle || '\u2014';
+    const ccRating = cc.rating != null ? cc.rating : null;
+    const ccStars = ccStarCount(ccRating);
+    const ccStarColors = ['#808080', '#666600', '#408000', '#36a0dc', '#a333c8', '#ff7f00', '#ff0000'];
+    const ccStarColor = ccStarColors[Math.min(Math.max(ccStars, 1), 7) - 1] || '#ffd700';
+
+    appendPfCard({
+      href: `https://www.codechef.com/users/${encodeURIComponent(ccHandle)}`,
+      logo: 'https://www.codechef.com/favicon.ico',
+      name: 'CodeChef',
+      handleLabel: 'Handle',
+      handle: ccHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(ccRating)}</span>
+          <span class="pf-stars">${starsHtml(ccStars, ccStarColor, 3)}</span>
+        </div>`,
+      footerRows: [
+        { label: 'Max Rating', value: dash(cc.max_rating) },
+        { label: 'Problems Solved', value: dash(cc.solved) }
+      ],
+      color: 'amber'
+    });
+
+    const hrHandle = hr.handle || '\u2014';
+    const hrStarCount = Math.min(Math.max(hr.stars || 0, 0), 5);
+    const hrLevel = hrTier(hr.algorithms_rating);
+
+    appendPfCard({
+      href: `https://www.hackerrank.com/profile/${encodeURIComponent(hrHandle)}`,
+      logo: 'https://www.hackerrank.com/favicon.ico',
+      name: 'HackerRank',
+      handleLabel: 'Handle',
+      handle: hrHandle,
+      bodyHtml: `
+        <div class="pf-stars" style="margin-bottom:4px;">${starsHtml(hrStarCount, '#00b14f', 5)}</div>
+        <div class="pf-badge-label">Problem Solving (${hrLevel})</div>`,
+      footerRows: [
+        { label: 'Badges', value: dash(hr.badges) },
+        { label: 'Problems Solved', value: dash(hr.solved) }
+      ],
+      color: 'pink'
+    });
+
+    const lcHandle = lc.handle || '\u2014';
+
+    appendPfCard({
+      href: `https://leetcode.com/${encodeURIComponent(lcHandle)}/`,
+      logo: 'https://leetcode.com/favicon.ico',
+      name: 'LeetCode',
+      handleLabel: 'Handle',
+      handle: lcHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(lc.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerNote: `${dash(lc.easy)} Easy \u00b7 ${dash(lc.medium)} Med \u00b7 ${dash(lc.hard)} Hard`,
+      color: 'blue'
+    });
+
+    const uvaHandle = uva.username || '\u2014';
+    const uvaUrl = uva.user_id != null && uva.user_id !== ''
+      ? `https://uhunt.onlinejudge.org/id/${encodeURIComponent(String(uva.user_id))}`
+      : 'https://uhunt.onlinejudge.org/';
+
+    appendPfCard({
+      href: uvaUrl,
+      logo: 'https://uhunt.onlinejudge.org/images/uva.png',
+      name: 'UVa Online Judge',
+      handleLabel: 'Username',
+      handle: uvaHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(uva.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerRows: [
+        { label: 'User ID', value: dash(uva.user_id) }
+      ],
+      color: 'teal'
+    });
+
+    const bcId = bc.profile_id != null ? bc.profile_id : 74808;
+    const bcUrl = bc.url || `https://judge.beecrowd.com/en/profile/${encodeURIComponent(String(bcId))}`;
+
+    appendPfCard({
+      href: bcUrl,
+      logo: 'https://judge.beecrowd.com/favicon.ico',
+      name: 'Beecrowd',
+      handleLabel: 'Profile',
+      handle: String(bcId),
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(bc.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>`,
+      footerRows: [
+        { label: 'Submissions number', value: dash(bc.submissions) }
+      ],
+      color: 'cyan'
+    });
+
+    const lojHandle = loj.handle || '\u2014';
+    const lojAc = loj.ac != null ? loj.ac : null;
+    const lojSubs = loj.submissions != null ? loj.submissions : null;
+    const lojAcLabel = lojAc != null && lojSubs != null ? `${lojAc} / ${lojSubs}` : dash(lojAc);
+
+    appendPfCard({
+      href: `https://lightoj.com/user/${encodeURIComponent(lojHandle)}`,
+      logo: 'https://lightoj.com/loj-favicon.png',
+      name: 'LightOJ',
+      handleLabel: 'Handle',
+      handle: lojHandle,
+      bodyHtml: `
+        <div class="pf-rating-row">
+          <span class="pf-rating-num">${dash(loj.solved)}</span>
+          <span class="pf-rating-rank">solved</span>
+        </div>
+        <div class="pf-subtitle">${dash(loj.tried)} tried \u00b7 ${dash(loj.submissions)} submissions</div>`,
+      footerRows: [
+        { label: 'AC Submissions', value: lojAcLabel }
+      ],
+      color: 'purple'
+    });
+  }
+
+  function renderRating(platform) {
+    const d = ratingData[platform];
+    const statsEl = document.getElementById('rating-stats');
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const tickColor  = isLight ? '#64748b' : '#6b7280';
+    const gridColor  = isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.04)';
+    const ttBg       = isLight ? '#ffffff' : '#1c2030';
+    const ttBorder   = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)';
+    const ttTitle    = isLight ? '#0f172a' : '#e8eaf2';
+    const ttBody     = isLight ? '#64748b' : '#6b7280';
+    const ptBorder   = isLight ? '#f0f4f8' : '#0d0f14';
+ 
+    if (!d || !d.contests || !d.contests.length) {
+      statsEl.innerHTML = '<div class="rating-stat"><div class="rs-label">No contest data</div><div class="rs-val">?ｿｽ?</div></div>';
+      if (ratingChart) { ratingChart.destroy(); ratingChart = null; }
+      return;
+    }
+ 
+    const labels = d.contests.map(c => c.date);
+    const values = d.contests.map(c => c.rating);
+    const displayLabels = labels.map(s => {
+      if (!s || typeof s !== 'string') return s;
+      const p = s.split('-');
+      return p.length >= 2 ? `${p[0]}-${p[1]}` : s;
+    });
+    const positive = values.filter(v => v > 0);
+    const max = values.length ? Math.max(...values) : 0;
+    const min = positive.length ? Math.min(...positive) : null;
+    const last = values[values.length - 1];
+    const delta = values.length > 1 ? last - values[values.length - 2] : 0;
+ 
+    statsEl.innerHTML = `
+      <div class="rating-stat"><div class="rs-label">Current</div><div class="rs-val" style="color:${d.color}">${last}</div></div>
+      <div class="rating-stat"><div class="rs-label">Peak</div><div class="rs-val">${max}</div></div>
+      <div class="rating-stat"><div class="rs-label">Min</div><div class="rs-val">${min != null ? min : '?ｿｽ?'}</div></div>
+      <div class="rating-stat"><div class="rs-label">Last change</div><div class="rs-val" style="color:${delta>=0?'#00e5a0':'#ff6b6b'}">${delta>=0?'+':''}${delta}</div></div>
+      <div class="rating-stat"><div class="rs-label">Contests</div><div class="rs-val">${d.contests.length}</div></div>
+    `;
+ 
+    if (ratingChart) ratingChart.destroy();
+ 
+    const cCtx = document.getElementById('ratingChart');
+    ratingChart = new Chart(cCtx, {
+      type: 'line',
+      data: {
+        labels: displayLabels,
+        datasets: [{
+          label: d.label,
+          data: values,
+          borderColor: d.color,
+          backgroundColor: d.color + '18',
+          borderWidth: 2,
+          pointBackgroundColor: d.color,
+          pointBorderColor: ptBorder,
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: true,
+          tension: 0.35,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: { left: 4, right: 8, top: 8, bottom: 4 }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: tickColor,
+              font: { family: 'Space Mono', size: 10 },
+              maxRotation: 40,
+              minRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 12,
+              autoSkipPadding: 28
+            },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          },
+          y: {
+            grace: '6%',
+            ticks: {
+              color: tickColor,
+              font: { family: 'Space Mono', size: 10 },
+              padding: 10,
+              callback: v => (typeof v === 'number' && Number.isFinite(v) ? Math.round(v) : v)
+            },
+            grid: { color: gridColor },
+            border: { color: gridColor }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: ttBg,
+            borderColor: ttBorder,
+            borderWidth: 1,
+            titleColor: ttTitle,
+            bodyColor: ttBody,
+            titleFont: { family: 'Space Mono', size: 11 },
+            bodyFont: { family: 'Space Mono', size: 10 },
+            callbacks: {
+              title: items => {
+                const c = d.contests[items[0].dataIndex];
+                const name = c.name || 'Contest';
+                return c.date ? `${name} (${c.date})` : name;
+              },
+              label: item => ` Rating: ${item.parsed.y}`
+            }
+          }
+        }
+      }
+    });
+  }
+ 
+  function formatLastUpdatedLabel(isoOrDate) {
+    if (!isoOrDate) return '';
+    const dt = new Date(isoOrDate);
+    if (isNaN(dt.getTime())) return String(isoOrDate);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
+  }
+ 
+  function applyProfile(data) {
+    ratingData = data.rating || {};
+    const lu = data.meta && data.meta.lastUpdated;
+    const pill = document.getElementById('pill-last-updated');
+    if (pill) {
+      if (lu) {
+        const dt = new Date(lu);
+        const ds = isNaN(dt.getTime()) ? lu : formatLastUpdatedLabel(lu);
+        pill.textContent = `Last updated: ${ds}`;
+      } else {
+        pill.textContent = 'Last updated: ?ｿｽ?';
+      }
+    }
+ 
+    const sum = data.summary || {};
+    document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '?ｿｽ?';
+ 
+    buildProfileCards(data._raw || {});
+    renderRating(document.querySelector('.rtab.active')?.dataset.platform || 'codeforces');
+  }
+ 
+  window.setTheme = function(t) {
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
+    document.getElementById('btn-dark').classList.toggle('active', t === 'dark');
+    document.getElementById('btn-light').classList.toggle('active', t === 'light');
+    localStorage.setItem('cp-theme', t);
+    const active = document.querySelector('.rtab.active');
+    if (active && ratingData && Object.keys(ratingData).length) renderRating(active.dataset.platform);
+  };
+ 
+  const savedTheme = localStorage.getItem('cp-theme') || 'light';
+  window.setTheme(savedTheme);
+ 
+  document.getElementById('rating-tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.rtab');
+    if (!btn) return;
+    document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderRating(btn.dataset.platform);
+  });
+ 
+  (async function loadProfile() {
+    try {
+      const res = await fetch('data.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(String(res.status));
+      applyProfile(normalizeProfileData(await res.json()));
+    } catch (e) {
+      document.getElementById('pill-last-updated').textContent = 'Could not load data.json';
+    }
+  })();
+ 
+  (function() {
+    const startYear = 2026;
+    const currentYear = new Date().getFullYear();
+    const yearStr = currentYear > startYear ? `${startYear}\u2013${currentYear}` : `${startYear}`;
+    document.getElementById('copyright').innerHTML = `
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
+      </svg>
+      <span class="copyright-text">${yearStr} Fahim Ahsan Khan. All rights reserved.</span>
+    `;
+  })();
+</script>
+</body>
+</html>
+ 

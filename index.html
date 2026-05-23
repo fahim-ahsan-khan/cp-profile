@@ -340,44 +340,96 @@
     color: var(--muted);
   }
  
-  .problems-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
- 
-  .prob-card {
-    flex: 1;
+  .lifetime-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 20px;
+    padding: 28px 24px 24px;
     text-align: center;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s ease both;
+    transition: var(--theme-transition);
   }
- 
-  .prob-card .num {
+
+  .lifetime-total {
     font-family: var(--mono);
-    font-size: 36px;
+    font-size: clamp(42px, 8vw, 56px);
     font-weight: 700;
-    color: var(--accent);
+    color: var(--card-num);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.35s;
+  }
+
+  .lifetime-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    gap: 2px;
+    margin: 0 auto 24px;
+    max-width: 100%;
+    background: var(--surface2);
+  }
+
+  .lifetime-seg {
     display: block;
+    height: 100%;
+    min-width: 2px;
+    border-radius: 2px;
+    transition: width 0.4s ease;
   }
- 
-  .prob-card .label {
-    font-size: 11px;
+
+  .lifetime-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .lifetime-legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+  }
+
+  .lifetime-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .lifetime-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .lifetime-plat {
     color: var(--muted);
-    font-family: var(--mono);
-    margin-top: 4px;
+    font-family: var(--sans);
   }
- 
-  .prob-card.total .num { color: var(--accent2); }
+
+  .lifetime-count {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--card-num);
+    transition: color 0.35s;
+  }
+
+  @media (max-width: 520px) {
+    .lifetime-legend-row { gap: 10px 16px; }
+    .lifetime-legend-item { font-size: 11px; }
+  }
  
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
  
-  .card, .prob-card {
+  .card, .lifetime-card {
     animation: fadeUp 0.5s ease both;
   }
   .rating-card {
@@ -545,7 +597,7 @@
   .pf-card[data-color="green"]:hover  { border-color: #00e5a0; box-shadow: 0 0 18px rgba(0,229,160,0.18); }
   .pf-card[data-color="blue"]:hover   { border-color: #3d7fff; box-shadow: 0 0 18px rgba(61,127,255,0.18); }
   .pf-card[data-color="cyan"]:hover   { border-color: #22d3ee; box-shadow: 0 0 18px rgba(34,211,238,0.18); }
-  .pf-card[data-color="pink"]:hover   { border-color: #f472b6; box-shadow: 0 0 18px rgba(244,114,182,0.18); }
+  .pf-card[data-color="hr-green"]:hover  { border-color: #2ec866; box-shadow: 0 0 18px rgba(46,200,102,0.22); }
   .pf-card[data-color="teal"]:hover   { border-color: #2dd4bf; box-shadow: 0 0 18px rgba(45,212,191,0.18); }
   .pf-card[data-color="amber"]:hover  { border-color: #ffd166; box-shadow: 0 0 18px rgba(255,209,102,0.18); }
   .pf-card[data-color="purple"]:hover { border-color: #a78bfa; box-shadow: 0 0 18px rgba(167,139,250,0.18); }
@@ -579,7 +631,7 @@
   .pf-card[data-color="green"]::after  { background: rgba(0,229,160,0.85);  color: #021a10; }
   .pf-card[data-color="blue"]::after   { background: rgba(61,127,255,0.85); color: #fff; }
   .pf-card[data-color="cyan"]::after   { background: rgba(34,211,238,0.85); color: #021a1f; }
-  .pf-card[data-color="pink"]::after   { background: rgba(244,114,182,0.85); color: #fff; }
+  .pf-card[data-color="hr-green"]::after  { background: rgba(46,200,102,0.9); color: #021a10; }
   .pf-card[data-color="teal"]::after   { background: rgba(45,212,191,0.85); color: #021a18; }
   .pf-card[data-color="amber"]::after  { background: rgba(255,209,102,0.85); color: #1a1200; }
   .pf-card[data-color="purple"]::after { background: rgba(167,139,250,0.85); color: #1a0f33; }
@@ -766,11 +818,10 @@
   </header>
  
   <div class="section-label">Problems Solved</div>
-  <div class="problems-row">
-    <div class="prob-card">
-      <span class="num" id="summary-solved">?ｿｽ?</span>
-      <div class="label">Solved</div>
-    </div>
+  <div class="lifetime-card">
+    <div class="lifetime-total" id="summary-solved">&mdash;</div>
+    <div class="lifetime-bar" id="lifetime-bar" role="img" aria-label="Platform breakdown of problems solved"></div>
+    <div class="lifetime-legend" id="lifetime-legend"></div>
   </div>
 
   <div class="section-label" style="margin-top:32px;">Platform Profiles</div>
@@ -894,7 +945,7 @@
             solved: hr.solved,
             url: hrUrl,
             favicon: 'https://www.hackerrank.com/favicon.ico',
-            color: 'pink'
+            color: 'hr-green'
           },
           {
             name: 'LightOJ',
@@ -1083,7 +1134,7 @@
         { label: 'Badges', value: dash(hr.badges) },
         { label: 'Problems Solved', value: dash(hr.solved) }
       ],
-      color: 'pink'
+      color: 'hr-green'
     });
 
     const lcHandle = lc.handle || '\u2014';
@@ -1294,6 +1345,58 @@
     return `${dt.getUTCDate()} ${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
   }
  
+  function renderLifetimeSolved(platforms, total) {
+    const totalEl = document.getElementById('summary-solved');
+    const barEl = document.getElementById('lifetime-bar');
+    const legendEl = document.getElementById('lifetime-legend');
+    if (!totalEl || !barEl || !legendEl) return;
+
+    const colorHex = {
+      green: '#00e5a0',
+      cyan: '#22d3ee',
+      teal: '#2dd4bf',
+      'hr-green': '#2ec866',
+      blue: '#3d7fff',
+      purple: '#a78bfa',
+      amber: '#ffd166'
+    };
+
+    const list = (platforms || []).slice().sort((a, b) => {
+      const diff = (b.solved || 0) - (a.solved || 0);
+      if (diff !== 0) return diff;
+      return a.name.localeCompare(b.name);
+    });
+
+    const sum = total != null
+      ? total
+      : list.reduce((acc, p) => acc + (p.solved || 0), 0);
+
+    totalEl.textContent = sum;
+
+    barEl.innerHTML = list.map(p => {
+      const n = p.solved || 0;
+      const pct = sum > 0 ? (n / sum) * 100 : 0;
+      const hex = colorHex[p.color] || '#94a3b8';
+      return `<span class="lifetime-seg" style="width:${pct}%;background:${hex}" title="${p.name}: ${n}"></span>`;
+    }).join('');
+
+    function legendItem(p) {
+      const hex = colorHex[p.color] || '#94a3b8';
+      return `<div class="lifetime-legend-item">
+        <span class="lifetime-dot" style="background:${hex}"></span>
+        <span class="lifetime-plat">${p.name}</span>
+        <span class="lifetime-count">${p.solved ?? 0}</span>
+      </div>`;
+    }
+
+    const row1 = list.slice(0, 5);
+    const row2 = list.slice(5);
+
+    legendEl.innerHTML = `
+      <div class="lifetime-legend-row">${row1.map(legendItem).join('')}</div>
+      <div class="lifetime-legend-row">${row2.map(legendItem).join('')}</div>`;
+  }
+
   function applyProfile(data) {
     ratingData = data.rating || {};
     const lu = data.meta && data.meta.lastUpdated;
@@ -1309,7 +1412,7 @@
     }
  
     const sum = data.summary || {};
-    document.getElementById('summary-solved').textContent = sum.solved != null ? sum.solved : '?ｿｽ?';
+    renderLifetimeSolved(data.platforms || [], sum.solved);
  
     buildProfileCards(data._raw || {});
     renderRating(document.querySelector('.rtab.active')?.dataset.platform || 'codeforces');

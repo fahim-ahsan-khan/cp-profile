@@ -31,3 +31,17 @@ def _beecrowd_profile_id() -> int:
 
 
 BEECROWD_PROFILE_ID = _beecrowd_profile_id()
+
+
+def _beecrowd_submissions_override() -> int | None:
+    raw = os.environ.get("BEECROWD_SUBMISSIONS", "452").strip()
+    if not raw:
+        return None
+    try:
+        n = int(raw)
+        return n if n >= 0 else None
+    except ValueError:
+        return None
+
+
+BEECROWD_SUBMISSIONS_OVERRIDE = _beecrowd_submissions_override()

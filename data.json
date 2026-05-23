@@ -666,7 +666,8 @@
   "beecrowd": {
     "profile_id": 74808,
     "url": "https://judge.beecrowd.com/en/profile/74808",
-    "solved": 243
+    "solved": 243,
+    "submissions": 452
   },
   "hackerrank": {
     "handle": "loop_breaker",

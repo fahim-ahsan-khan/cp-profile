@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-23T12:57:05Z"
+    "lastUpdated": "2026-05-23T13:28:30Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -666,8 +666,7 @@
   "beecrowd": {
     "profile_id": 74808,
     "url": "https://judge.beecrowd.com/en/profile/74808",
-    "solved": 243,
-    "submission": 452
+    "solved": 243
   },
   "hackerrank": {
     "handle": "loop_breaker",

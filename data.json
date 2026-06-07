@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-06T19:03:02Z"
+    "lastUpdated": "2026-06-07T02:29:37Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -541,10 +541,121 @@
   },
   "codechef": {
     "handle": "loop_breaker",
-    "rating": 0,
-    "max_rating": 0,
-    "solved": 0,
-    "contests": []
+    "rating": 1517,
+    "max_rating": 1563,
+    "solved": 53,
+    "contests": [
+      {
+        "date": "2018-07-23",
+        "rating": 1053,
+        "name": "July Cook-Off 2018 Division 2"
+      },
+      {
+        "date": "2018-08-20",
+        "rating": 1119,
+        "name": "August Cook-Off 2018 Division 2"
+      },
+      {
+        "date": "2018-11-12",
+        "rating": 1234,
+        "name": "November Challenge 2018 Division 2"
+      },
+      {
+        "date": "2018-11-19",
+        "rating": 1302,
+        "name": "November Cook-Off 2018 Division 2"
+      },
+      {
+        "date": "2018-12-18",
+        "rating": 1341,
+        "name": "December Challenge 2018 Division 2"
+      },
+      {
+        "date": "2019-01-14",
+        "rating": 1402,
+        "name": "January Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-02-13",
+        "rating": 1465,
+        "name": "February Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-02-23",
+        "rating": 1465,
+        "name": "February Lunchtime 2019 Division 2"
+      },
+      {
+        "date": "2019-03-13",
+        "rating": 1423,
+        "name": "March Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-04-15",
+        "rating": 1406,
+        "name": "April Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-06-17",
+        "rating": 1442,
+        "name": "June Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-07-15",
+        "rating": 1396,
+        "name": "July Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-08-12",
+        "rating": 1448,
+        "name": "August Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-09-16",
+        "rating": 1473,
+        "name": "September Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-09-28",
+        "rating": 1514,
+        "name": "September Lunchtime 2019 Division 2"
+      },
+      {
+        "date": "2019-10-14",
+        "rating": 1537,
+        "name": "October Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-11-11",
+        "rating": 1563,
+        "name": "November Challenge 2019 Division 2"
+      },
+      {
+        "date": "2019-12-16",
+        "rating": 1542,
+        "name": "December Challenge 2019 Division 2"
+      },
+      {
+        "date": "2020-01-13",
+        "rating": 1562,
+        "name": "January Challenge 2020 Division 2"
+      },
+      {
+        "date": "2020-07-13",
+        "rating": 1548,
+        "name": "July Challenge 2020 Division 2"
+      },
+      {
+        "date": "2021-04-12",
+        "rating": 1546,
+        "name": "April Challenge 2021 Division 3"
+      },
+      {
+        "date": "2021-05-17",
+        "rating": 1517,
+        "name": "May Challenge 2021 Division 3 (Rated)"
+      }
+    ]
   },
   "uva": {
     "username": "loop_breaker",

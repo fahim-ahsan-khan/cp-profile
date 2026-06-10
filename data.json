@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-10T14:50:03Z"
+    "lastUpdated": "2026-06-10T20:08:51Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -659,8 +659,9 @@
   },
   "uva": {
     "username": "loop_breaker",
-    "solved": 0,
-    "user_id": 833661
+    "solved": 193,
+    "user_id": 833661,
+    "display_name": "Fahim Ahsan Khan"
   },
   "beecrowd": {
     "profile_id": 74808,

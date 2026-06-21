@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-21T13:45:28Z"
+    "lastUpdated": "2026-06-21T19:12:41Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -8,12 +8,533 @@
     "max_rating": 1377,
     "rank": "pupil",
     "solved": 433,
-    "contests": []
+    "contests": [
+      {
+        "date": "2016-03-03",
+        "rating": 1377,
+        "name": "Codeforces Round 344 (Div. 2)"
+      },
+      {
+        "date": "2016-03-07",
+        "rating": 1266,
+        "name": "Codeforces Round 345 (Div. 2)"
+      },
+      {
+        "date": "2016-03-19",
+        "rating": 1204,
+        "name": "IndiaHacks 2016 - Online Edition (Div. 1 + Div. 2)"
+      },
+      {
+        "date": "2016-03-30",
+        "rating": 1185,
+        "name": "Codeforces Round 346 (Div. 2)"
+      },
+      {
+        "date": "2016-05-05",
+        "rating": 1150,
+        "name": "Codeforces Round 350 (Div. 2)"
+      },
+      {
+        "date": "2016-05-07",
+        "rating": 1141,
+        "name": "Codeforces Round 351 (VK Cup 2016 Round 3, Div. 2 Edition)"
+      },
+      {
+        "date": "2016-05-11",
+        "rating": 1038,
+        "name": "Codeforces Round 352 (Div. 2)"
+      },
+      {
+        "date": "2016-05-16",
+        "rating": 950,
+        "name": "Codeforces Round 353 (Div. 2)"
+      },
+      {
+        "date": "2016-06-01",
+        "rating": 941,
+        "name": "Codeforces Round 355 (Div. 2)"
+      },
+      {
+        "date": "2016-06-29",
+        "rating": 901,
+        "name": "Codeforces Round 360 (Div. 2)"
+      },
+      {
+        "date": "2016-07-14",
+        "rating": 817,
+        "name": "Codeforces Round 362 (Div. 2)"
+      },
+      {
+        "date": "2016-07-22",
+        "rating": 728,
+        "name": "Codeforces Round 364 (Div. 2)"
+      },
+      {
+        "date": "2016-08-11",
+        "rating": 836,
+        "name": "Codeforces Round 367 (Div. 2)"
+      },
+      {
+        "date": "2016-08-20",
+        "rating": 944,
+        "name": "Codeforces Round 368 (Div. 2)"
+      },
+      {
+        "date": "2016-08-24",
+        "rating": 981,
+        "name": "AIM Tech Round 3 (Div. 2)"
+      },
+      {
+        "date": "2016-09-13",
+        "rating": 1047,
+        "name": "Codeforces Round 371 (Div. 2)"
+      },
+      {
+        "date": "2016-09-17",
+        "rating": 1050,
+        "name": "Codeforces Round 372 (Div. 2)"
+      },
+      {
+        "date": "2016-09-23",
+        "rating": 1132,
+        "name": "Codeforces Round 373 (Div. 2)"
+      },
+      {
+        "date": "2016-09-30",
+        "rating": 1176,
+        "name": "Codeforces Round 374 (Div. 2)"
+      },
+      {
+        "date": "2016-10-03",
+        "rating": 1177,
+        "name": "Codeforces Round 375 (Div. 2)"
+      },
+      {
+        "date": "2016-10-17",
+        "rating": 1116,
+        "name": "Codeforces Round 377 (Div. 2)"
+      },
+      {
+        "date": "2016-10-22",
+        "rating": 1107,
+        "name": "Canada Cup 2016"
+      },
+      {
+        "date": "2016-10-31",
+        "rating": 1101,
+        "name": "Codeforces Round 378 (Div. 2)"
+      },
+      {
+        "date": "2016-11-15",
+        "rating": 1159,
+        "name": "Codeforces Round 379 (Div. 2)"
+      },
+      {
+        "date": "2016-11-23",
+        "rating": 1067,
+        "name": "Codeforces Round 381 (Div. 2)"
+      },
+      {
+        "date": "2016-12-14",
+        "rating": 1082,
+        "name": "Codeforces Round 384 (Div. 2)"
+      },
+      {
+        "date": "2016-12-17",
+        "rating": 1107,
+        "name": "Codeforces Round 385 (Div. 2)"
+      },
+      {
+        "date": "2016-12-19",
+        "rating": 1043,
+        "name": "Codeforces Round 387 (Div. 2)"
+      },
+      {
+        "date": "2016-12-19",
+        "rating": 1017,
+        "name": "Codeforces Round 388 (Div. 2)"
+      },
+      {
+        "date": "2016-12-25",
+        "rating": 1066,
+        "name": "Codeforces Round 389 (Div. 2, Rated, Based on Technocup 2017 - Elimination Round 3)"
+      },
+      {
+        "date": "2016-12-30",
+        "rating": 1089,
+        "name": "Good Bye 2016"
+      },
+      {
+        "date": "2017-01-06",
+        "rating": 1001,
+        "name": "Codeforces Round 390 (Div. 2)"
+      },
+      {
+        "date": "2017-01-12",
+        "rating": 1102,
+        "name": "Codecraft-17 and Codeforces Round 391 (Div. 1 + Div. 2, combined)"
+      },
+      {
+        "date": "2017-01-19",
+        "rating": 1079,
+        "name": "Codeforces Round 392 (Div. 2)"
+      },
+      {
+        "date": "2017-01-22",
+        "rating": 1096,
+        "name": "Codeforces Round 393 (Div. 2) (8VC Venture Cup 2017 - Final Round Div. 2 Edition)"
+      },
+      {
+        "date": "2017-02-02",
+        "rating": 1163,
+        "name": "Codeforces Round 395 (Div. 2)"
+      },
+      {
+        "date": "2017-02-18",
+        "rating": 1223,
+        "name": "Codeforces Round 398 (Div. 2)"
+      },
+      {
+        "date": "2017-02-20",
+        "rating": 1262,
+        "name": "Divide by Zero 2017 and Codeforces Round 399 (Div. 1 + Div. 2, combined)"
+      },
+      {
+        "date": "2017-02-23",
+        "rating": 1335,
+        "name": "ICM Technex 2017 and Codeforces Round 400 (Div. 1 + Div. 2, combined)"
+      },
+      {
+        "date": "2017-02-26",
+        "rating": 1274,
+        "name": "Codeforces Round 402 (Div. 2)"
+      },
+      {
+        "date": "2017-03-05",
+        "rating": 1281,
+        "name": "Codeforces Round 403 (Div. 2, based on Technocup 2017 Finals)"
+      },
+      {
+        "date": "2017-03-18",
+        "rating": 1245,
+        "name": "Codeforces Round 405 (rated, Div. 2, based on VK Cup 2017 Round 1)"
+      },
+      {
+        "date": "2017-03-29",
+        "rating": 1146,
+        "name": "Codeforces Round 407 (Div. 2)"
+      },
+      {
+        "date": "2017-04-10",
+        "rating": 1157,
+        "name": "Codeforces Round 408 (Div. 2)"
+      },
+      {
+        "date": "2017-04-16",
+        "rating": 1055,
+        "name": "Codeforces Round 409 (rated, Div. 2, based on VK Cup 2017 Round 2)"
+      },
+      {
+        "date": "2017-04-21",
+        "rating": 1064,
+        "name": "Codeforces Round 410 (Div. 2)"
+      },
+      {
+        "date": "2017-06-17",
+        "rating": 974,
+        "name": "Codeforces Round 419 (Div. 2)"
+      },
+      {
+        "date": "2017-07-24",
+        "rating": 1068,
+        "name": "Codeforces Round 425 (Div. 2)"
+      },
+      {
+        "date": "2017-07-31",
+        "rating": 1032,
+        "name": "Codeforces Round 427 (Div. 2)"
+      },
+      {
+        "date": "2017-08-12",
+        "rating": 938,
+        "name": "Codeforces Round 428 (Div. 2)"
+      },
+      {
+        "date": "2017-08-29",
+        "rating": 850,
+        "name": "Codeforces Round 430 (Div. 2)"
+      },
+      {
+        "date": "2017-10-23",
+        "rating": 995,
+        "name": "Codeforces Round 442 (Div. 2)"
+      },
+      {
+        "date": "2017-11-17",
+        "rating": 1049,
+        "name": "Codeforces Round 446 (Div. 2)"
+      },
+      {
+        "date": "2017-12-02",
+        "rating": 1064,
+        "name": "Codeforces Round 449 (Div. 2)"
+      },
+      {
+        "date": "2017-12-11",
+        "rating": 1096,
+        "name": "Codeforces Round 450 (Div. 2)"
+      },
+      {
+        "date": "2017-12-16",
+        "rating": 1094,
+        "name": "Codeforces Round 451 (Div. 2)"
+      },
+      {
+        "date": "2017-12-23",
+        "rating": 1011,
+        "name": "Codeforces Round 454 (Div. 2, based on Technocup 2018 Elimination Round 4)"
+      },
+      {
+        "date": "2018-01-13",
+        "rating": 993,
+        "name": "Educational Codeforces Round 36 (Rated for Div. 2)"
+      },
+      {
+        "date": "2018-01-29",
+        "rating": 1017,
+        "name": "Codeforces Round 459 (Div. 2)"
+      },
+      {
+        "date": "2018-01-31",
+        "rating": 920,
+        "name": "Codeforces Round 460 (Div. 2)"
+      },
+      {
+        "date": "2018-02-07",
+        "rating": 849,
+        "name": "Codeforces Round 461 (Div. 2)"
+      },
+      {
+        "date": "2018-02-16",
+        "rating": 895,
+        "name": "Educational Codeforces Round 38 (Rated for Div. 2)"
+      },
+      {
+        "date": "2018-02-17",
+        "rating": 1085,
+        "name": "Codeforces Round 464 (Div. 2)"
+      },
+      {
+        "date": "2018-02-19",
+        "rating": 1064,
+        "name": "Codeforces Round 465 (Div. 2)"
+      },
+      {
+        "date": "2018-02-24",
+        "rating": 978,
+        "name": "Codeforces Round 466 (Div. 2)"
+      },
+      {
+        "date": "2018-02-25",
+        "rating": 1134,
+        "name": "Codeforces Round 467 (Div. 2)"
+      },
+      {
+        "date": "2018-04-04",
+        "rating": 1121,
+        "name": "Educational Codeforces Round 41 (Rated for Div. 2)"
+      },
+      {
+        "date": "2018-04-07",
+        "rating": 1152,
+        "name": "Divide by Zero 2018 and Codeforces Round 474 (Div. 1 + Div. 2, combined)"
+      },
+      {
+        "date": "2018-04-25",
+        "rating": 1260,
+        "name": "Codeforces Round 476 (Div. 2) [Thanks, Telegram!]"
+      },
+      {
+        "date": "2018-05-06",
+        "rating": 1205,
+        "name": "Codeforces Round 479 (Div. 3)"
+      },
+      {
+        "date": "2018-05-08",
+        "rating": 1138,
+        "name": "Codeforces Round 480 (Div. 2)"
+      },
+      {
+        "date": "2018-05-13",
+        "rating": 1147,
+        "name": "Codeforces Round 481 (Div. 3)"
+      },
+      {
+        "date": "2018-05-29",
+        "rating": 1111,
+        "name": "Codeforces Round 485 (Div. 2)"
+      },
+      {
+        "date": "2018-06-01",
+        "rating": 1101,
+        "name": "Codeforces Round 486 (Div. 3)"
+      },
+      {
+        "date": "2018-06-21",
+        "rating": 1163,
+        "name": "Codeforces Round 490 (Div. 3)"
+      },
+      {
+        "date": "2018-06-23",
+        "rating": 1193,
+        "name": "Codeforces Round 491 (Div. 2)"
+      },
+      {
+        "date": "2018-06-24",
+        "rating": 1213,
+        "name": "Codeforces Round 492 (Div. 2) [Thanks, uDebug!]"
+      },
+      {
+        "date": "2018-07-01",
+        "rating": 1188,
+        "name": "Codeforces Round 493 (Div. 2)"
+      },
+      {
+        "date": "2018-07-16",
+        "rating": 1146,
+        "name": "Codeforces Round 498 (Div. 3)"
+      },
+      {
+        "date": "2018-07-26",
+        "rating": 1174,
+        "name": "Codeforces Round 499 (Div. 2)"
+      },
+      {
+        "date": "2018-07-31",
+        "rating": 1219,
+        "name": "Codeforces Round 501 (Div. 3)"
+      },
+      {
+        "date": "2018-08-18",
+        "rating": 1205,
+        "name": "Educational Codeforces Round 49 (Rated for Div. 2)"
+      },
+      {
+        "date": "2018-08-19",
+        "rating": 1103,
+        "name": "Codeforces Round 505 (rated, Div. 1 + Div. 2, based on VK Cup 2018 Final)"
+      },
+      {
+        "date": "2018-08-24",
+        "rating": 1011,
+        "name": "Codeforces Round 506 (Div. 3)"
+      },
+      {
+        "date": "2018-12-04",
+        "rating": 1082,
+        "name": "Codeforces Round 525 (Div. 2)"
+      },
+      {
+        "date": "2018-12-15",
+        "rating": 1157,
+        "name": "Educational Codeforces Round 56 (Rated for Div. 2)"
+      },
+      {
+        "date": "2018-12-18",
+        "rating": 1172,
+        "name": "Codeforces Round 527 (Div. 3)"
+      },
+      {
+        "date": "2018-12-27",
+        "rating": 1099,
+        "name": "Codeforces Round 529 (Div. 3)"
+      },
+      {
+        "date": "2019-01-09",
+        "rating": 1132,
+        "name": "Codeforces Round 531 (Div. 3)"
+      },
+      {
+        "date": "2019-01-11",
+        "rating": 1161,
+        "name": "Educational Codeforces Round 58 (Rated for Div. 2)"
+      },
+      {
+        "date": "2019-01-23",
+        "rating": 1222,
+        "name": "Codeforces Round 535 (Div. 3)"
+      },
+      {
+        "date": "2019-02-03",
+        "rating": 1191,
+        "name": "CodeCraft-19 and Codeforces Round 537 (Div. 2)"
+      },
+      {
+        "date": "2019-02-18",
+        "rating": 1147,
+        "name": "Educational Codeforces Round 60 (Rated for Div. 2)"
+      },
+      {
+        "date": "2019-02-19",
+        "rating": 1202,
+        "name": "Codeforces Round 540 (Div. 3)"
+      },
+      {
+        "date": "2019-08-30",
+        "rating": 1206,
+        "name": "Codeforces Round 582 (Div. 3)"
+      },
+      {
+        "date": "2019-09-23",
+        "rating": 1276,
+        "name": "Codeforces Round 588 (Div. 2)"
+      },
+      {
+        "date": "2019-10-01",
+        "rating": 1295,
+        "name": "Codeforces Round 590 (Div. 3)"
+      },
+      {
+        "date": "2019-10-22",
+        "rating": 1262,
+        "name": "Codeforces Round 595 (Div. 3)"
+      },
+      {
+        "date": "2019-11-04",
+        "rating": 1262,
+        "name": "Codeforces Round 598 (Div. 3)"
+      },
+      {
+        "date": "2019-11-06",
+        "rating": 1246,
+        "name": "Codeforces Round 599 (Div. 2)"
+      },
+      {
+        "date": "2019-11-16",
+        "rating": 1296,
+        "name": "Codeforces Round 600 (Div. 2)"
+      },
+      {
+        "date": "2020-02-12",
+        "rating": 1256,
+        "name": "Educational Codeforces Round 82 (Rated for Div. 2)"
+      },
+      {
+        "date": "2020-02-13",
+        "rating": 1200,
+        "name": "Codeforces Round 619 (Div. 2)"
+      },
+      {
+        "date": "2020-02-24",
+        "rating": 1231,
+        "name": "Codeforces Round 624 (Div. 3)"
+      }
+    ]
   },
   "leetcode": {
     "handle": "loop_breaker",
-    "solved": 94,
-    "easy": 46,
+    "solved": 95,
+    "easy": 47,
     "medium": 48,
     "hard": 0,
     "ranking": 1628761

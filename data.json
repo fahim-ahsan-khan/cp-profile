@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-06-24T14:03:42Z"
+    "lastUpdated": "2026-06-24T19:24:56Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
@@ -533,9 +533,9 @@
   },
   "leetcode": {
     "handle": "loop_breaker",
-    "solved": 95,
+    "solved": 96,
     "easy": 47,
-    "medium": 48,
+    "medium": 49,
     "hard": 0,
     "ranking": 1619950
   },

@@ -1,13 +1,13 @@
 {
   "meta": {
-    "lastUpdated": "2026-10-22T10:47:13Z"
+    "lastUpdated": "2026-10-22T16:13:23Z"
   },
   "codeforces": {
     "handle": "loop_breaker",
     "rating": 1231,
     "max_rating": 1377,
     "rank": "pupil",
-    "solved": 433,
+    "solved": 0,
     "contests": [
       {
         "date": "2016-03-03",
@@ -537,7 +537,7 @@
     "easy": 47,
     "medium": 57,
     "hard": 1,
-    "ranking": 1626839
+    "ranking": 1627678
   },
   "codechef": {
     "handle": "loop_breaker",
